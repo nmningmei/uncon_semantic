@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-This experiment was created using PsychoPy2 Experiment Builder (v1.82.01), February 15, 2020, at 13:39
+This experiment was created using PsychoPy2 Experiment Builder (v3.2.4), February 15, 2020, at 13:58
 If you publish work using this script please cite the relevant PsychoPy publications
   Peirce, JW (2007) PsychoPy - Psychophysics software in Python. Journal of Neuroscience Methods, 162(1-2), 8-13.
   Peirce, JW (2009) Generating stimuli for neuroscience using PsychoPy. Frontiers in Neuroinformatics, 2:10. doi: 10.3389/neuro.11.010.2008
@@ -20,7 +20,7 @@ _thisDir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(_thisDir)
 
 # Store info about the experiment session
-expName = u'experiment'  # from the Builder filename that created this script
+expName = 'experiment'  # from the Builder filename that created this script
 expInfo = {'participant':'', 'session':'001'}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False: core.quit()  # user pressed cancel
@@ -63,19 +63,9 @@ presentation = visual.TextStim(win=win, ori=0, name='presentation',
     pos=[0, 0], height=0.1, wrapWidth=None,
     color=u'white', colorSpace='rgb', opacity=1,
     depth=0.0)
-import pandas as pd
-
-df = pd.read_csv('../data/sampled.csv',encoding = 'latin-1')
-
-Words = df['Word'].values
-
-idx = 0
-
-import sys
-
-reload(sys)
-
-sys.setdefaultencoding('utf-8')
+#import sys
+#reload(sys)
+#sys.setdefaultencoding("utf-8")
 
 # Create some handy timers
 globalClock = core.Clock()  # to track the time since experiment started
@@ -84,7 +74,7 @@ routineTimer = core.CountdownTimer()  # to track time remaining of each (non-sli
 # set up handler to look after randomisation of conditions etc
 trials = data.TrialHandler(nReps=1, method='random', 
     extraInfo=expInfo, originPath=None,
-    trialList=data.importConditions(u'..\\data\\sampled.csv'),
+    trialList=data.importConditions('..\\data\\sampled.csv'),
     seed=None, name='trials')
 thisExp.addLoop(trials)  # add the loop to the experiment
 thisTrial = trials.trialList[0]  # so we can initialise stimuli with some values
@@ -106,7 +96,7 @@ for thisTrial in trials:
     frameN = -1
     routineTimer.add(1.000000)
     # update component parameters for each repeat
-    presentation.setText(Word.decode('utf-8'))
+    presentation.setText(Word.encode('utf8'))
     
     # keep track of which components have finished
     trialComponents = []
