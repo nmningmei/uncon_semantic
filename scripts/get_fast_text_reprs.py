@@ -115,7 +115,7 @@ df_final.to_csv(os.path.join(working_dir,'sampled.csv'),index = False,encoding='
 
 sampled_words = np.array([model_word2vec[word] for word in words])
 df_sampled_words = pd.DataFrame(sampled_words.T,columns = words)
-df_sampled_words.to_csv('../results/sampled_words.csv',index = False,encoding = 'latin-1')
+df_sampled_words.to_csv('../data/sampled_words.csv',index = False,encoding = 'latin-1')
 plt.close('all')
 
 
