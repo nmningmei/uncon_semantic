@@ -7,6 +7,7 @@ Created on Tue Feb 18 16:03:27 2020
 import os
 import pandas as pd
 from matplotlib import pyplot as plt
+plt.style.use('dark_background')
 
 df = pd.read_csv('../data/sampled.csv',encoding = 'latin-1')
 figure_dir = '../stimuli_figure'
@@ -26,4 +27,11 @@ for ii,row in df.iterrows():
                 bbox_inches = 'tight')
     plt.close('all')
 
-df['Path'] = pathes
+df['PATH'] = pathes
+columns = []
+for col in df.columns:
+    if '\n' in col:
+        col = col.replace('\n','_')
+    columns.append(col)
+df.columns = columns
+df.to_csv('../data/sampled_words.csv',encoding = 'latin-1',index = False)
