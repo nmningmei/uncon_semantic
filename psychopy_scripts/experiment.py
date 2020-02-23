@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-This experiment was created using PsychoPy2 Experiment Builder (v1.82.01), February 23, 2020, at 14:54
+This experiment was created using PsychoPy2 Experiment Builder (v1.82.01), February 23, 2020, at 14:58
 If you publish work using this script please cite the relevant PsychoPy publications
   Peirce, JW (2007) PsychoPy - Psychophysics software in Python. Journal of Neuroscience Methods, 162(1-2), 8-13.
   Peirce, JW (2009) Generating stimuli for neuroscience using PsychoPy. Frontiers in Neuroinformatics, 2:10. doi: 10.3389/neuro.11.010.2008
@@ -65,6 +65,7 @@ postmask_dur = int(expInfo['postmask'])
 n_square = int(expInfo['n_square'])
 image_size = int(expInfo['image_size'])
 opacity = float(expInfo['opacity'])
+session = int(expInfo['session'])
 
 curr = int(expInfo['probeFrames'])
 lowest_opacity = float(expInfo['lowest_opacity'])
@@ -305,7 +306,7 @@ for thisComponent in intoPrepareComponents:
 # set up handler to look after randomisation of conditions etc
 main_loop = data.TrialHandler(nReps=1, method='random', 
     extraInfo=expInfo, originPath=None,
-    trialList=data.importConditions('..\\data\\sampled_words.csv'),
+    trialList=data.importConditions(u'..\\experiment_csvs\\session_{}.csv'.format(int(session)),
     seed=None, name='main_loop')
 thisExp.addLoop(main_loop)  # add the loop to the experiment
 thisMain_loop = main_loop.trialList[0]  # so we can initialise stimuli with some values
