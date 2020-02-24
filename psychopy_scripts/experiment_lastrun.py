@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy2 Experiment Builder (v1.90.1),
-    on February 24, 2020, at 16:48
+    on February 24, 2020, at 17:07
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -27,7 +27,7 @@ os.chdir(_thisDir)
 
 # Store info about the experiment session
 expName = u'experiment'  # from the Builder filename that created this script
-expInfo = {u'n_square': u'64', u'opacity': u'1', u'lowest_opacity': u'0.1', u'probeFrames': u'4', u'participant': u'test', u'session': u'1', u'image_size': u'300', u'premask': u'4', u'step_size': u'0.1', u'postmask': u'4'}
+expInfo = {u'n_square': u'64', u'opacity': u'1', u'lowest_opacity': u'0.1', u'probeFrames': u'4', u'participant': u'test', u'session': u'1', u'image_size': u'512', u'premask': u'4', u'step_size': u'0.1', u'postmask': u'4'}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False:
     core.quit()  # user pressed cancel
@@ -184,10 +184,10 @@ response_options = visual.TextStim(win=win, name='response_options',
 visibilityClock = core.Clock()
 
 visibility_message = visual.TextStim(win=win, name='visibility_message',
-    text='?',
-    font='Arial',
+    text=u'?',
+    font=u'Arial',
     pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
-    color='white', colorSpace='rgb', opacity=1,
+    color=u'white', colorSpace='rgb', opacity=1,
     depth=-1.0);
 
 # Initialize components for Routine "jitter2"
@@ -195,9 +195,9 @@ jitter2Clock = core.Clock()
 
 post_jitter = visual.TextStim(win=win, name='post_jitter',
     text='default text',
-    font='Arial',
+    font=u'Arial',
     pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
-    color='white', colorSpace='rgb', opacity=1,
+    color=u'white', colorSpace='rgb', opacity=1,
     depth=-1.0);
 
 # Initialize components for Routine "end_experiment"
@@ -771,7 +771,7 @@ for thisMain_loop in main_loop:
         if visible.status == STARTED and t >= frameRemains:
             visible.status = STOPPED
         if visible.status == STARTED:
-            theseKeys = event.getKeys(keyList=['1', '2', '3'])
+            theseKeys = event.getKeys(keyList=['1', '2'])
             
             # check for quit:
             if "escape" in theseKeys:
@@ -780,7 +780,7 @@ for thisMain_loop in main_loop:
                 visible.keys = theseKeys[-1]  # just the last key pressed
                 visible.rt = visible.clock.getTime()
                 # was this 'correct'?
-                if (visible.keys == str("'1'")) or (visible.keys == "'1'"):
+                if (visible.keys == str(u"'1'")) or (visible.keys == u"'1'"):
                     visible.corr = 1
                 else:
                     visible.corr = 0
@@ -839,7 +839,7 @@ for thisMain_loop in main_loop:
     if visible.keys in ['', [], None]:  # No response was made
         visible.keys=None
         # was no response the correct answer?!
-        if str("'1'").lower() == 'none':
+        if str(u"'1'").lower() == 'none':
            visible.corr = 1  # correct non-response
         else:
            visible.corr = 0  # failed to respond (incorrectly)
@@ -858,7 +858,15 @@ for thisMain_loop in main_loop:
     jitter2_delay_dur = jitter2_dur_options[jitter_counter]
     main_loop.addData('jitter2',jitter2_delay_dur)
     jitter_counter += 1
-    post_jitter.setText(msg)
+    
+    acc = main_loop.data['response.corr'].values
+    meanacc = main_loop.data['response.corr'].mean()
+    meanvis = main_loop.data['visible.corr'].mean()
+    
+    msg_post = '{}/{}, mean unconscious = {:.2f},opacity = {:.1f},p(correct) = {:.2f}'.format(
+            main_loop.thisN+1,main_loop.nTotal,
+            meanvis,opacity,meanacc)
+    post_jitter.setText(msg_post)
     # keep track of which components have finished
     jitter2Components = [post_jitter]
     for thisComponent in jitter2Components:
