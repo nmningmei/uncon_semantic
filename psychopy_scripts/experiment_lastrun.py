@@ -1,29 +1,36 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-This experiment was created using PsychoPy2 Experiment Builder (v1.82.01), February 24, 2020, at 12:37
-If you publish work using this script please cite the relevant PsychoPy publications
-  Peirce, JW (2007) PsychoPy - Psychophysics software in Python. Journal of Neuroscience Methods, 162(1-2), 8-13.
-  Peirce, JW (2009) Generating stimuli for neuroscience using PsychoPy. Frontiers in Neuroinformatics, 2:10. doi: 10.3389/neuro.11.010.2008
+This experiment was created using PsychoPy2 Experiment Builder (v1.90.1),
+    on February 24, 2020, at 16:48
+If you publish work using this script please cite the PsychoPy publications:
+    Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
+        Journal of Neuroscience Methods, 162(1-2), 8-13.
+    Peirce, JW (2009) Generating stimuli for neuroscience using PsychoPy.
+        Frontiers in Neuroinformatics, 2:10. doi: 10.3389/neuro.11.010.2008
 """
 
-from __future__ import division  # so that 1/3=0.333 instead of 1/3=0
-from psychopy import visual, core, data, event, logging, sound, gui
-from psychopy.constants import *  # things like STARTED, FINISHED
+from __future__ import absolute_import, division
+from psychopy import locale_setup, sound, gui, visual, core, data, event, logging, clock
+from psychopy.constants import (NOT_STARTED, STARTED, PLAYING, PAUSED,
+                                STOPPED, FINISHED, PRESSED, RELEASED, FOREVER)
 import numpy as np  # whole numpy lib is available, prepend 'np.'
-from numpy import sin, cos, tan, log, log10, pi, average, sqrt, std, deg2rad, rad2deg, linspace, asarray
+from numpy import (sin, cos, tan, log, log10, pi, average,
+                   sqrt, std, deg2rad, rad2deg, linspace, asarray)
 from numpy.random import random, randint, normal, shuffle
 import os  # handy system and path functions
+import sys  # to get file system encoding
 
 # Ensure that relative paths start from the same directory as this script
-_thisDir = os.path.dirname(os.path.abspath(__file__))
+_thisDir = os.path.dirname(os.path.abspath(__file__)).decode(sys.getfilesystemencoding())
 os.chdir(_thisDir)
 
 # Store info about the experiment session
-expName = 'experiment'  # from the Builder filename that created this script
-expInfo = {u'n_square': u'32', u'opacity': u'2', u'lowest_opacity': u'0.2', u'probeFrames': u'4', u'participant': u'test', u'premask': u'4', u'session': u'1', u'image_size': u'128', u'postmask': u'4'}
+expName = u'experiment'  # from the Builder filename that created this script
+expInfo = {u'n_square': u'64', u'opacity': u'1', u'lowest_opacity': u'0.1', u'probeFrames': u'4', u'participant': u'test', u'session': u'1', u'image_size': u'300', u'premask': u'4', u'step_size': u'0.1', u'postmask': u'4'}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
-if dlg.OK == False: core.quit()  # user pressed cancel
+if dlg.OK == False:
+    core.quit()  # user pressed cancel
 expInfo['date'] = data.getDateStr()  # add a simple timestamp
 expInfo['expName'] = expName
 
@@ -36,7 +43,7 @@ thisExp = data.ExperimentHandler(name=expName, version='',
     originPath=u'C:\\Users\\ning\\Documents\\python_works\\uncon_semantic\\psychopy_scripts\\experiment.psyexp',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
-#save a log file for detail verbose info
+# save a log file for detail verbose info
 logFile = logging.LogFile(filename+'.log', level=logging.EXP)
 logging.console.setLevel(logging.WARNING)  # this outputs to the screen, not a file
 
@@ -45,16 +52,17 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 # Start Code - component code to be run before the window creation
 
 # Setup the Window
-win = visual.Window(size=(1280, 720), fullscr=True, screen=0, allowGUI=False, allowStencil=False,
-    monitor='testMonitor', color=[-1.000,-1.000,-1.000], colorSpace='rgb',
-    blendMode='avg', useFBO=True,
-    )
-# store frame rate of monitor if we can measure it successfully
-expInfo['frameRate']=win.getActualFrameRate()
-if expInfo['frameRate']!=None:
-    frameDur = 1.0/round(expInfo['frameRate'])
+win = visual.Window(
+    size=[1280, 720], fullscr=True, screen=0,
+    allowGUI=False, allowStencil=False,
+    monitor=u'testMonitor', color=[-1.000,-1.000,-1.000], colorSpace='rgb',
+    blendMode='avg', useFBO=True)
+# store frame rate of monitor if we can measure it
+expInfo['frameRate'] = win.getActualFrameRate()
+if expInfo['frameRate'] != None:
+    frameDur = 1.0 / round(expInfo['frameRate'])
 else:
-    frameDur = 1.0/60.0 # couldn't get a reliable measure so guess
+    frameDur = 1.0 / 60.0  # could not measure, so guess
 
 # Initialize components for Routine "intro"
 introClock = core.Clock()
@@ -66,6 +74,7 @@ n_square = int(expInfo['n_square'])
 image_size = int(expInfo['image_size'])
 opacity = float(expInfo['opacity'])
 session = int(expInfo['session'])
+step_size = float(expInfo['step_size'])
 
 curr = int(expInfo['probeFrames'])
 lowest_opacity = float(expInfo['lowest_opacity'])
@@ -86,97 +95,110 @@ np.random.shuffle(jitter1_dur_options)
 jitter2_dur_options = np.concatenate([[6.0]*16,[6.5]*8,[7.0]*6,[7.5]*4,[8.0]*4])
 np.random.shuffle(jitter2_dur_options)
 
+np.random.seed(12345)
+masks = np.random.rand(n_square,n_square)*2 - 1
 
 # Initialize components for Routine "intoPrepare"
 intoPrepareClock = core.Clock()
-preparation = visual.TextStim(win=win, ori=0, name='preparation',
-    text=None,    font='Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None,
+preparation = visual.TextStim(win=win, name='preparation',
+    text=None,
+    font='Arial',
+    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
-    depth=0.0)
-first_blank = visual.TextStim(win=win, ori=0, name='first_blank',
-    text=None,    font='Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None,
+    depth=0.0);
+first_blank = visual.TextStim(win=win, name='first_blank',
+    text=None,
+    font='Arial',
+    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
-    depth=-1.0)
+    depth=-1.0);
 
 # Initialize components for Routine "fixation"
 fixationClock = core.Clock()
-fixation_cross = visual.TextStim(win=win, ori=0, name='fixation_cross',
-    text='+',    font='Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None,
+fixation_cross = visual.TextStim(win=win, name='fixation_cross',
+    text='+',
+    font='Arial',
+    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
-    depth=0.0)
-blank_period = visual.TextStim(win=win, ori=0, name='blank_period',
-    text=None,    font='Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None,
+    depth=0.0);
+blank_period = visual.TextStim(win=win, name='blank_period',
+    text=None,
+    font='Arial',
+    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
-    depth=-1.0)
+    depth=-1.0);
 
 
 # Initialize components for Routine "premask"
 premaskClock = core.Clock()
-premasking = visual.GratingStim(win=win, name='premasking',units='pix', 
-    tex=np.random.rand(n_square,n_square)*2 - 1, mask=None,
-    ori=0, pos=[0, -0], size=(image_size/2, image_size/2), sf=None, phase=0.0,
-    color=[1,1,1], colorSpace='rgb', opacity=1,
-    texRes=128, interpolate=True, depth=0.0)
+premasking = visual.GratingStim(
+    win=win, name='premasking',units='pix', 
+    tex=masks, mask=None,
+    ori=0, pos=[0, 0], size=(image_size/1.5, image_size/1.5), sf=None, phase=0.0,
+    color=[1,1,1], colorSpace='rgb', opacity=1,blendmode='avg',
+    texRes=256, interpolate=True, depth=0.0)
 
 # Initialize components for Routine "trial"
 trialClock = core.Clock()
 import sys
 reload(sys)
 sys.setdefaultencoding("latin-1")
-presentation = visual.ImageStim(win=win, name='presentation',units='pix', 
+presentation = visual.ImageStim(
+    win=win, name='presentation',units='pix', 
     image='sin', mask=None,
     ori=0, pos=(0, 0), size=(image_size, image_size),
     color=[1,1,1], colorSpace='rgb', opacity=1.0,
     flipHoriz=False, flipVert=False,
-    texRes=128, interpolate=True, depth=-1.0)
+    texRes=256, interpolate=True, depth=-1.0)
 
 # Initialize components for Routine "postmask"
 postmaskClock = core.Clock()
-postmasking = visual.GratingStim(win=win, name='postmasking',units='pix', 
-    tex=np.random.rand(n_square,n_square)*2 -1, mask=None,
-    ori=0, pos=[0, 0], size=(image_size/2, image_size/2), sf=None, phase=0.0,
-    color=[1,1,1], colorSpace='rgb', opacity=1,
-    texRes=128, interpolate=True, depth=0.0)
+postmasking = visual.GratingStim(
+    win=win, name='postmasking',units='pix', 
+    tex=masks, mask=None,
+    ori=0, pos=[0, 0], size=(image_size/1.5, image_size/1.5), sf=None, phase=0.0,
+    color=[1,1,1], colorSpace='rgb', opacity=1,blendmode='avg',
+    texRes=256, interpolate=True, depth=0.0)
 
 # Initialize components for Routine "jitter1"
 jitter1Clock = core.Clock()
-jitter_delay = visual.TextStim(win=win, ori=0, name='jitter_delay',
-    text='+',    font='Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None,
+jitter_delay = visual.TextStim(win=win, name='jitter_delay',
+    text='+',
+    font='Arial',
+    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
-    depth=0.0)
+    depth=0.0);
 
 
 # Initialize components for Routine "discriminate"
 discriminateClock = core.Clock()
 
-response_options = visual.TextStim(win=win, ori=0, name='response_options',
-    text='default text',    font='Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None,
+response_options = visual.TextStim(win=win, name='response_options',
+    text='default text',
+    font='Arial',
+    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
-    depth=-1.0)
+    depth=-1.0);
 
 # Initialize components for Routine "visibility"
 visibilityClock = core.Clock()
 
-visibility_message = visual.TextStim(win=win, ori=0, name='visibility_message',
-    text='?',    font='Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None,
+visibility_message = visual.TextStim(win=win, name='visibility_message',
+    text='?',
+    font='Arial',
+    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
-    depth=-1.0)
+    depth=-1.0);
 
 # Initialize components for Routine "jitter2"
 jitter2Clock = core.Clock()
 
-post_jitter = visual.TextStim(win=win, ori=0, name='post_jitter',
-    text='+',    font='Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None,
+post_jitter = visual.TextStim(win=win, name='post_jitter',
+    text='default text',
+    font='Arial',
+    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
-    depth=-1.0)
+    depth=-1.0);
 
 # Initialize components for Routine "end_experiment"
 end_experimentClock = core.Clock()
@@ -186,10 +208,11 @@ end_experimentClock = core.Clock()
 globalClock = core.Clock()  # to track the time since experiment started
 routineTimer = core.CountdownTimer()  # to track time remaining of each (non-slip) routine 
 
-#------Prepare to start Routine "intro"-------
+# ------Prepare to start Routine "intro"-------
 t = 0
-introClock.reset()  # clock 
+introClock.reset()  # clock
 frameN = -1
+continueRoutine = True
 # update component parameters for each repeat
 msg.draw()
 win.flip()
@@ -207,8 +230,7 @@ for thisComponent in introComponents:
     if hasattr(thisComponent, 'status'):
         thisComponent.status = NOT_STARTED
 
-#-------Start Routine "intro"-------
-continueRoutine = True
+# -------Start Routine "intro"-------
 while continueRoutine:
     # get current time
     t = introClock.getTime()
@@ -233,7 +255,7 @@ while continueRoutine:
     if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
         win.flip()
 
-#-------Ending Routine "intro"-------
+# -------Ending Routine "intro"-------
 for thisComponent in introComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
@@ -241,22 +263,20 @@ for thisComponent in introComponents:
 # the Routine "intro" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
 
-#------Prepare to start Routine "intoPrepare"-------
+# ------Prepare to start Routine "intoPrepare"-------
 t = 0
-intoPrepareClock.reset()  # clock 
+intoPrepareClock.reset()  # clock
 frameN = -1
+continueRoutine = True
 routineTimer.add(0.400000)
 # update component parameters for each repeat
 # keep track of which components have finished
-intoPrepareComponents = []
-intoPrepareComponents.append(preparation)
-intoPrepareComponents.append(first_blank)
+intoPrepareComponents = [preparation, first_blank]
 for thisComponent in intoPrepareComponents:
     if hasattr(thisComponent, 'status'):
         thisComponent.status = NOT_STARTED
 
-#-------Start Routine "intoPrepare"-------
-continueRoutine = True
+# -------Start Routine "intoPrepare"-------
 while continueRoutine and routineTimer.getTime() > 0:
     # get current time
     t = intoPrepareClock.getTime()
@@ -266,19 +286,21 @@ while continueRoutine and routineTimer.getTime() > 0:
     # *preparation* updates
     if t >= 0.0 and preparation.status == NOT_STARTED:
         # keep track of start time/frame for later
-        preparation.tStart = t  # underestimates by a little under one frame
+        preparation.tStart = t
         preparation.frameNStart = frameN  # exact frame index
         preparation.setAutoDraw(True)
-    if preparation.status == STARTED and t >= (0.0 + (.3-win.monitorFramePeriod*0.75)): #most of one frame period left
+    frameRemains = 0.0 + .3- win.monitorFramePeriod * 0.75  # most of one frame period left
+    if preparation.status == STARTED and t >= frameRemains:
         preparation.setAutoDraw(False)
     
     # *first_blank* updates
     if t >= .3 and first_blank.status == NOT_STARTED:
         # keep track of start time/frame for later
-        first_blank.tStart = t  # underestimates by a little under one frame
+        first_blank.tStart = t
         first_blank.frameNStart = frameN  # exact frame index
         first_blank.setAutoDraw(True)
-    if first_blank.status == STARTED and t >= (.3 + (.1-win.monitorFramePeriod*0.75)): #most of one frame period left
+    frameRemains = .3 + .1- win.monitorFramePeriod * 0.75  # most of one frame period left
+    if first_blank.status == STARTED and t >= frameRemains:
         first_blank.setAutoDraw(False)
     
     # check if all components have finished
@@ -298,47 +320,45 @@ while continueRoutine and routineTimer.getTime() > 0:
     if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
         win.flip()
 
-#-------Ending Routine "intoPrepare"-------
+# -------Ending Routine "intoPrepare"-------
 for thisComponent in intoPrepareComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
 
 # set up handler to look after randomisation of conditions etc
 main_loop = data.TrialHandler(nReps=1, method='random', 
-    extraInfo=expInfo, originPath=u'C:\\Users\\ning\\Documents\\python_works\\uncon_semantic\\psychopy_scripts\\experiment.psyexp',
+    extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('..\\experiment_csvs\\session_1.csv'),
     seed=None, name='main_loop')
 thisExp.addLoop(main_loop)  # add the loop to the experiment
 thisMain_loop = main_loop.trialList[0]  # so we can initialise stimuli with some values
-# abbreviate parameter names if possible (e.g. rgb=thisMain_loop.rgb)
+# abbreviate parameter names if possible (e.g. rgb = thisMain_loop.rgb)
 if thisMain_loop != None:
-    for paramName in thisMain_loop.keys():
-        exec(paramName + '= thisMain_loop.' + paramName)
+    for paramName in thisMain_loop:
+        exec('{} = thisMain_loop[paramName]'.format(paramName))
 
 for thisMain_loop in main_loop:
     currentLoop = main_loop
     # abbreviate parameter names if possible (e.g. rgb = thisMain_loop.rgb)
     if thisMain_loop != None:
-        for paramName in thisMain_loop.keys():
-            exec(paramName + '= thisMain_loop.' + paramName)
+        for paramName in thisMain_loop:
+            exec('{} = thisMain_loop[paramName]'.format(paramName))
     
-    #------Prepare to start Routine "fixation"-------
+    # ------Prepare to start Routine "fixation"-------
     t = 0
-    fixationClock.reset()  # clock 
+    fixationClock.reset()  # clock
     frameN = -1
+    continueRoutine = True
     # update component parameters for each repeat
     main_loop.addData("fixation_onset", globalClock.getTime() - startTime)
     main_loop.addData("blank_dur",blank_dur)
     # keep track of which components have finished
-    fixationComponents = []
-    fixationComponents.append(fixation_cross)
-    fixationComponents.append(blank_period)
+    fixationComponents = [fixation_cross, blank_period]
     for thisComponent in fixationComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
     
-    #-------Start Routine "fixation"-------
-    continueRoutine = True
+    # -------Start Routine "fixation"-------
     while continueRoutine:
         # get current time
         t = fixationClock.getTime()
@@ -348,16 +368,17 @@ for thisMain_loop in main_loop:
         # *fixation_cross* updates
         if t >= 0.0 and fixation_cross.status == NOT_STARTED:
             # keep track of start time/frame for later
-            fixation_cross.tStart = t  # underestimates by a little under one frame
+            fixation_cross.tStart = t
             fixation_cross.frameNStart = frameN  # exact frame index
             fixation_cross.setAutoDraw(True)
-        if fixation_cross.status == STARTED and t >= (0.0 + (0.5-win.monitorFramePeriod*0.75)): #most of one frame period left
+        frameRemains = 0.0 + 0.5- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if fixation_cross.status == STARTED and t >= frameRemains:
             fixation_cross.setAutoDraw(False)
         
         # *blank_period* updates
         if (fixation_cross.status == FINISHED) and blank_period.status == NOT_STARTED:
             # keep track of start time/frame for later
-            blank_period.tStart = t  # underestimates by a little under one frame
+            blank_period.tStart = t
             blank_period.frameNStart = frameN  # exact frame index
             blank_period.setAutoDraw(True)
         if blank_period.status == STARTED and t >= (blank_period.tStart + blank_dur):
@@ -381,7 +402,7 @@ for thisMain_loop in main_loop:
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    #-------Ending Routine "fixation"-------
+    # -------Ending Routine "fixation"-------
     for thisComponent in fixationComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
@@ -389,21 +410,19 @@ for thisMain_loop in main_loop:
     # the Routine "fixation" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     
-    #------Prepare to start Routine "premask"-------
+    # ------Prepare to start Routine "premask"-------
     t = 0
-    premaskClock.reset()  # clock 
+    premaskClock.reset()  # clock
     frameN = -1
+    continueRoutine = True
     # update component parameters for each repeat
-    premasking.setTex(np.random.rand(n_square,n_square)*2 - 1)
     # keep track of which components have finished
-    premaskComponents = []
-    premaskComponents.append(premasking)
+    premaskComponents = [premasking]
     for thisComponent in premaskComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
     
-    #-------Start Routine "premask"-------
-    continueRoutine = True
+    # -------Start Routine "premask"-------
     while continueRoutine:
         # get current time
         t = premaskClock.getTime()
@@ -413,7 +432,7 @@ for thisMain_loop in main_loop:
         # *premasking* updates
         if t >= 0.0 and premasking.status == NOT_STARTED:
             # keep track of start time/frame for later
-            premasking.tStart = t  # underestimates by a little under one frame
+            premasking.tStart = t
             premasking.frameNStart = frameN  # exact frame index
             premasking.setAutoDraw(True)
         if premasking.status == STARTED and frameN >= (premasking.frameNStart + premask_dur):
@@ -436,30 +455,29 @@ for thisMain_loop in main_loop:
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    #-------Ending Routine "premask"-------
+    # -------Ending Routine "premask"-------
     for thisComponent in premaskComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
     # the Routine "premask" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     
-    #------Prepare to start Routine "trial"-------
+    # ------Prepare to start Routine "trial"-------
     t = 0
-    trialClock.reset()  # clock 
+    trialClock.reset()  # clock
     frameN = -1
+    continueRoutine = True
     # update component parameters for each repeat
     main_loop.addData("image_onset_time", globalClock.getTime() - startTime)
-    presentation.setImage(PATH)
+    presentation.setImage(PATH_english)
     presentation.setOpacity(opacity)
     # keep track of which components have finished
-    trialComponents = []
-    trialComponents.append(presentation)
+    trialComponents = [presentation]
     for thisComponent in trialComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
     
-    #-------Start Routine "trial"-------
-    continueRoutine = True
+    # -------Start Routine "trial"-------
     while continueRoutine:
         # get current time
         t = trialClock.getTime()
@@ -470,7 +488,7 @@ for thisMain_loop in main_loop:
         # *presentation* updates
         if t >= 0.0 and presentation.status == NOT_STARTED:
             # keep track of start time/frame for later
-            presentation.tStart = t  # underestimates by a little under one frame
+            presentation.tStart = t
             presentation.frameNStart = frameN  # exact frame index
             presentation.setAutoDraw(True)
         if presentation.status == STARTED and frameN >= (presentation.frameNStart + curr):
@@ -493,7 +511,7 @@ for thisMain_loop in main_loop:
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    #-------Ending Routine "trial"-------
+    # -------Ending Routine "trial"-------
     for thisComponent in trialComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
@@ -501,21 +519,19 @@ for thisMain_loop in main_loop:
     # the Routine "trial" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     
-    #------Prepare to start Routine "postmask"-------
+    # ------Prepare to start Routine "postmask"-------
     t = 0
-    postmaskClock.reset()  # clock 
+    postmaskClock.reset()  # clock
     frameN = -1
+    continueRoutine = True
     # update component parameters for each repeat
-    postmasking.setTex(np.random.rand(n_square,n_square)*2 -1)
     # keep track of which components have finished
-    postmaskComponents = []
-    postmaskComponents.append(postmasking)
+    postmaskComponents = [postmasking]
     for thisComponent in postmaskComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
     
-    #-------Start Routine "postmask"-------
-    continueRoutine = True
+    # -------Start Routine "postmask"-------
     while continueRoutine:
         # get current time
         t = postmaskClock.getTime()
@@ -525,7 +541,7 @@ for thisMain_loop in main_loop:
         # *postmasking* updates
         if t >= 0.0 and postmasking.status == NOT_STARTED:
             # keep track of start time/frame for later
-            postmasking.tStart = t  # underestimates by a little under one frame
+            postmasking.tStart = t
             postmasking.frameNStart = frameN  # exact frame index
             postmasking.setAutoDraw(True)
         if postmasking.status == STARTED and frameN >= (postmasking.frameNStart + postmask_dur):
@@ -548,29 +564,28 @@ for thisMain_loop in main_loop:
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    #-------Ending Routine "postmask"-------
+    # -------Ending Routine "postmask"-------
     for thisComponent in postmaskComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
     # the Routine "postmask" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     
-    #------Prepare to start Routine "jitter1"-------
+    # ------Prepare to start Routine "jitter1"-------
     t = 0
-    jitter1Clock.reset()  # clock 
+    jitter1Clock.reset()  # clock
     frameN = -1
+    continueRoutine = True
     # update component parameters for each repeat
     jitter1_dur = jitter1_dur_options[jitter_counter]
     main_loop.addData('jitter1',jitter1_dur)
     # keep track of which components have finished
-    jitter1Components = []
-    jitter1Components.append(jitter_delay)
+    jitter1Components = [jitter_delay]
     for thisComponent in jitter1Components:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
     
-    #-------Start Routine "jitter1"-------
-    continueRoutine = True
+    # -------Start Routine "jitter1"-------
     while continueRoutine:
         # get current time
         t = jitter1Clock.getTime()
@@ -580,10 +595,11 @@ for thisMain_loop in main_loop:
         # *jitter_delay* updates
         if t >= 0.0 and jitter_delay.status == NOT_STARTED:
             # keep track of start time/frame for later
-            jitter_delay.tStart = t  # underestimates by a little under one frame
+            jitter_delay.tStart = t
             jitter_delay.frameNStart = frameN  # exact frame index
             jitter_delay.setAutoDraw(True)
-        if jitter_delay.status == STARTED and t >= (0.0 + (jitter1_dur-win.monitorFramePeriod*0.75)): #most of one frame period left
+        frameRemains = 0.0 + jitter1_dur- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if jitter_delay.status == STARTED and t >= frameRemains:
             jitter_delay.setAutoDraw(False)
         
         
@@ -604,7 +620,7 @@ for thisMain_loop in main_loop:
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    #-------Ending Routine "jitter1"-------
+    # -------Ending Routine "jitter1"-------
     for thisComponent in jitter1Components:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
@@ -612,10 +628,11 @@ for thisMain_loop in main_loop:
     # the Routine "jitter1" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     
-    #------Prepare to start Routine "discriminate"-------
+    # ------Prepare to start Routine "discriminate"-------
     t = 0
-    discriminateClock.reset()  # clock 
+    discriminateClock.reset()  # clock
     frameN = -1
+    continueRoutine = True
     routineTimer.add(1.500000)
     # update component parameters for each repeat
     main_loop.addData("discrim_resptime", globalClock.getTime() - startTime)
@@ -625,18 +642,14 @@ for thisMain_loop in main_loop:
     resp_msg = '{}'.format(resp_options[idx][0])
     main_loop.addData("response_window", resp_options[idx][0])
     response_options.setText(resp_msg)
-    response = event.BuilderKeyResponse()  # create an object of type KeyResponse
-    response.status = NOT_STARTED
+    response = event.BuilderKeyResponse()
     # keep track of which components have finished
-    discriminateComponents = []
-    discriminateComponents.append(response_options)
-    discriminateComponents.append(response)
+    discriminateComponents = [response_options, response]
     for thisComponent in discriminateComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
     
-    #-------Start Routine "discriminate"-------
-    continueRoutine = True
+    # -------Start Routine "discriminate"-------
     while continueRoutine and routineTimer.getTime() > 0:
         # get current time
         t = discriminateClock.getTime()
@@ -647,22 +660,24 @@ for thisMain_loop in main_loop:
         # *response_options* updates
         if t >= 0.0 and response_options.status == NOT_STARTED:
             # keep track of start time/frame for later
-            response_options.tStart = t  # underestimates by a little under one frame
+            response_options.tStart = t
             response_options.frameNStart = frameN  # exact frame index
             response_options.setAutoDraw(True)
-        if response_options.status == STARTED and t >= (0.0 + (1.5-win.monitorFramePeriod*0.75)): #most of one frame period left
+        frameRemains = 0.0 + 1.5- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if response_options.status == STARTED and t >= frameRemains:
             response_options.setAutoDraw(False)
         
         # *response* updates
         if t >= 0.0 and response.status == NOT_STARTED:
             # keep track of start time/frame for later
-            response.tStart = t  # underestimates by a little under one frame
+            response.tStart = t
             response.frameNStart = frameN  # exact frame index
             response.status = STARTED
             # keyboard checking is just starting
-            response.clock.reset()  # now t=0
+            win.callOnFlip(response.clock.reset)  # t=0 on next screen flip
             event.clearEvents(eventType='keyboard')
-        if response.status == STARTED and t >= (0.0 + (1.5-win.monitorFramePeriod*0.75)): #most of one frame period left
+        frameRemains = 0.0 + 1.5- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if response.status == STARTED and t >= frameRemains:
             response.status = STOPPED
         if response.status == STARTED:
             theseKeys = event.getKeys(keyList=['1', '2'])
@@ -691,7 +706,7 @@ for thisMain_loop in main_loop:
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    #-------Ending Routine "discriminate"-------
+    # -------Ending Routine "discriminate"-------
     for thisComponent in discriminateComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
@@ -705,31 +720,27 @@ for thisMain_loop in main_loop:
     main_loop.addData('response.corr' , temp_corr)
     # check responses
     if response.keys in ['', [], None]:  # No response was made
-       response.keys=None
-    # store data for main_loop (TrialHandler)
+        response.keys=None
     main_loop.addData('response.keys',response.keys)
     if response.keys != None:  # we had a response
         main_loop.addData('response.rt', response.rt)
     
-    #------Prepare to start Routine "visibility"-------
+    # ------Prepare to start Routine "visibility"-------
     t = 0
-    visibilityClock.reset()  # clock 
+    visibilityClock.reset()  # clock
     frameN = -1
+    continueRoutine = True
     routineTimer.add(1.500000)
     # update component parameters for each repeat
     main_loop.addData("visible_resptime", globalClock.getTime() - startTime)
-    visible = event.BuilderKeyResponse()  # create an object of type KeyResponse
-    visible.status = NOT_STARTED
+    visible = event.BuilderKeyResponse()
     # keep track of which components have finished
-    visibilityComponents = []
-    visibilityComponents.append(visibility_message)
-    visibilityComponents.append(visible)
+    visibilityComponents = [visibility_message, visible]
     for thisComponent in visibilityComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
     
-    #-------Start Routine "visibility"-------
-    continueRoutine = True
+    # -------Start Routine "visibility"-------
     while continueRoutine and routineTimer.getTime() > 0:
         # get current time
         t = visibilityClock.getTime()
@@ -740,22 +751,24 @@ for thisMain_loop in main_loop:
         # *visibility_message* updates
         if t >= 0.0 and visibility_message.status == NOT_STARTED:
             # keep track of start time/frame for later
-            visibility_message.tStart = t  # underestimates by a little under one frame
+            visibility_message.tStart = t
             visibility_message.frameNStart = frameN  # exact frame index
             visibility_message.setAutoDraw(True)
-        if visibility_message.status == STARTED and t >= (0.0 + (1.5-win.monitorFramePeriod*0.75)): #most of one frame period left
+        frameRemains = 0.0 + 1.5- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if visibility_message.status == STARTED and t >= frameRemains:
             visibility_message.setAutoDraw(False)
         
         # *visible* updates
         if t >= 0.0 and visible.status == NOT_STARTED:
             # keep track of start time/frame for later
-            visible.tStart = t  # underestimates by a little under one frame
+            visible.tStart = t
             visible.frameNStart = frameN  # exact frame index
             visible.status = STARTED
             # keyboard checking is just starting
-            visible.clock.reset()  # now t=0
+            win.callOnFlip(visible.clock.reset)  # t=0 on next screen flip
             event.clearEvents(eventType='keyboard')
-        if visible.status == STARTED and t >= (0.0 + (1.5-win.monitorFramePeriod*0.75)): #most of one frame period left
+        frameRemains = 0.0 + 1.5- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if visible.status == STARTED and t >= frameRemains:
             visible.status = STOPPED
         if visible.status == STARTED:
             theseKeys = event.getKeys(keyList=['1', '2', '3'])
@@ -789,57 +802,70 @@ for thisMain_loop in main_loop:
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    #-------Ending Routine "visibility"-------
+    # -------Ending Routine "visibility"-------
     for thisComponent in visibilityComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
     count += 1
-    main_loop.addData('probe_Frames',curr)
-    if (visible.keys == str('1')) or (visible.keys == '1'):# invisible
-        opacity += np.random.choice([0.1, 0.2, 0.3],size = 1)[0]
-        if opacity > 1: opacity = 1
-        #curr += np.random.choice([1,2,3],size=1)[0]
-        #if curr < 1:  curr = 1
-    elif (visible.keys == str('2')) or (visible.keys == '2'):# partially aware
-        opacity -= 0.1
-        if opacity < lowest_opacity: opacity = lowest_opacity
-        #curr -= 1
-        #if curr < 1:  curr = 1 
-    elif (visible.keys == str('3')) or (visible.keys == '3'): # visible
-        opacity -= np.random.choice([0.1, 0.2, 0.3],size = 1)[0]
-        if opacity < lowest_opacity: opacity = lowest_opacity
-        #curr -= np.random.choice([2,3],size=1,p=[0.5,0.5])[0]
-        #if curr < 1: curr = 1
+    main_loop.addData('opacity',opacity)
     
+    #if (visible.keys == str('1')) or (visible.keys == '1'):# invisible
+    #    opacity += np.random.choice([0.02, 0.04, 0.08],size = 1)[0]
+    #    if opacity > 1: opacity = 1
+    #    #curr += np.random.choice([1,2,3],size=1)[0]
+    #    #if curr < 1:  curr = 1
+    #elif (visible.keys == str('2')) or (visible.keys == '2'):# partially aware
+    #    opacity -= 0.1
+    #    if opacity < lowest_opacity: opacity = lowest_opacity
+    #    #curr -= 1
+    #    #if curr < 1:  curr = 1 
+    #elif (visible.keys == str('3')) or (visible.keys == '3'): # visible
+    #    opacity -= np.random.choice([0.02, 0.04, 0.08],size = 1)[0]
+    #    if opacity < lowest_opacity: opacity = lowest_opacity
+    #    #curr -= np.random.choice([2,3],size=1,p=[0.5,0.5])[0]
+    #    #if curr < 1: curr = 1
+    
+    if ((visible.keys == str('1')) or (visible.keys == '1')) and (temp_corr == 0): # invisible and incorrect
+        opacity += 2 * step_size
+    elif ((visible.keys == str('1')) or (visible.keys == '1')) and (temp_corr == 1): # invisible and correct
+        opacity += step_size
+    elif ((visible.keys == str('2')) or (visible.keys == '2')) and (temp_corr == 0): # visible and incorrect
+        opacity -= step_size
+        if opacity < lowest_opacity: opacity = lowest_opacity
+    elif ((visible.keys == str('2')) or (visible.keys == '2')) and (temp_corr == 1): # visible and correct
+        opacity -= 2 * step_size
+        if opacity < lowest_opacity: opacity = lowest_opacity
     # check responses
     if visible.keys in ['', [], None]:  # No response was made
-       visible.keys=None
-       # was no response the correct answer?!
-       if str("'1'").lower() == 'none': visible.corr = 1  # correct non-response
-       else: visible.corr = 0  # failed to respond (incorrectly)
+        visible.keys=None
+        # was no response the correct answer?!
+        if str("'1'").lower() == 'none':
+           visible.corr = 1  # correct non-response
+        else:
+           visible.corr = 0  # failed to respond (incorrectly)
     # store data for main_loop (TrialHandler)
     main_loop.addData('visible.keys',visible.keys)
     main_loop.addData('visible.corr', visible.corr)
     if visible.keys != None:  # we had a response
         main_loop.addData('visible.rt', visible.rt)
     
-    #------Prepare to start Routine "jitter2"-------
+    # ------Prepare to start Routine "jitter2"-------
     t = 0
-    jitter2Clock.reset()  # clock 
+    jitter2Clock.reset()  # clock
     frameN = -1
+    continueRoutine = True
     # update component parameters for each repeat
     jitter2_delay_dur = jitter2_dur_options[jitter_counter]
     main_loop.addData('jitter2',jitter2_delay_dur)
     jitter_counter += 1
+    post_jitter.setText(msg)
     # keep track of which components have finished
-    jitter2Components = []
-    jitter2Components.append(post_jitter)
+    jitter2Components = [post_jitter]
     for thisComponent in jitter2Components:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
     
-    #-------Start Routine "jitter2"-------
-    continueRoutine = True
+    # -------Start Routine "jitter2"-------
     while continueRoutine:
         # get current time
         t = jitter2Clock.getTime()
@@ -850,10 +876,11 @@ for thisMain_loop in main_loop:
         # *post_jitter* updates
         if t >= 0.0 and post_jitter.status == NOT_STARTED:
             # keep track of start time/frame for later
-            post_jitter.tStart = t  # underestimates by a little under one frame
+            post_jitter.tStart = t
             post_jitter.frameNStart = frameN  # exact frame index
             post_jitter.setAutoDraw(True)
-        if post_jitter.status == STARTED and t >= (0.0 + (jitter2_delay_dur-win.monitorFramePeriod*0.75)): #most of one frame period left
+        frameRemains = 0.0 + jitter2_delay_dur- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if post_jitter.status == STARTED and t >= frameRemains:
             post_jitter.setAutoDraw(False)
         
         # check if all components have finished
@@ -873,16 +900,16 @@ for thisMain_loop in main_loop:
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    #-------Ending Routine "jitter2"-------
+    # -------Ending Routine "jitter2"-------
     for thisComponent in jitter2Components:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
     meanacc = main_loop.data['response.corr'].mean()
     meanvis = main_loop.data['visible.corr'].mean()
     
-    print('{}/{}, mean unconscious = {:.2f},frame = {},p(correct) = {:.2f}'.format(
+    print('{}/{}, mean unconscious = {:.2f},opacity = {:.1f},p(correct) = {:.2f}'.format(
             main_loop.thisN,main_loop.nTotal,
-            meanvis,curr,meanacc))
+            meanvis,opacity,meanacc))
     # the Routine "jitter2" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     thisExp.nextEntry()
@@ -890,17 +917,20 @@ for thisMain_loop in main_loop:
 # completed 1 repeats of 'main_loop'
 
 # get names of stimulus parameters
-if main_loop.trialList in ([], [None], None):  params = []
-else:  params = main_loop.trialList[0].keys()
+if main_loop.trialList in ([], [None], None):
+    params = []
+else:
+    params = main_loop.trialList[0].keys()
 # save data for this loop
 main_loop.saveAsText(filename + 'main_loop.csv', delim=',',
     stimOut=params,
     dataOut=['n','all_mean','all_std', 'all_raw'])
 
-#------Prepare to start Routine "end_experiment"-------
+# ------Prepare to start Routine "end_experiment"-------
 t = 0
-end_experimentClock.reset()  # clock 
+end_experimentClock.reset()  # clock
 frameN = -1
+continueRoutine = True
 # update component parameters for each repeat
 
 # keep track of which components have finished
@@ -909,8 +939,7 @@ for thisComponent in end_experimentComponents:
     if hasattr(thisComponent, 'status'):
         thisComponent.status = NOT_STARTED
 
-#-------Start Routine "end_experiment"-------
-continueRoutine = True
+# -------Start Routine "end_experiment"-------
 while continueRoutine:
     # get current time
     t = end_experimentClock.getTime()
@@ -935,7 +964,7 @@ while continueRoutine:
     if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
         win.flip()
 
-#-------Ending Routine "end_experiment"-------
+# -------Ending Routine "end_experiment"-------
 for thisComponent in end_experimentComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
@@ -952,5 +981,11 @@ routineTimer.reset()
 print(globalClock.getTime() - startTime)
 print("mean unconscious = {:.2f}, frame = {}, p(correct) = {:.2f}".format(
     meanvis,curr,meanacc))
+# these shouldn't be strictly necessary (should auto-save)
+thisExp.saveAsWideText(filename+'.csv')
+thisExp.saveAsPickle(filename)
+logging.flush()
+# make sure everything is closed down
+thisExp.abort()  # or data files will save again on exit
 win.close()
 core.quit()
