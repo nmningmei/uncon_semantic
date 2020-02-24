@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-This experiment was created using PsychoPy2 Experiment Builder (v3.2.4), February 18, 2020, at 18:49
+This experiment was created using PsychoPy2 Experiment Builder (v1.82.01), February 24, 2020, at 12:37
 If you publish work using this script please cite the relevant PsychoPy publications
   Peirce, JW (2007) PsychoPy - Psychophysics software in Python. Journal of Neuroscience Methods, 162(1-2), 8-13.
   Peirce, JW (2009) Generating stimuli for neuroscience using PsychoPy. Frontiers in Neuroinformatics, 2:10. doi: 10.3389/neuro.11.010.2008
@@ -20,15 +20,15 @@ _thisDir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(_thisDir)
 
 # Store info about the experiment session
-expName = u'experiment'  # from the Builder filename that created this script
-expInfo = {u'n_square': u'32', u'opacity': u'0.6', u'probeFrames': u'5', u'participant': u'test', u'premask': u'20', u'session': u'001', u'image_size': u'128', u'postmask': u'20'}
+expName = 'experiment'  # from the Builder filename that created this script
+expInfo = {u'n_square': u'32', u'opacity': u'2', u'lowest_opacity': u'0.2', u'probeFrames': u'4', u'participant': u'test', u'premask': u'4', u'session': u'1', u'image_size': u'128', u'postmask': u'4'}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False: core.quit()  # user pressed cancel
 expInfo['date'] = data.getDateStr()  # add a simple timestamp
 expInfo['expName'] = expName
 
 # Data file name stem = absolute path + name; later add .psyexp, .csv, .log, etc
-filename = _thisDir + os.sep + 'data/%s_%s_%s' %(expInfo['participant'], expName, expInfo['date'])
+filename = _thisDir + os.sep + 'data/%s/%s_%s' %(expInfo['participant'], expName, expInfo['date'])
 
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
@@ -46,7 +46,7 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
 # Setup the Window
 win = visual.Window(size=(1280, 720), fullscr=True, screen=0, allowGUI=False, allowStencil=False,
-    monitor=u'testMonitor', color=[-1.000,-1.000,-1.000], colorSpace='rgb',
+    monitor='testMonitor', color=[-1.000,-1.000,-1.000], colorSpace='rgb',
     blendMode='avg', useFBO=True,
     )
 # store frame rate of monitor if we can measure it successfully
@@ -65,8 +65,10 @@ postmask_dur = int(expInfo['postmask'])
 n_square = int(expInfo['n_square'])
 image_size = int(expInfo['image_size'])
 opacity = float(expInfo['opacity'])
+session = int(expInfo['session'])
 
 curr = int(expInfo['probeFrames'])
+lowest_opacity = float(expInfo['lowest_opacity'])
 count = 0
 
 import time
@@ -88,27 +90,27 @@ np.random.shuffle(jitter2_dur_options)
 # Initialize components for Routine "intoPrepare"
 intoPrepareClock = core.Clock()
 preparation = visual.TextStim(win=win, ori=0, name='preparation',
-    text=None,    font=u'Arial',
+    text=None,    font='Arial',
     pos=[0, 0], height=0.1, wrapWidth=None,
-    color=u'white', colorSpace='rgb', opacity=1,
+    color='white', colorSpace='rgb', opacity=1,
     depth=0.0)
 first_blank = visual.TextStim(win=win, ori=0, name='first_blank',
-    text=None,    font=u'Arial',
+    text=None,    font='Arial',
     pos=[0, 0], height=0.1, wrapWidth=None,
-    color=u'white', colorSpace='rgb', opacity=1,
+    color='white', colorSpace='rgb', opacity=1,
     depth=-1.0)
 
 # Initialize components for Routine "fixation"
 fixationClock = core.Clock()
 fixation_cross = visual.TextStim(win=win, ori=0, name='fixation_cross',
-    text=u'+',    font=u'Arial',
+    text='+',    font='Arial',
     pos=[0, 0], height=0.1, wrapWidth=None,
-    color=u'white', colorSpace='rgb', opacity=1,
+    color='white', colorSpace='rgb', opacity=1,
     depth=0.0)
 blank_period = visual.TextStim(win=win, ori=0, name='blank_period',
-    text=None,    font=u'Arial',
+    text=None,    font='Arial',
     pos=[0, 0], height=0.1, wrapWidth=None,
-    color=u'white', colorSpace='rgb', opacity=1,
+    color='white', colorSpace='rgb', opacity=1,
     depth=-1.0)
 
 
@@ -116,7 +118,7 @@ blank_period = visual.TextStim(win=win, ori=0, name='blank_period',
 premaskClock = core.Clock()
 premasking = visual.GratingStim(win=win, name='premasking',units='pix', 
     tex=np.random.rand(n_square,n_square)*2 - 1, mask=None,
-    ori=0, pos=[0, -0], size=(image_size, image_size), sf=None, phase=0.0,
+    ori=0, pos=[0, -0], size=(image_size/2, image_size/2), sf=None, phase=0.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     texRes=128, interpolate=True, depth=0.0)
 
@@ -136,16 +138,16 @@ presentation = visual.ImageStim(win=win, name='presentation',units='pix',
 postmaskClock = core.Clock()
 postmasking = visual.GratingStim(win=win, name='postmasking',units='pix', 
     tex=np.random.rand(n_square,n_square)*2 -1, mask=None,
-    ori=0, pos=[0, 0], size=(image_size, image_size), sf=None, phase=0.0,
+    ori=0, pos=[0, 0], size=(image_size/2, image_size/2), sf=None, phase=0.0,
     color=[1,1,1], colorSpace='rgb', opacity=1,
     texRes=128, interpolate=True, depth=0.0)
 
 # Initialize components for Routine "jitter1"
 jitter1Clock = core.Clock()
 jitter_delay = visual.TextStim(win=win, ori=0, name='jitter_delay',
-    text=u'+',    font=u'Arial',
+    text='+',    font='Arial',
     pos=[0, 0], height=0.1, wrapWidth=None,
-    color=u'white', colorSpace='rgb', opacity=1,
+    color='white', colorSpace='rgb', opacity=1,
     depth=0.0)
 
 
@@ -153,27 +155,27 @@ jitter_delay = visual.TextStim(win=win, ori=0, name='jitter_delay',
 discriminateClock = core.Clock()
 
 response_options = visual.TextStim(win=win, ori=0, name='response_options',
-    text='default text',    font=u'Arial',
+    text='default text',    font='Arial',
     pos=[0, 0], height=0.1, wrapWidth=None,
-    color=u'white', colorSpace='rgb', opacity=1,
+    color='white', colorSpace='rgb', opacity=1,
     depth=-1.0)
 
 # Initialize components for Routine "visibility"
 visibilityClock = core.Clock()
 
 visibility_message = visual.TextStim(win=win, ori=0, name='visibility_message',
-    text=u'?',    font=u'Arial',
+    text='?',    font='Arial',
     pos=[0, 0], height=0.1, wrapWidth=None,
-    color=u'white', colorSpace='rgb', opacity=1,
+    color='white', colorSpace='rgb', opacity=1,
     depth=-1.0)
 
 # Initialize components for Routine "jitter2"
 jitter2Clock = core.Clock()
 
 post_jitter = visual.TextStim(win=win, ori=0, name='post_jitter',
-    text=u'+',    font=u'Arial',
+    text='+',    font='Arial',
     pos=[0, 0], height=0.1, wrapWidth=None,
-    color=u'white', colorSpace='rgb', opacity=1,
+    color='white', colorSpace='rgb', opacity=1,
     depth=-1.0)
 
 # Initialize components for Routine "end_experiment"
@@ -243,7 +245,7 @@ routineTimer.reset()
 t = 0
 intoPrepareClock.reset()  # clock 
 frameN = -1
-routineTimer.add(13.000000)
+routineTimer.add(0.400000)
 # update component parameters for each repeat
 # keep track of which components have finished
 intoPrepareComponents = []
@@ -267,16 +269,16 @@ while continueRoutine and routineTimer.getTime() > 0:
         preparation.tStart = t  # underestimates by a little under one frame
         preparation.frameNStart = frameN  # exact frame index
         preparation.setAutoDraw(True)
-    if preparation.status == STARTED and t >= (0.0 + (3-win.monitorFramePeriod*0.75)): #most of one frame period left
+    if preparation.status == STARTED and t >= (0.0 + (.3-win.monitorFramePeriod*0.75)): #most of one frame period left
         preparation.setAutoDraw(False)
     
     # *first_blank* updates
-    if t >= 3 and first_blank.status == NOT_STARTED:
+    if t >= .3 and first_blank.status == NOT_STARTED:
         # keep track of start time/frame for later
         first_blank.tStart = t  # underestimates by a little under one frame
         first_blank.frameNStart = frameN  # exact frame index
         first_blank.setAutoDraw(True)
-    if first_blank.status == STARTED and t >= (3 + (10-win.monitorFramePeriod*0.75)): #most of one frame period left
+    if first_blank.status == STARTED and t >= (.3 + (.1-win.monitorFramePeriod*0.75)): #most of one frame period left
         first_blank.setAutoDraw(False)
     
     # check if all components have finished
@@ -304,7 +306,7 @@ for thisComponent in intoPrepareComponents:
 # set up handler to look after randomisation of conditions etc
 main_loop = data.TrialHandler(nReps=1, method='random', 
     extraInfo=expInfo, originPath=u'C:\\Users\\ning\\Documents\\python_works\\uncon_semantic\\psychopy_scripts\\experiment.psyexp',
-    trialList=data.importConditions(u'..\\data\\sampled_words.csv'),
+    trialList=data.importConditions('..\\experiment_csvs\\session_1.csv'),
     seed=None, name='main_loop')
 thisExp.addLoop(main_loop)  # add the loop to the experiment
 thisMain_loop = main_loop.trialList[0]  # so we can initialise stimuli with some values
@@ -392,6 +394,7 @@ for thisMain_loop in main_loop:
     premaskClock.reset()  # clock 
     frameN = -1
     # update component parameters for each repeat
+    premasking.setTex(np.random.rand(n_square,n_square)*2 - 1)
     # keep track of which components have finished
     premaskComponents = []
     premaskComponents.append(premasking)
@@ -415,8 +418,6 @@ for thisMain_loop in main_loop:
             premasking.setAutoDraw(True)
         if premasking.status == STARTED and frameN >= (premasking.frameNStart + premask_dur):
             premasking.setAutoDraw(False)
-        if premasking.status == STARTED:  # only update if being drawn
-            premasking.setTex(np.random.rand(n_square,n_square)*2 - 1, log=False)
         
         # check if all components have finished
         if not continueRoutine:  # a component has requested a forced-end of Routine
@@ -505,6 +506,7 @@ for thisMain_loop in main_loop:
     postmaskClock.reset()  # clock 
     frameN = -1
     # update component parameters for each repeat
+    postmasking.setTex(np.random.rand(n_square,n_square)*2 -1)
     # keep track of which components have finished
     postmaskComponents = []
     postmaskComponents.append(postmasking)
@@ -528,8 +530,6 @@ for thisMain_loop in main_loop:
             postmasking.setAutoDraw(True)
         if postmasking.status == STARTED and frameN >= (postmasking.frameNStart + postmask_dur):
             postmasking.setAutoDraw(False)
-        if postmasking.status == STARTED:  # only update if being drawn
-            postmasking.setTex(np.random.rand(n_square,n_square)*2 -1, log=False)
         
         # check if all components have finished
         if not continueRoutine:  # a component has requested a forced-end of Routine
@@ -767,7 +767,7 @@ for thisMain_loop in main_loop:
                 visible.keys = theseKeys[-1]  # just the last key pressed
                 visible.rt = visible.clock.getTime()
                 # was this 'correct'?
-                if (visible.keys == str(u"'1'")) or (visible.keys == u"'1'"):
+                if (visible.keys == str("'1'")) or (visible.keys == "'1'"):
                     visible.corr = 1
                 else:
                     visible.corr = 0
@@ -796,20 +796,26 @@ for thisMain_loop in main_loop:
     count += 1
     main_loop.addData('probe_Frames',curr)
     if (visible.keys == str('1')) or (visible.keys == '1'):# invisible
-        curr += np.random.choice([1,2,3],size=1)[0]
-        if curr < 1:  curr = 1
+        opacity += np.random.choice([0.1, 0.2, 0.3],size = 1)[0]
+        if opacity > 1: opacity = 1
+        #curr += np.random.choice([1,2,3],size=1)[0]
+        #if curr < 1:  curr = 1
     elif (visible.keys == str('2')) or (visible.keys == '2'):# partially aware
-        curr -= 1
-        if curr < 1:  curr = 1 
+        opacity -= 0.1
+        if opacity < lowest_opacity: opacity = lowest_opacity
+        #curr -= 1
+        #if curr < 1:  curr = 1 
     elif (visible.keys == str('3')) or (visible.keys == '3'): # visible
-        curr -= np.random.choice([2,3],size=1,p=[0.5,0.5])[0]
-        if curr < 1: curr = 1
+        opacity -= np.random.choice([0.1, 0.2, 0.3],size = 1)[0]
+        if opacity < lowest_opacity: opacity = lowest_opacity
+        #curr -= np.random.choice([2,3],size=1,p=[0.5,0.5])[0]
+        #if curr < 1: curr = 1
     
     # check responses
     if visible.keys in ['', [], None]:  # No response was made
        visible.keys=None
        # was no response the correct answer?!
-       if str(u"'1'").lower() == 'none': visible.corr = 1  # correct non-response
+       if str("'1'").lower() == 'none': visible.corr = 1  # correct non-response
        else: visible.corr = 0  # failed to respond (incorrectly)
     # store data for main_loop (TrialHandler)
     main_loop.addData('visible.keys',visible.keys)
