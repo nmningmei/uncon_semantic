@@ -1,386 +1,392 @@
-<PsychoPy2experiment version="1.82.01" encoding="utf-8">
+<?xml version="1.0" ?>
+<PsychoPy2experiment encoding="utf-8" version="1.90.3">
   <Settings>
-    <Param name="Monitor" val="testMonitor" valType="str" updates="None"/>
-    <Param name="color" val="$[-1.000,-1.000,-1.000]" valType="str" updates="None"/>
-    <Param name="colorSpace" val="rgb" valType="str" updates="None"/>
-    <Param name="Experiment info" val="{u'n_square': u'32', u'opacity': u'0.6', u'lowest_opacity': u'0.2', u'probeFrames': u'5', u'participant': u'test', u'premask': u'20', u'session': u'1', u'image_size': u'128', u'postmask': u'20'}" valType="code" updates="None"/>
-    <Param name="Units" val="use prefs" valType="str" updates="None"/>
-    <Param name="Audio latency priority" val="use prefs" valType="str" updates="None"/>
-    <Param name="JS libs" val="packaged" valType="str" updates="None"/>
-    <Param name="Save excel file" val="False" valType="bool" updates="None"/>
-    <Param name="Audio lib" val="use prefs" valType="str" updates="None"/>
-    <Param name="Enable Escape" val="True" valType="bool" updates="None"/>
-    <Param name="Save psydat file" val="True" valType="bool" updates="None"/>
-    <Param name="Window size (pixels)" val="[1280, 720]" valType="code" updates="None"/>
-    <Param name="Full-screen window" val="True" valType="bool" updates="None"/>
-    <Param name="blendMode" val="avg" valType="str" updates="None"/>
-    <Param name="Use version" val="" valType="str" updates="None"/>
-    <Param name="HTML path" val="html" valType="str" updates="None"/>
-    <Param name="Save csv file" val="True" valType="bool" updates="None"/>
-    <Param name="Save log file" val="True" valType="bool" updates="None"/>
-    <Param name="Save wide csv file" val="True" valType="bool" updates="None"/>
-    <Param name="exportHTML" val="on Sync" valType="str" updates="None"/>
-    <Param name="Force stereo" val="True" valType="bool" updates="None"/>
-    <Param name="Show mouse" val="False" valType="bool" updates="None"/>
-    <Param name="Data filename" val="'data/%s/%s_%s' %(expInfo['participant'], expName, expInfo['date'])" valType="code" updates="None"/>
-    <Param name="Show info dlg" val="True" valType="bool" updates="None"/>
-    <Param name="Incomplete URL" val="" valType="str" updates="None"/>
-    <Param name="expName" val="experiment" valType="str" updates="None"/>
-    <Param name="logging level" val="exp" valType="code" updates="None"/>
-    <Param name="Completed URL" val="" valType="str" updates="None"/>
-    <Param name="Screen" val="1" valType="num" updates="None"/>
+    <Param name="Monitor" updates="None" val="testMonitor" valType="str"/>
+    <Param name="color" updates="None" val="$[-1.000,-1.000,-1.000]" valType="str"/>
+    <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
+    <Param name="Experiment info" updates="None" val="{u'n_square': u'64', u'opacity': u'0.1', u'lowest_opacity': u'0.1', u'probeFrames': u'4', u'participant': u'test', u'step_size': u'0.1', u'premask': u'4', u'session': u'1', u'image_size': u'512', u'postmask': u'4'}" valType="code"/>
+    <Param name="JS libs" updates="None" val="packaged" valType="str"/>
+    <Param name="Audio latency priority" updates="None" val="use prefs" valType="str"/>
+    <Param name="Units" updates="None" val="use prefs" valType="str"/>
+    <Param name="Save excel file" updates="None" val="False" valType="bool"/>
+    <Param name="Audio lib" updates="None" val="use prefs" valType="str"/>
+    <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
+    <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
+    <Param name="Window size (pixels)" updates="None" val="[1280, 720]" valType="code"/>
+    <Param name="Full-screen window" updates="None" val="True" valType="bool"/>
+    <Param name="blendMode" updates="None" val="avg" valType="str"/>
+    <Param name="Use version" updates="None" val="" valType="str"/>
+    <Param name="HTML path" updates="None" val="html" valType="str"/>
+    <Param name="Save csv file" updates="None" val="True" valType="bool"/>
+    <Param name="OSF Project ID" updates="None" val="" valType="str"/>
+    <Param name="Save log file" updates="None" val="True" valType="bool"/>
+    <Param name="Save wide csv file" updates="None" val="True" valType="bool"/>
+    <Param name="exportHTML" updates="None" val="on Sync" valType="str"/>
+    <Param name="Force stereo" updates="None" val="True" valType="bool"/>
+    <Param name="Show mouse" updates="None" val="False" valType="bool"/>
+    <Param name="Data filename" updates="None" val="'data/%s/%s_%s' %(expInfo['participant'], expName, expInfo['date'])" valType="code"/>
+    <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
+    <Param name="Incomplete URL" updates="None" val="" valType="str"/>
+    <Param name="expName" updates="None" val="experiment" valType="str"/>
+    <Param name="logging level" updates="None" val="exp" valType="code"/>
+    <Param name="Completed URL" updates="None" val="" valType="str"/>
+    <Param name="Screen" updates="None" val="1" valType="num"/>
   </Settings>
   <Routines>
-    <Routine name="jitter1">
-      <TextComponent name="jitter_delay">
-        <Param name="opacity" val="1" valType="code" updates="constant"/>
-        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
-        <Param name="name" val="jitter_delay" valType="code" updates="None"/>
-        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
-        <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="+" valType="str" updates="constant"/>
-        <Param name="stopVal" val="$jitter1_dur" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
-        <Param name="flip" val="" valType="str" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="units" val="from exp settings" valType="str" updates="None"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="ori" val="0" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
-        <Param name="startVal" val="0.0" valType="code" updates="None"/>
-        <Param name="font" val="Arial" valType="str" updates="constant"/>
-        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
-      </TextComponent>
-      <CodeComponent name="log_jitter_delay">
-        <Param name="Begin Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="name" val="log_jitter_delay" valType="code" updates="None"/>
-        <Param name="Begin Routine" val="jitter1_dur = jitter1_dur_options[jitter_counter]&#10;main_loop.addData('jitter1',jitter1_dur)" valType="extendedCode" updates="constant"/>
-        <Param name="End Routine" val="" valType="extendedCode" updates="constant"/>
-        <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
-      </CodeComponent>
+    <Routine name="premask">
+      <GratingComponent name="premasking">
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="tex" updates="set every repeat" val="$masks" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="blendmode" updates="constant" val="avg" valType="str"/>
+        <Param name="name" updates="None" val="premasking" valType="code"/>
+        <Param name="color" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="stopVal" updates="constant" val="$premask_dur" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="pix" valType="str"/>
+        <Param name="texture resolution" updates="constant" val="256" valType="code"/>
+        <Param name="phase" updates="constant" val="0.0" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="sf" updates="constant" val="None" valType="code"/>
+        <Param name="size" updates="constant" val="$(image_size/1.5, image_size/1.5)" valType="code"/>
+      </GratingComponent>
     </Routine>
     <Routine name="discriminate">
       <CodeComponent name="get_response">
-        <Param name="Begin Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="name" val="get_response" valType="code" updates="None"/>
-        <Param name="Begin Routine" val="main_loop.addData(&quot;discrim_resptime&quot;, globalClock.getTime() - startTime)&#10;resp_options = [['nV_V',['Nonliving_Things','Living_Things']],&#10;                ['V_nV',['Living_Things','Nonliving_Things']]]&#10;idx = np.random.choice([0,1])&#10;resp_msg = '{}'.format(resp_options[idx][0])&#10;main_loop.addData(&quot;response_window&quot;, resp_options[idx][0])" valType="extendedCode" updates="constant"/>
-        <Param name="End Routine" val="temp_correctAns = np.where(np.array(resp_options[idx][1]) == category)[0][0]+1&#10;main_loop.addData('correctAns',temp_correctAns)&#10;# objective accuracy&#10;if (response.keys == str(temp_correctAns)) or (response.keys == temp_correctAns):&#10;   temp_corr = 1&#10;else:&#10;    temp_corr = 0&#10;main_loop.addData('response.corr' , temp_corr)" valType="extendedCode" updates="constant"/>
-        <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="name" updates="None" val="get_response" valType="code"/>
+        <Param name="Begin Routine" updates="constant" val="main_loop.addData(&quot;discrim_resptime&quot;, globalClock.getTime() - startTime)&amp;#10;resp_options = [['nV_V',['Nonliving_Things','Living_Things']],&amp;#10;                ['V_nV',['Living_Things','Nonliving_Things']]]&amp;#10;idx = np.random.choice([0,1])&amp;#10;resp_msg = '{}'.format(resp_options[idx][0])&amp;#10;main_loop.addData(&quot;response_window&quot;, resp_options[idx][0])" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="temp_correctAns = np.where(np.array(resp_options[idx][1]) == category)[0][0]+1&amp;#10;main_loop.addData('correctAns',temp_correctAns)&amp;#10;# objective accuracy&amp;#10;if (response.keys == str(temp_correctAns)) or (response.keys == temp_correctAns):&amp;#10;   temp_corr = 1&amp;#10;else:&amp;#10;    temp_corr = 0&amp;#10;main_loop.addData('response.corr' , temp_corr)" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
       </CodeComponent>
       <TextComponent name="response_options">
-        <Param name="opacity" val="1" valType="code" updates="constant"/>
-        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
-        <Param name="name" val="response_options" valType="code" updates="None"/>
-        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
-        <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="$resp_msg" valType="str" updates="set every repeat"/>
-        <Param name="stopVal" val="1.5" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
-        <Param name="flip" val="" valType="str" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="units" val="from exp settings" valType="str" updates="None"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="ori" val="0" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
-        <Param name="startVal" val="0.0" valType="code" updates="None"/>
-        <Param name="font" val="Arial" valType="str" updates="constant"/>
-        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="response_options" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="set every repeat" val="$resp_msg" valType="str"/>
+        <Param name="stopVal" updates="constant" val="1.5" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
       </TextComponent>
       <KeyboardComponent name="response">
-        <Param name="correctAns" val="" valType="str" updates="constant"/>
-        <Param name="storeCorrect" val="False" valType="bool" updates="constant"/>
-        <Param name="name" val="response" valType="code" updates="None"/>
-        <Param name="stopVal" val="1.5" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="forceEndRoutine" val="False" valType="bool" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="discard previous" val="True" valType="bool" updates="constant"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="allowedKeys" val="'1','2'" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
-        <Param name="startVal" val="0.0" valType="code" updates="None"/>
-        <Param name="store" val="last key" valType="str" updates="constant"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="response" valType="code"/>
+        <Param name="stopVal" updates="constant" val="1.5" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="False" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="allowedKeys" updates="constant" val="'1','2'" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="store" updates="constant" val="last key" valType="str"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
       </KeyboardComponent>
     </Routine>
     <Routine name="fixation">
       <TextComponent name="fixation_cross">
-        <Param name="opacity" val="1" valType="code" updates="constant"/>
-        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
-        <Param name="name" val="fixation_cross" valType="code" updates="None"/>
-        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
-        <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="+" valType="str" updates="constant"/>
-        <Param name="stopVal" val="0.5" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
-        <Param name="flip" val="" valType="str" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="units" val="from exp settings" valType="str" updates="None"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="ori" val="0" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
-        <Param name="startVal" val="0.0" valType="code" updates="None"/>
-        <Param name="font" val="Arial" valType="str" updates="constant"/>
-        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="fixation_cross" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="constant" val="+" valType="str"/>
+        <Param name="stopVal" updates="constant" val="0.5" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
       </TextComponent>
       <TextComponent name="blank_period">
-        <Param name="opacity" val="1" valType="code" updates="constant"/>
-        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
-        <Param name="name" val="blank_period" valType="code" updates="None"/>
-        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
-        <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="" valType="str" updates="constant"/>
-        <Param name="stopVal" val="$blank_dur" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
-        <Param name="flip" val="" valType="str" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="units" val="from exp settings" valType="str" updates="None"/>
-        <Param name="startType" val="condition" valType="str" updates="None"/>
-        <Param name="ori" val="0" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
-        <Param name="startVal" val="$fixation_cross.status == FINISHED" valType="code" updates="None"/>
-        <Param name="font" val="Arial" valType="str" updates="constant"/>
-        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="blank_period" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="constant" val="" valType="str"/>
+        <Param name="stopVal" updates="constant" val="$blank_dur" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="condition" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="$fixation_cross.status == FINISHED" valType="code"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
       </TextComponent>
       <CodeComponent name="code">
-        <Param name="Begin Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="name" val="code" valType="code" updates="None"/>
-        <Param name="Begin Routine" val="main_loop.addData(&quot;fixation_onset&quot;, globalClock.getTime() - startTime)&#10;main_loop.addData(&quot;blank_dur&quot;,blank_dur)" valType="extendedCode" updates="constant"/>
-        <Param name="End Routine" val="" valType="extendedCode" updates="constant"/>
-        <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="name" updates="None" val="code" valType="code"/>
+        <Param name="Begin Routine" updates="constant" val="main_loop.addData(&quot;fixation_onset&quot;, globalClock.getTime() - startTime)&amp;#10;main_loop.addData(&quot;blank_dur&quot;,blank_dur)" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
       </CodeComponent>
     </Routine>
     <Routine name="visibility">
       <CodeComponent name="trigger_visibility">
-        <Param name="Begin Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="name" val="trigger_visibility" valType="code" updates="None"/>
-        <Param name="Begin Routine" val="main_loop.addData(&quot;visible_resptime&quot;, globalClock.getTime() - startTime)" valType="extendedCode" updates="constant"/>
-        <Param name="End Routine" val="count += 1&#10;main_loop.addData('probe_Frames',curr)&#10;if (visible.keys == str('1')) or (visible.keys == '1'):# invisible&#10;    opacity += np.random.choice([0.1, 0.2, 0.3],size = 1)[0]&#10;    if opacity &gt; 1: opacity = 1&#10;    #curr += np.random.choice([1,2,3],size=1)[0]&#10;    #if curr &lt; 1:  curr = 1&#10;elif (visible.keys == str('2')) or (visible.keys == '2'):# partially aware&#10;    opacity -= 0.1&#10;    if opacity &lt; lowest_opacity: opacity = lowest_opacity&#10;    #curr -= 1&#10;    #if curr &lt; 1:  curr = 1 &#10;elif (visible.keys == str('3')) or (visible.keys == '3'): # visible&#10;    opacity -= np.random.choice([0.1, 0.2, 0.3],size = 1)[0]&#10;    if opacity &lt; lowest_opacity: opacity = lowest_opacity&#10;    #curr -= np.random.choice([2,3],size=1,p=[0.5,0.5])[0]&#10;    #if curr &lt; 1: curr = 1&#10;" valType="extendedCode" updates="constant"/>
-        <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="name" updates="None" val="trigger_visibility" valType="code"/>
+        <Param name="Begin Routine" updates="constant" val="main_loop.addData(&quot;visible_resptime&quot;, globalClock.getTime() - startTime)" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="count += 1&amp;#10;main_loop.addData('opacity',opacity)&amp;#10;&amp;#10;#if (visible.keys == str('1')) or (visible.keys == '1'):# invisible&amp;#10;#    opacity += np.random.choice([0.02, 0.04, 0.08],size = 1)[0]&amp;#10;#    if opacity &gt; 1: opacity = 1&amp;#10;#    #curr += np.random.choice([1,2,3],size=1)[0]&amp;#10;#    #if curr &lt; 1:  curr = 1&amp;#10;#elif (visible.keys == str('2')) or (visible.keys == '2'):# partially aware&amp;#10;#    opacity -= 0.1&amp;#10;#    if opacity &lt; lowest_opacity: opacity = lowest_opacity&amp;#10;#    #curr -= 1&amp;#10;#    #if curr &lt; 1:  curr = 1 &amp;#10;#elif (visible.keys == str('3')) or (visible.keys == '3'): # visible&amp;#10;#    opacity -= np.random.choice([0.02, 0.04, 0.08],size = 1)[0]&amp;#10;#    if opacity &lt; lowest_opacity: opacity = lowest_opacity&amp;#10;#    #curr -= np.random.choice([2,3],size=1,p=[0.5,0.5])[0]&amp;#10;#    #if curr &lt; 1: curr = 1&amp;#10;&amp;#10;if ((visible.keys == str('1')) or (visible.keys == '1')) and (temp_corr == 0): # invisible and incorrect&amp;#10;    opacity += 2 * step_size&amp;#10;    unconscious_trials.append(temp_corr)&amp;#10;    n_unconscious += 1&amp;#10;elif ((visible.keys == str('1')) or (visible.keys == '1')) and (temp_corr == 1): # invisible and correct&amp;#10;    opacity += step_size&amp;#10;    unconscious_trials.append(temp_corr)&amp;#10;    n_unconscious += 1&amp;#10;elif ((visible.keys == str('2')) or (visible.keys == '2')) and (temp_corr == 0): # visible and incorrect&amp;#10;    opacity -= step_size&amp;#10;    if opacity &lt; lowest_opacity: opacity = lowest_opacity&amp;#10;elif ((visible.keys == str('2')) or (visible.keys == '2')) and (temp_corr == 1): # visible and correct&amp;#10;    opacity -= 2 * step_size&amp;#10;    if opacity &lt; lowest_opacity: opacity = lowest_opacity" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
       </CodeComponent>
       <TextComponent name="visibility_message">
-        <Param name="opacity" val="1" valType="code" updates="constant"/>
-        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
-        <Param name="name" val="visibility_message" valType="code" updates="None"/>
-        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
-        <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="?" valType="str" updates="constant"/>
-        <Param name="stopVal" val="1.5" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
-        <Param name="flip" val="" valType="str" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="units" val="from exp settings" valType="str" updates="None"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="ori" val="0" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
-        <Param name="startVal" val="0.0" valType="code" updates="None"/>
-        <Param name="font" val="Arial" valType="str" updates="constant"/>
-        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="visibility_message" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="constant" val="?" valType="str"/>
+        <Param name="stopVal" updates="constant" val="1.5" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
       </TextComponent>
       <KeyboardComponent name="visible">
-        <Param name="correctAns" val="'1'" valType="str" updates="constant"/>
-        <Param name="storeCorrect" val="True" valType="bool" updates="constant"/>
-        <Param name="name" val="visible" valType="code" updates="None"/>
-        <Param name="stopVal" val="1.5" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="forceEndRoutine" val="False" valType="bool" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="discard previous" val="True" valType="bool" updates="constant"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="allowedKeys" val="'1','2','3'" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
-        <Param name="startVal" val="0.0" valType="code" updates="None"/>
-        <Param name="store" val="last key" valType="str" updates="constant"/>
+        <Param name="correctAns" updates="constant" val="'1'" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="visible" valType="code"/>
+        <Param name="stopVal" updates="constant" val="1.5" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="False" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="allowedKeys" updates="constant" val="'1','2'" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="store" updates="constant" val="last key" valType="str"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
       </KeyboardComponent>
     </Routine>
-    <Routine name="premask">
-      <GratingComponent name="premasking">
-        <Param name="opacity" val="1" valType="code" updates="constant"/>
-        <Param name="tex" val="$np.random.rand(n_square,n_square)*2 - 1" valType="str" updates="set every frame"/>
-        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
-        <Param name="name" val="premasking" valType="code" updates="None"/>
-        <Param name="color" val="$[1,1,1]" valType="str" updates="constant"/>
-        <Param name="stopVal" val="$premask_dur" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="mask" val="None" valType="str" updates="constant"/>
-        <Param name="pos" val="[0, -0]" valType="code" updates="constant"/>
-        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="units" val="pix" valType="str" updates="None"/>
-        <Param name="texture resolution" val="128" valType="code" updates="constant"/>
-        <Param name="phase" val="0.0" valType="code" updates="constant"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="ori" val="0" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (frames)" valType="str" updates="None"/>
-        <Param name="startVal" val="0.0" valType="code" updates="None"/>
-        <Param name="sf" val="None" valType="code" updates="constant"/>
-        <Param name="size" val="$(image_size, image_size)" valType="code" updates="constant"/>
-      </GratingComponent>
+    <Routine name="jitter1">
+      <TextComponent name="jitter_delay">
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="jitter_delay" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="constant" val="+" valType="str"/>
+        <Param name="stopVal" updates="constant" val="$jitter1_dur" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+      </TextComponent>
+      <CodeComponent name="log_jitter_delay">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="name" updates="None" val="log_jitter_delay" valType="code"/>
+        <Param name="Begin Routine" updates="constant" val="jitter1_dur = jitter1_dur_options[jitter_counter]&amp;#10;main_loop.addData('jitter1',jitter1_dur)" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+      </CodeComponent>
     </Routine>
     <Routine name="trial">
       <CodeComponent name="importing">
-        <Param name="Begin Experiment" val="import sys&#10;reload(sys)&#10;sys.setdefaultencoding(&quot;latin-1&quot;)" valType="extendedCode" updates="constant"/>
-        <Param name="name" val="importing" valType="code" updates="None"/>
-        <Param name="Begin JS Routine" val="" valType="extendedCode" updates="constant"/>
-        <Param name="End JS Routine" val="" valType="extendedCode" updates="constant"/>
-        <Param name="End JS Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="Each JS Frame" val="" valType="extendedCode" updates="constant"/>
-        <Param name="Begin JS Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="disabled" val="False" valType="bool" updates="None"/>
-        <Param name="Begin Routine" val="main_loop.addData(&quot;image_onset_time&quot;, globalClock.getTime() - startTime)" valType="extendedCode" updates="constant"/>
-        <Param name="End Routine" val="" valType="extendedCode" updates="constant"/>
-        <Param name="Code Type" val="Py" valType="str" updates="None"/>
-        <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Experiment" updates="constant" val="import sys&amp;#10;reload(sys)&amp;#10;sys.setdefaultencoding(&quot;latin-1&quot;)" valType="extendedCode"/>
+        <Param name="name" updates="None" val="importing" valType="code"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="Begin Routine" updates="constant" val="main_loop.addData(&quot;image_onset_time&quot;, globalClock.getTime() - startTime)" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
       </CodeComponent>
       <ImageComponent name="presentation">
-        <Param name="flipVert" val="False" valType="bool" updates="constant"/>
-        <Param name="color" val="$[1,1,1]" valType="str" updates="constant"/>
-        <Param name="image" val="$PATH" valType="str" updates="set every repeat"/>
-        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
-        <Param name="pos" val="(0, 0)" valType="code" updates="constant"/>
-        <Param name="disabled" val="False" valType="bool" updates="None"/>
-        <Param name="startVal" val="0.0" valType="code" updates="None"/>
-        <Param name="syncScreenRefresh" val="True" valType="bool" updates="None"/>
-        <Param name="units" val="pix" valType="str" updates="None"/>
-        <Param name="size" val="$(image_size, image_size)" valType="code" updates="constant"/>
-        <Param name="opacity" val="$opacity" valType="code" updates="set every repeat"/>
-        <Param name="stopVal" val="$curr" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="ori" val="0" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (frames)" valType="str" updates="None"/>
-        <Param name="texture resolution" val="128" valType="code" updates="constant"/>
-        <Param name="name" val="presentation" valType="code" updates="None"/>
-        <Param name="saveStartStop" val="True" valType="bool" updates="None"/>
-        <Param name="mask" val="None" valType="str" updates="constant"/>
-        <Param name="flipHoriz" val="False" valType="bool" updates="constant"/>
+        <Param name="flipVert" updates="constant" val="False" valType="bool"/>
+        <Param name="color" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="image" updates="set every repeat" val="$PATH_english" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="units" updates="None" val="pix" valType="str"/>
+        <Param name="size" updates="constant" val="$(image_size, image_size)" valType="code"/>
+        <Param name="opacity" updates="set every repeat" val="$opacity" valType="code"/>
+        <Param name="stopVal" updates="constant" val="$curr" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
+        <Param name="texture resolution" updates="constant" val="256" valType="code"/>
+        <Param name="name" updates="None" val="presentation" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
       </ImageComponent>
     </Routine>
     <Routine name="intro">
       <CodeComponent name="settingThingsUp">
-        <Param name="Begin Experiment" val="globalClock = core.Clock()&#10;&#10;premask_dur = int(expInfo['premask'])&#10;postmask_dur = int(expInfo['postmask'])&#10;n_square = int(expInfo['n_square'])&#10;image_size = int(expInfo['image_size'])&#10;opacity = float(expInfo['opacity'])&#10;session = int(expInfo['session'])&#10;&#10;curr = int(expInfo['probeFrames'])&#10;lowest_opacity = float(expInfo['lowest_opacity'])&#10;count = 0&#10;&#10;import time&#10;from psychopy import parallel&#10;parallel.setPortAddress(888)&#10;wait_msg = &quot;Wating for Scanner ...&quot;&#10;msg = visual.TextStim(win,color = 'DarkGray',text = wait_msg)&#10;&#10;# jitter 1&#10;jitter_counter = 0&#10;jitter1_dur_options = np.concatenate([[1.5]*16,[2.0]*8,[2.5]*6,[3.0]*4,[3.5]*4])&#10;np.random.shuffle(jitter1_dur_options)&#10;&#10;# jitter 2&#10;jitter2_dur_options = np.concatenate([[6.0]*16,[6.5]*8,[7.0]*6,[7.5]*4,[8.0]*4])&#10;np.random.shuffle(jitter2_dur_options)&#10;" valType="extendedCode" updates="constant"/>
-        <Param name="name" val="settingThingsUp" valType="code" updates="None"/>
-        <Param name="Begin Routine" val="msg.draw()&#10;win.flip()&#10;&#10;while True:&#10;    if (event.getKeys() == ['q']):#(parallel.readPin(10) == 1) or &#10;        break&#10;    else:&#10;        time.sleep(0.0001) # give 1ms to other processes&#10;globalClock.reset()&#10;startTime = globalClock.getTime()" valType="extendedCode" updates="constant"/>
-        <Param name="End Routine" val="" valType="extendedCode" updates="constant"/>
-        <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Experiment" updates="constant" val="globalClock = core.Clock()&amp;#10;&amp;#10;premask_dur = int(expInfo['premask'])&amp;#10;postmask_dur = int(expInfo['postmask'])&amp;#10;n_square = int(expInfo['n_square'])&amp;#10;image_size = int(expInfo['image_size'])&amp;#10;opacity = float(expInfo['opacity'])&amp;#10;session = int(expInfo['session'])&amp;#10;step_size = float(expInfo['step_size'])&amp;#10;&amp;#10;curr = int(expInfo['probeFrames'])&amp;#10;lowest_opacity = float(expInfo['lowest_opacity'])&amp;#10;count = 0&amp;#10;&amp;#10;import time&amp;#10;from psychopy import parallel&amp;#10;parallel.setPortAddress(888)&amp;#10;wait_msg = &quot;Wating for Scanner ...&quot;&amp;#10;msg = visual.TextStim(win,color = 'DarkGray',text = wait_msg)&amp;#10;&amp;#10;# jitter 1&amp;#10;jitter_counter = 0&amp;#10;jitter1_dur_options = np.concatenate([[1.5]*16,[2.0]*8,[2.5]*6,[3.0]*4,[3.5]*4])&amp;#10;np.random.shuffle(jitter1_dur_options)&amp;#10;&amp;#10;# jitter 2&amp;#10;jitter2_dur_options = np.concatenate([[6.0]*16,[6.5]*8,[7.0]*6,[7.5]*4,[8.0]*4])&amp;#10;np.random.shuffle(jitter2_dur_options)&amp;#10;&amp;#10;np.random.seed(12345)&amp;#10;masks = np.random.rand(n_square,n_square)*2 - 1&amp;#10;&amp;#10;# save corrections of trials of unconscious&amp;#10;unconscious_trials = []&amp;#10;# count unconscious trials&amp;#10;n_unconscious = 0" valType="extendedCode"/>
+        <Param name="name" updates="None" val="settingThingsUp" valType="code"/>
+        <Param name="Begin Routine" updates="constant" val="msg.draw()&amp;#10;win.flip()&amp;#10;&amp;#10;while True:&amp;#10;    if (event.getKeys() == ['q']):#(parallel.readPin(10) == 1) or &amp;#10;        break&amp;#10;    else:&amp;#10;        time.sleep(0.0001) # give 1ms to other processes&amp;#10;globalClock.reset()&amp;#10;startTime = globalClock.getTime()" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
       </CodeComponent>
     </Routine>
     <Routine name="end_experiment">
       <CodeComponent name="theEnd">
-        <Param name="Begin Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="name" val="theEnd" valType="code" updates="None"/>
-        <Param name="Begin Routine" val="" valType="extendedCode" updates="constant"/>
-        <Param name="End Routine" val="" valType="extendedCode" updates="constant"/>
-        <Param name="End Experiment" val="print(globalClock.getTime() - startTime)&#10;print(&quot;mean unconscious = {:.2f}, frame = {}, p(correct) = {:.2f}&quot;.format(&#10;    meanvis,curr,meanacc))" valType="extendedCode" updates="constant"/>
-        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="name" updates="None" val="theEnd" valType="code"/>
+        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="print(globalClock.getTime() - startTime)&amp;#10;print(&quot;mean unconscious = {:.2f}, frame = {}, p(correct) = {:.2f}&quot;.format(&amp;#10;    meanvis,curr,meanacc))" valType="extendedCode"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
       </CodeComponent>
     </Routine>
     <Routine name="intoPrepare">
       <TextComponent name="preparation">
-        <Param name="opacity" val="1" valType="code" updates="constant"/>
-        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
-        <Param name="name" val="preparation" valType="code" updates="None"/>
-        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
-        <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="" valType="str" updates="constant"/>
-        <Param name="stopVal" val="3" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
-        <Param name="flip" val="" valType="str" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="units" val="from exp settings" valType="str" updates="None"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="ori" val="0" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
-        <Param name="startVal" val="0.0" valType="code" updates="None"/>
-        <Param name="font" val="Arial" valType="str" updates="constant"/>
-        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="preparation" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="constant" val="" valType="str"/>
+        <Param name="stopVal" updates="constant" val=".3" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
       </TextComponent>
       <TextComponent name="first_blank">
-        <Param name="opacity" val="1" valType="code" updates="constant"/>
-        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
-        <Param name="name" val="first_blank" valType="code" updates="None"/>
-        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
-        <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="" valType="str" updates="constant"/>
-        <Param name="stopVal" val="10" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
-        <Param name="flip" val="" valType="str" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="units" val="from exp settings" valType="str" updates="None"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="ori" val="0" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
-        <Param name="startVal" val="3" valType="code" updates="None"/>
-        <Param name="font" val="Arial" valType="str" updates="constant"/>
-        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="first_blank" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="constant" val="" valType="str"/>
+        <Param name="stopVal" updates="constant" val=".1" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val=".3" valType="code"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
       </TextComponent>
     </Routine>
     <Routine name="jitter2">
       <CodeComponent name="code_2">
-        <Param name="Begin Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="name" val="code_2" valType="code" updates="None"/>
-        <Param name="Begin Routine" val="jitter2_delay_dur = jitter2_dur_options[jitter_counter]&#10;main_loop.addData('jitter2',jitter2_delay_dur)&#10;jitter_counter += 1" valType="extendedCode" updates="constant"/>
-        <Param name="End Routine" val="meanacc = main_loop.data['response.corr'].mean()&#10;meanvis = main_loop.data['visible.corr'].mean()&#10;&#10;print('{}/{}, mean unconscious = {:.2f},frame = {},p(correct) = {:.2f}'.format(&#10;        main_loop.thisN,main_loop.nTotal,&#10;        meanvis,curr,meanacc))" valType="extendedCode" updates="constant"/>
-        <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
-        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="name" updates="None" val="code_2" valType="code"/>
+        <Param name="Begin Routine" updates="constant" val="jitter2_delay_dur = jitter2_dur_options[jitter_counter]&amp;#10;main_loop.addData('jitter2',jitter2_delay_dur)&amp;#10;jitter_counter += 1&amp;#10;&amp;#10;meanacc = main_loop.data['response.corr'].mean()&amp;#10;&amp;#10;&amp;#10;msg_post = '{}/{}, mean unconscious = {:.2f},opacity = {:.1f},p(correct) = {:.2f}'.format(&amp;#10;        main_loop.thisN+1,main_loop.nTotal,&amp;#10;        n_unconscious/(main_loop.thisN+1),opacity,meanacc)" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="print('{}/{}, mean unconscious = {:.2f},opacity = {:.1f},p(correct) = {:.2f}'.format(&amp;#10;        main_loop.thisN+1,main_loop.nTotal,&amp;#10;        n_unconscious/(main_loop.thisN+1),opacity,meanacc))" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
       </CodeComponent>
       <TextComponent name="post_jitter">
-        <Param name="opacity" val="1" valType="code" updates="constant"/>
-        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
-        <Param name="name" val="post_jitter" valType="code" updates="None"/>
-        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
-        <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="+" valType="str" updates="constant"/>
-        <Param name="stopVal" val="$jitter2_delay_dur" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
-        <Param name="flip" val="" valType="str" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="units" val="from exp settings" valType="str" updates="None"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="ori" val="0" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
-        <Param name="startVal" val="0.0" valType="code" updates="None"/>
-        <Param name="font" val="Arial" valType="str" updates="constant"/>
-        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="post_jitter" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="set every repeat" val="$msg_post" valType="str"/>
+        <Param name="stopVal" updates="constant" val="$jitter2_delay_dur" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
       </TextComponent>
     </Routine>
     <Routine name="postmask">
       <GratingComponent name="postmasking">
-        <Param name="opacity" val="1" valType="code" updates="constant"/>
-        <Param name="tex" val="$np.random.rand(n_square,n_square)*2 -1" valType="str" updates="set every frame"/>
-        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
-        <Param name="name" val="postmasking" valType="code" updates="None"/>
-        <Param name="color" val="$[1,1,1]" valType="str" updates="constant"/>
-        <Param name="stopVal" val="postmask_dur" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="mask" val="None" valType="str" updates="constant"/>
-        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
-        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="units" val="pix" valType="str" updates="None"/>
-        <Param name="texture resolution" val="128" valType="code" updates="constant"/>
-        <Param name="phase" val="0.0" valType="code" updates="constant"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="ori" val="0" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (frames)" valType="str" updates="None"/>
-        <Param name="startVal" val="0.0" valType="code" updates="None"/>
-        <Param name="sf" val="None" valType="code" updates="constant"/>
-        <Param name="size" val="$(image_size, image_size)" valType="code" updates="constant"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="tex" updates="set every repeat" val="$masks" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="blendmode" updates="constant" val="avg" valType="str"/>
+        <Param name="name" updates="None" val="postmasking" valType="code"/>
+        <Param name="color" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="stopVal" updates="constant" val="postmask_dur" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="pix" valType="str"/>
+        <Param name="texture resolution" updates="constant" val="256" valType="code"/>
+        <Param name="phase" updates="constant" val="0.0" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="sf" updates="constant" val="None" valType="code"/>
+        <Param name="size" updates="constant" val="$(image_size/1.5, image_size/1.5)" valType="code"/>
       </GratingComponent>
     </Routine>
   </Routines>
@@ -388,15 +394,15 @@
     <Routine name="intro"/>
     <Routine name="intoPrepare"/>
     <LoopInitiator loopType="TrialHandler" name="main_loop">
-      <Param name="conditionsFile" val="..\experiment_csvs\session_1.csv" valType="str" updates="None"/>
-      <Param name="name" val="main_loop" valType="code" updates="None"/>
-      <Param name="isTrials" val="True" valType="bool" updates="None"/>
-      <Param name="random seed" val="" valType="code" updates="None"/>
-      <Param name="loopType" val="random" valType="str" updates="None"/>
-      <Param name="nReps" val="1" valType="code" updates="None"/>
-      <Param name="endPoints" val="[0, 1]" valType="num" updates="None"/>
-      <Param name="conditions" val="[{'Category': 'animal', 'Mean_Familiarity': 4.3600000000000003, 'SD_Concreteness': 1.5524174696260014, 'Word': 'Gaviota', 'category': 'Living_Things', 'Mean_Arousal': 5.0263157894736841, 'Mean_Valence': 5.0, 'SD_Familiarity': 2.3252240035460381, 'Length': 7, 'Frequency': 2.5, 'blank_dur': 0.63353243637140588, 'picked': True, 'English': 'Seagull', 'log_frequency': 0.91629073187415522, 'PATH': '../stimuli_figure/Seagull.jpeg', 'Mean_Concreteness': 7.9199999999999999, 'SD_Arousal': 1.9240559932469117, 'SD_Valence': 1.9864405216230223}, {'Category': 'animal', 'Mean_Familiarity': 4.2400000000000002, 'SD_Concreteness': 2.6223399220289245, 'Word': 'Almeja', 'category': 'Living_Things', 'Mean_Arousal': 3.4210526315789487, 'Mean_Valence': 4.9210526315789487, 'SD_Familiarity': 2.3853720883753127, 'Length': 6, 'Frequency': 0.54000000000000004, 'blank_dur': 0.35022490885271323, 'picked': True, 'English': 'Clam', 'log_frequency': -0.61618613942381706, 'PATH': '../stimuli_figure/Clam.jpeg', 'Mean_Concreteness': 6.7199999999999998, 'SD_Arousal': 1.7496189383941527, 'SD_Valence': 1.6986732334124204}, {'Category': 'animal', 'Mean_Familiarity': 4.7199999999999998, 'SD_Concreteness': 1.4685593847940459, 'Word': 'Oso', 'category': 'Living_Things', 'Mean_Arousal': 5.2368421052631575, 'Mean_Valence': 5.6052631578947381, 'SD_Familiarity': 2.685144316419509, 'Length': 3, 'Frequency': 11.43, 'blank_dur': 0.4893778749568593, 'picked': True, 'English': 'Bear', 'log_frequency': 2.4362414778067194, 'PATH': '../stimuli_figure/Bear.jpeg', 'Mean_Concreteness': 7.6399999999999997, 'SD_Arousal': 2.0721344332669598, 'SD_Valence': 1.7939760112321024}, {'Category': 'object', 'Mean_Familiarity': 3.6000000000000001, 'SD_Concreteness': 1.3228756555322954, 'Word': 'Misil', 'category': 'Nonliving_Things', 'Mean_Arousal': 6.7894736842105274, 'Mean_Valence': 1.5526315789473684, 'SD_Familiarity': 2.3804761428476167, 'Length': 5, 'Frequency': 5.0, 'blank_dur': 0.41362588498755709, 'picked': True, 'English': 'Missile', 'log_frequency': 1.6094379124341005, 'PATH': '../stimuli_figure/Missile.jpeg', 'Mean_Concreteness': 7.7999999999999998, 'SD_Arousal': 1.9885876386486108, 'SD_Valence': 0.7240041966823505}, {'Category': 'object', 'Mean_Familiarity': 3.9166666666666665, 'SD_Concreteness': 1.5275252316519468, 'Word': 'Soplete', 'category': 'Nonliving_Things', 'Mean_Arousal': 4.8421052631578947, 'Mean_Valence': 3.763157894736842, 'SD_Familiarity': 2.7491764247666524, 'Length': 7, 'Frequency': 2.5, 'blank_dur': 0.32659273781134429, 'picked': True, 'English': 'Blowtorch', 'log_frequency': 0.91629073187415522, 'PATH': '../stimuli_figure/Blowtorch.jpeg', 'Mean_Concreteness': 7.4000000000000004, 'SD_Arousal': 2.0205206151355566, 'SD_Valence': 1.6180437057925561}, {'Category': 'object', 'Mean_Familiarity': 4.7999999999999998, 'SD_Concreteness': 2.1424285285628559, 'Word': 'Peluche', 'category': 'Nonliving_Things', 'Mean_Arousal': 4.1578947368421044, 'Mean_Valence': 7.4736842105263159, 'SD_Familiarity': 2.4152294576982403, 'Length': 7, 'Frequency': 2.1400000000000001, 'blank_dur': 0.58063932247736638, 'picked': True, 'English': 'Teddy', 'log_frequency': 0.76080582903376015, 'PATH': '../stimuli_figure/Teddy.jpeg', 'Mean_Concreteness': 6.5599999999999996, 'SD_Arousal': 2.5204709533057583, 'SD_Valence': 1.2244544754488242}, {'Category': 'animal', 'Mean_Familiarity': 3.6800000000000002, 'SD_Concreteness': 1.2476644848141918, 'Word': 'Oveja', 'category': 'Living_Things', 'Mean_Arousal': 4.0263157894736841, 'Mean_Valence': 5.6578947368421053, 'SD_Familiarity': 2.1354156504062622, 'Length': 5, 'Frequency': 6.6100000000000003, 'blank_dur': 0.54242774869202082, 'picked': True, 'English': 'Sheep', 'log_frequency': 1.8885836538635947, 'PATH': '../stimuli_figure/Sheep.jpeg', 'Mean_Concreteness': 7.8399999999999999, 'SD_Arousal': 1.9794463067649943, 'SD_Valence': 1.3411635889793536}, {'Category': 'animal', 'Mean_Familiarity': 3.8799999999999999, 'SD_Concreteness': 1.5470401847829731, 'Word': 'Culebra', 'category': 'Living_Things', 'Mean_Arousal': 7.5789473684210531, 'Mean_Valence': 1.8157894736842104, 'SD_Familiarity': 2.350886357667394, 'Length': 7, 'Frequency': 2.3199999999999998, 'blank_dur': 0.57201669513023035, 'picked': True, 'English': 'Snake', 'log_frequency': 0.84156718567821853, 'PATH': '../stimuli_figure/Snake.jpeg', 'Mean_Concreteness': 7.3200000000000003, 'SD_Arousal': 1.5357290538648978, 'SD_Valence': 1.1821936357122866}, {'Category': 'object', 'Mean_Familiarity': 4.8799999999999999, 'SD_Concreteness': 1.6329931618554518, 'Word': 'Retrete', 'category': 'Nonliving_Things', 'Mean_Arousal': 3.736842105263158, 'Mean_Valence': 3.1578947368421053, 'SD_Familiarity': 2.8331372481167696, 'Length': 7, 'Frequency': 8.0399999999999991, 'blank_dur': 0.34312174391520744, 'picked': True, 'English': 'Toilet', 'log_frequency': 2.0844290831908747, 'PATH': '../stimuli_figure/Toilet.jpeg', 'Mean_Concreteness': 7.7999999999999998, 'SD_Arousal': 2.0491819135781939, 'SD_Valence': 1.70097453449444}, {'Category': 'object', 'Mean_Familiarity': 4.0800000000000001, 'SD_Concreteness': 2.2546248764114467, 'Word': 'Arco', 'category': 'Nonliving_Things', 'Mean_Arousal': 4.0526315789473681, 'Mean_Valence': 4.8421052631578947, 'SD_Familiarity': 2.4650895859312425, 'Length': 4, 'Frequency': 22.859999999999999, 'blank_dur': 0.42420437225870877, 'picked': True, 'English': 'Arc', 'log_frequency': 3.1293886583666644, 'PATH': '../stimuli_figure/Arc.jpeg', 'Mean_Concreteness': 6.2000000000000002, 'SD_Arousal': 1.7076515946484954, 'SD_Valence': 1.3259635107586647}, {'Category': 'object', 'Mean_Familiarity': 5.0, 'SD_Concreteness': 1.8230011885167088, 'Word': 'Inyecci\xc3\xb3n', 'category': 'Nonliving_Things', 'Mean_Arousal': 7.0, 'Mean_Valence': 2.0526315789473686, 'SD_Familiarity': 1.8708286933869709, 'Length': 9, 'Frequency': 6.96, 'blank_dur': 0.33988835661678529, 'picked': True, 'English': 'Injection', 'log_frequency': 1.9401794743463283, 'PATH': '../stimuli_figure/Injection.jpeg', 'Mean_Concreteness': 6.6399999999999997, 'SD_Arousal': 1.4886961463697743, 'SD_Valence': 1.2290925771886112}, {'Category': 'animal', 'Mean_Familiarity': 4.2800000000000002, 'SD_Concreteness': 1.293573860795485, 'Word': 'Camello', 'category': 'Living_Things', 'Mean_Arousal': 4.8684210526315788, 'Mean_Valence': 5.8157894736842106, 'SD_Familiarity': 2.622339922028925, 'Length': 7, 'Frequency': 2.3199999999999998, 'blank_dur': 0.67617073719388787, 'picked': True, 'English': 'Camel', 'log_frequency': 0.84156718567821853, 'PATH': '../stimuli_figure/Camel.jpeg', 'Mean_Concreteness': 7.5599999999999996, 'SD_Arousal': 1.9054835894898383, 'SD_Valence': 1.5041431637924283}, {'Category': 'animal', 'Mean_Familiarity': 4.4000000000000004, 'SD_Concreteness': 1.7729448195962938, 'Word': 'Lobo', 'category': 'Living_Things', 'Mean_Arousal': 6.8157894736842106, 'Mean_Valence': 4.8157894736842106, 'SD_Familiarity': 2.4152294576982403, 'Length': 4, 'Frequency': 15.18, 'blank_dur': 0.33011582516855226, 'picked': True, 'English': 'Wolf', 'log_frequency': 2.7199787719674839, 'PATH': '../stimuli_figure/Wolf.jpeg', 'Mean_Concreteness': 7.6799999999999997, 'SD_Arousal': 1.7375855126986566, 'SD_Valence': 2.3579109301415091}, {'Category': 'object', 'Mean_Familiarity': 3.1200000000000001, 'SD_Concreteness': 1.4798648586948735, 'Word': 'Sierra', 'category': 'Nonliving_Things', 'Mean_Arousal': 5.0526315789473681, 'Mean_Valence': 3.7105263157894735, 'SD_Familiarity': 1.9646882704388504, 'Length': 6, 'Frequency': 14.82, 'blank_dur': 0.33721052958741637, 'picked': True, 'English': 'Mountain range', 'log_frequency': 2.695977619867941, 'PATH': '../stimuli_figure/Mountain range.jpeg', 'Mean_Concreteness': 6.7599999999999998, 'SD_Arousal': 2.1428368216878355, 'SD_Valence': 2.0912674901850736}, {'Category': 'animal', 'Mean_Familiarity': 3.1600000000000001, 'SD_Concreteness': 1.6329931618554518, 'Word': 'Orangut\xc3\xa1n', 'category': 'Living_Things', 'Mean_Arousal': 5.9736842105263159, 'Mean_Valence': 5.5, 'SD_Familiarity': 2.173323108360405, 'Length': 9, 'Frequency': 1.0700000000000001, 'blank_dur': 0.67228619908708975, 'picked': True, 'English': 'Orangutan', 'log_frequency': 0.067658648473814864, 'PATH': '../stimuli_figure/Orangutan.jpeg', 'Mean_Concreteness': 8.0, 'SD_Arousal': 1.9657450565400183, 'SD_Valence': 1.955587974069263}, {'Category': 'animal', 'Mean_Familiarity': 4.6799999999999997, 'SD_Concreteness': 1.2909944487358056, 'Word': 'Perdiz', 'category': 'Living_Things', 'Mean_Arousal': 3.9473684210526319, 'Mean_Valence': 5.3157894736842106, 'SD_Familiarity': 2.5119713374160946, 'Length': 6, 'Frequency': 1.0700000000000001, 'blank_dur': 0.32305954124494823, 'picked': True, 'English': 'Partridge', 'log_frequency': 0.067658648473814864, 'PATH': '../stimuli_figure/Partridge.jpeg', 'Mean_Concreteness': 8.0, 'SD_Arousal': 1.9023082482626867, 'SD_Valence': 1.6782433408887849}, {'Category': 'object', 'Mean_Familiarity': 3.6400000000000001, 'SD_Concreteness': 1.7860571099491744, 'Word': 'Navaja', 'category': 'Nonliving_Things', 'Mean_Arousal': 6.4210526315789469, 'Mean_Valence': 2.0789473684210527, 'SD_Familiarity': 1.7767010628315238, 'Length': 6, 'Frequency': 13.390000000000001, 'blank_dur': 0.59983005806478773, 'picked': True, 'English': 'Razor', 'log_frequency': 2.5945081597030808, 'PATH': '../stimuli_figure/Razor.jpeg', 'Mean_Concreteness': 7.2400000000000002, 'SD_Arousal': 2.1514492783133536, 'SD_Valence': 1.4590181620374196}, {'Category': 'object', 'Mean_Familiarity': 3.96, 'SD_Concreteness': 1.3344650993747542, 'Word': 'Faja', 'category': 'Nonliving_Things', 'Mean_Arousal': 3.8421052631578951, 'Mean_Valence': 3.6842105263157889, 'SD_Familiarity': 2.4913182588073064, 'Length': 4, 'Frequency': 2.3199999999999998, 'blank_dur': 0.43181021994898933, 'picked': True, 'English': 'Belt', 'log_frequency': 0.84156718567821853, 'PATH': '../stimuli_figure/Belt.jpeg', 'Mean_Concreteness': 7.0416666666666679, 'SD_Arousal': 1.808782116612434, 'SD_Valence': 1.6620609667468578}, {'Category': 'object', 'Mean_Familiarity': 3.7999999999999998, 'SD_Concreteness': 2.6454089297870573, 'Word': 'Escudo', 'category': 'Nonliving_Things', 'Mean_Arousal': 4.9473684210526319, 'Mean_Valence': 4.7368421052631575, 'SD_Familiarity': 2.3094010767585029, 'Length': 6, 'Frequency': 8.9299999999999997, 'blank_dur': 0.44905084699682413, 'picked': True, 'English': 'Shield', 'log_frequency': 2.1894163948884082, 'PATH': '../stimuli_figure/Shield.jpeg', 'Mean_Concreteness': 6.2916666666666679, 'SD_Arousal': 1.7698277274700398, 'SD_Valence': 1.4460423253929602}, {'Category': 'animal', 'Mean_Familiarity': 3.3199999999999998, 'SD_Concreteness': 2.103172207246315, 'Word': 'Gorri\xc3\xb3n', 'category': 'Living_Things', 'Mean_Arousal': 4.3684210526315788, 'Mean_Valence': 5.7105263157894735, 'SD_Familiarity': 2.4785748593361738, 'Length': 7, 'Frequency': 0.89000000000000001, 'blank_dur': 0.63474523271984529, 'picked': True, 'English': 'Sparrow', 'log_frequency': -0.11653381625595152, 'PATH': '../stimuli_figure/Sparrow.jpeg', 'Mean_Concreteness': 7.5599999999999996, 'SD_Arousal': 1.8948158668521169, 'SD_Valence': 1.3931860188332874}, {'Category': 'animal', 'Mean_Familiarity': 4.1600000000000001, 'SD_Concreteness': 2.2568414506414345, 'Word': 'Cebra', 'category': 'Living_Things', 'Mean_Arousal': 5.0263157894736841, 'Mean_Valence': 5.7105263157894735, 'SD_Familiarity': 2.718455443813637, 'Length': 5, 'Frequency': 0.89000000000000001, 'blank_dur': 0.67804951645808309, 'picked': True, 'English': 'Zebra', 'log_frequency': -0.11653381625595152, 'PATH': '../stimuli_figure/Zebra.jpeg', 'Mean_Concreteness': 7.5199999999999996, 'SD_Arousal': 1.731845478801922, 'SD_Valence': 1.4502170338382827}, {'Category': 'animal', 'Mean_Familiarity': 5.0, 'SD_Concreteness': 1.2355835328567109, 'Word': 'Caracol', 'category': 'Living_Things', 'Mean_Arousal': 3.210526315789473, 'Mean_Valence': 5.0526315789473681, 'SD_Familiarity': 1.9790570145063195, 'Length': 7, 'Frequency': 5.3600000000000003, 'blank_dur': 0.65225098127406822, 'picked': True, 'English': 'Snail', 'log_frequency': 1.6789639750827108, 'PATH': '../stimuli_figure/Snail.jpeg', 'Mean_Concreteness': 7.8799999999999999, 'SD_Arousal': 2.1073602641865827, 'SD_Valence': 1.9583137868136629}, {'Category': 'animal', 'Mean_Familiarity': 3.3599999999999999, 'SD_Concreteness': 1.5307950004273383, 'Word': 'Escarabajo', 'category': 'Living_Things', 'Mean_Arousal': 4.5526315789473681, 'Mean_Valence': 3.3684210526315788, 'SD_Familiarity': 1.8, 'Length': 10, 'Frequency': 1.4299999999999999, 'blank_dur': 0.3994516770315879, 'picked': True, 'English': 'Beetle', 'log_frequency': 0.35767444427181588, 'PATH': '../stimuli_figure/Beetle.jpeg', 'Mean_Concreteness': 7.5199999999999996, 'SD_Arousal': 2.2862381283489173, 'SD_Valence': 1.6833212445988379}, {'Category': 'object', 'Mean_Familiarity': 4.8799999999999999, 'SD_Concreteness': 2.1652726842366641, 'Word': 'Sacapuntas', 'category': 'Nonliving_Things', 'Mean_Arousal': 3.6842105263157889, 'Mean_Valence': 4.7105263157894735, 'SD_Familiarity': 3.073000705065545, 'Length': 10, 'Frequency': 0.17999999999999999, 'blank_dur': 0.4145219392456877, 'picked': True, 'English': 'Sharpener', 'log_frequency': -1.7147984280919266, 'PATH': '../stimuli_figure/Sharpener.jpeg', 'Mean_Concreteness': 7.4166666666666679, 'SD_Arousal': 1.8614911656750359, 'SD_Valence': 1.2060185722392749}, {'Category': 'object', 'Mean_Familiarity': 4.8399999999999999, 'SD_Concreteness': 2.1617893822787955, 'Word': 'Alfombra', 'category': 'Nonliving_Things', 'Mean_Arousal': 2.9210526315789487, 'Mean_Valence': 5.0263157894736841, 'SD_Familiarity': 1.9723082923316024, 'Length': 8, 'Frequency': 16.07, 'blank_dur': 0.43530280580832881, 'picked': True, 'English': 'Carpet', 'log_frequency': 2.776954179749421, 'PATH': '../stimuli_figure/Carpet.jpeg', 'Mean_Concreteness': 7.4400000000000004, 'SD_Arousal': 1.8215167268911472, 'SD_Valence': 1.1965455256191009}, {'Category': 'animal', 'Mean_Familiarity': 3.7599999999999998, 'SD_Concreteness': 1.8484227510682358, 'Word': 'Tigre', 'category': 'Living_Things', 'Mean_Arousal': 7.2368421052631566, 'Mean_Valence': 5.9736842105263159, 'SD_Familiarity': 2.5046623192225601, 'Length': 5, 'Frequency': 4.29, 'blank_dur': 0.3831961062787288, 'picked': True, 'English': 'Tiger', 'log_frequency': 1.4562867329399256, 'PATH': '../stimuli_figure/Tiger.jpeg', 'Mean_Concreteness': 7.5999999999999996, 'SD_Arousal': 1.8370689128640949, 'SD_Valence': 2.0199925355128761}, {'Category': 'animal', 'Mean_Familiarity': 3.4399999999999999, 'SD_Concreteness': 1.920937271229854, 'Word': 'Babosa', 'category': 'Living_Things', 'Mean_Arousal': 5.0789473684210513, 'Mean_Valence': 2.1315789473684208, 'SD_Familiarity': 2.2000000000000002, 'Length': 6, 'Frequency': 0.35999999999999999, 'blank_dur': 0.49261096387418413, 'picked': True, 'English': 'Slug', 'log_frequency': -1.0216512475319814, 'PATH': '../stimuli_figure/Slug.jpeg', 'Mean_Concreteness': 6.7599999999999998, 'SD_Arousal': 2.5296253215496805, 'SD_Valence': 1.3390406535939228}, {'Category': 'object', 'Mean_Familiarity': 3.8399999999999999, 'SD_Concreteness': 1.106044001535802, 'Word': 'Br\xc3\xbajula', 'category': 'Nonliving_Things', 'Mean_Arousal': 4.0, 'Mean_Valence': 5.1052631578947372, 'SD_Familiarity': 2.230097157823697, 'Length': 7, 'Frequency': 2.5, 'blank_dur': 0.4770215125454299, 'picked': True, 'English': 'Compass', 'log_frequency': 0.91629073187415522, 'PATH': '../stimuli_figure/Compass.jpeg', 'Mean_Concreteness': 7.8399999999999999, 'SD_Arousal': 1.9312508199945781, 'SD_Valence': 1.5385053063037817}, {'Category': 'object', 'Mean_Familiarity': 4.8399999999999999, 'SD_Concreteness': 1.9510680835549183, 'Word': 'Cheque', 'category': 'Nonliving_Things', 'Mean_Arousal': 5.6842105263157894, 'Mean_Valence': 6.2105263157894735, 'SD_Familiarity': 2.32163735324878, 'Length': 6, 'Frequency': 4.1100000000000003, 'blank_dur': 0.56663310387268473, 'picked': True, 'English': 'Check', 'log_frequency': 1.4134230285081433, 'PATH': '../stimuli_figure/Check.jpeg', 'Mean_Concreteness': 6.8399999999999999, 'SD_Arousal': 1.7414697607061016, 'SD_Valence': 1.4361716139424865}, {'Category': 'object', 'Mean_Familiarity': 3.52, 'SD_Concreteness': 1.6753109164172073, 'Word': 'Patinete', 'category': 'Nonliving_Things', 'Mean_Arousal': 5.1052631578947372, 'Mean_Valence': 5.7105263157894735, 'SD_Familiarity': 2.1817424229271429, 'Length': 8, 'Frequency': 0.17999999999999999, 'blank_dur': 0.3395414379077053, 'picked': True, 'English': 'Scooter', 'log_frequency': -1.7147984280919266, 'PATH': '../stimuli_figure/Scooter.jpeg', 'Mean_Concreteness': 6.8399999999999999, 'SD_Arousal': 1.9699015434885081, 'SD_Valence': 1.7692248224184892}, {'Category': 'animal', 'Mean_Familiarity': 3.3199999999999998, 'SD_Concreteness': 1.943364779619789, 'Word': 'Asno', 'category': 'Living_Things', 'Mean_Arousal': 4.5263157894736841, 'Mean_Valence': 5.3157894736842106, 'SD_Familiarity': 2.3043437243605824, 'Length': 4, 'Frequency': 3.9300000000000002, 'blank_dur': 0.58451532830087527, 'picked': True, 'English': 'Donkey', 'log_frequency': 1.3686394258811698, 'PATH': '../stimuli_figure/Donkey.jpeg', 'Mean_Concreteness': 6.8799999999999999, 'SD_Arousal': 1.5894388284780532, 'SD_Valence': 1.6942711604969272}, {'Category': 'object', 'Mean_Familiarity': 4.96, 'SD_Concreteness': 1.9578900207451213, 'Word': 'Ladrillo', 'category': 'Nonliving_Things', 'Mean_Arousal': 3.3157894736842106, 'Mean_Valence': 4.2368421052631575, 'SD_Familiarity': 2.5735837529276826, 'Length': 8, 'Frequency': 8.0399999999999991, 'blank_dur': 0.68579612397350975, 'picked': True, 'English': 'Brick', 'log_frequency': 2.0844290831908747, 'PATH': '../stimuli_figure/Brick.jpeg', 'Mean_Concreteness': 6.5999999999999996, 'SD_Arousal': 1.817412225590012, 'SD_Valence': 1.4965584036303192}, {'Category': 'animal', 'Mean_Familiarity': 3.96, 'SD_Concreteness': 2.0631690833925047, 'Word': 'Canario', 'category': 'Living_Things', 'Mean_Arousal': 4.3421052631578965, 'Mean_Valence': 6.0526315789473673, 'SD_Familiarity': 2.207562758639793, 'Length': 7, 'Frequency': 5.54, 'blank_dur': 0.31577277894717842, 'picked': True, 'English': 'Canary', 'log_frequency': 1.7119945007591924, 'PATH': '../stimuli_figure/Canary.jpeg', 'Mean_Concreteness': 6.4400000000000004, 'SD_Arousal': 2.0305280339675962, 'SD_Valence': 1.6431243874063004}, {'Category': 'object', 'Mean_Familiarity': 3.5600000000000001, 'SD_Concreteness': 2.565800719723442, 'Word': 'Jeringa', 'category': 'Nonliving_Things', 'Mean_Arousal': 6.9473684210526327, 'Mean_Valence': 2.0, 'SD_Familiarity': 2.3108440016582685, 'Length': 7, 'Frequency': 1.0700000000000001, 'blank_dur': 0.46450658895590963, 'picked': True, 'English': 'Syringe', 'log_frequency': 0.067658648473814864, 'PATH': '../stimuli_figure/Syringe.jpeg', 'Mean_Concreteness': 6.4000000000000004, 'SD_Arousal': 1.6594914300903707, 'SD_Valence': 1.2080808993852437}, {'Category': 'animal', 'Mean_Familiarity': 4.1600000000000001, 'SD_Concreteness': 1.8929694486000912, 'Word': 'Liebre', 'category': 'Living_Things', 'Mean_Arousal': 4.6842105263157894, 'Mean_Valence': 5.6052631578947381, 'SD_Familiarity': 2.230097157823697, 'Length': 6, 'Frequency': 5.0, 'blank_dur': 0.4650543216850973, 'picked': True, 'English': 'Hare', 'log_frequency': 1.6094379124341005, 'PATH': '../stimuli_figure/Hare.jpeg', 'Mean_Concreteness': 7.4000000000000004, 'SD_Arousal': 1.8759540010192832, 'SD_Valence': 1.2200902422142861}, {'Category': 'object', 'Mean_Familiarity': 4.04, 'SD_Concreteness': 1.6753109164172073, 'Word': 'Bistur\xc3\xad', 'category': 'Nonliving_Things', 'Mean_Arousal': 6.5263157894736841, 'Mean_Valence': 3.263157894736842, 'SD_Familiarity': 2.4234960972391377, 'Length': 7, 'Frequency': 6.0700000000000003, 'blank_dur': 0.69165196479180879, 'picked': True, 'English': 'Scalpel', 'log_frequency': 1.803358605071407, 'PATH': '../stimuli_figure/Scalpel.jpeg', 'Mean_Concreteness': 7.8399999999999999, 'SD_Arousal': 2.0630185455306531, 'SD_Valence': 2.0883746496014908}]" valType="str" updates="None"/>
-      <Param name="Selected rows" val="" valType="str" updates="None"/>
+      <Param name="conditionsFile" updates="None" val="..\experiment_csvs\session_1.csv" valType="str"/>
+      <Param name="name" updates="None" val="main_loop" valType="code"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('Category', 'object'), ('Word', 'Jeringa'), ('Mean_Valence', 2.0), ('SD_Valence', 1.2080808993852437), ('Mean_Arousal', 6.947368421052633), ('SD_Arousal', 1.6594914300903707), ('Mean_Familiarity', 3.56), ('SD_Familiarity', 2.3108440016582685), ('Mean_Concreteness', 6.4), ('SD_Concreteness', 2.565800719723442), ('Frequency', 1.07), ('Length', 7), ('English', 'Syringe'), ('log_frequency', 0.06765864847381486), ('picked', True), ('PATH', '../stimuli_figure/Syringe.jpeg'), ('blank_dur', 0.4645065889559096), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Pato'), ('Mean_Valence', 6.2368421052631575), ('SD_Valence', 1.282611578336145), ('Mean_Arousal', 3.763157894736842), ('SD_Arousal', 1.8950035374183023), ('Mean_Familiarity', 4.76), ('SD_Familiarity', 2.6814175355583845), ('Mean_Concreteness', 7.8), ('SD_Concreteness', 1.6329931618554518), ('Frequency', 4.82), ('Length', 4), ('English', 'Duck'), ('log_frequency', 1.572773928062509), ('picked', True), ('PATH', '../stimuli_figure/Duck.jpeg'), ('blank_dur', 0.496888170153366), ('category', 'Living_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Misil'), ('Mean_Valence', 1.5526315789473684), ('SD_Valence', 0.7240041966823505), ('Mean_Arousal', 6.789473684210527), ('SD_Arousal', 1.9885876386486108), ('Mean_Familiarity', 3.6), ('SD_Familiarity', 2.3804761428476167), ('Mean_Concreteness', 7.8), ('SD_Concreteness', 1.3228756555322954), ('Frequency', 5.0), ('Length', 5), ('English', 'Missile'), ('log_frequency', 1.6094379124341005), ('picked', True), ('PATH', '../stimuli_figure/Missile.jpeg'), ('blank_dur', 0.4136258849875571), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Golondrina'), ('Mean_Valence', 6.315789473684211), ('SD_Valence', 1.3173532670307042), ('Mean_Arousal', 4.3421052631578965), ('SD_Arousal', 1.8347444890151736), ('Mean_Familiarity', 3.12), ('SD_Familiarity', 2.06801031589948), ('Mean_Concreteness', 7.16), ('SD_Concreteness', 1.4047538337136969), ('Frequency', 2.32), ('Length', 10), ('English', 'Swallow'), ('log_frequency', 0.8415671856782185), ('picked', True), ('PATH', '../stimuli_figure/Swallow.jpeg'), ('blank_dur', 0.6907175139430841), ('category', 'Living_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Refiner\xe9\x93\x86a'), ('Mean_Valence', 3.6216216216216215), ('SD_Valence', 1.9054213787586805), ('Mean_Arousal', 4.351351351351353), ('SD_Arousal', 2.440585269245157), ('Mean_Familiarity', 3.6), ('SD_Familiarity', 2.9580398915498085), ('Mean_Concreteness', 6.96), ('SD_Concreteness', 2.3000000000000003), ('Frequency', 0.89), ('Length', 9), ('English', 'Refinery'), ('log_frequency', -0.11653381625595152), ('picked', True), ('PATH', '../stimuli_figure/Refinery.jpeg'), ('blank_dur', 0.694426754065328), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Almeja'), ('Mean_Valence', 4.921052631578949), ('SD_Valence', 1.6986732334124204), ('Mean_Arousal', 3.4210526315789487), ('SD_Arousal', 1.7496189383941527), ('Mean_Familiarity', 4.24), ('SD_Familiarity', 2.3853720883753127), ('Mean_Concreteness', 6.72), ('SD_Concreteness', 2.6223399220289245), ('Frequency', 0.54), ('Length', 6), ('English', 'Clam'), ('log_frequency', -0.6161861394238171), ('picked', True), ('PATH', '../stimuli_figure/Clam.jpeg'), ('blank_dur', 0.35022490885271323), ('category', 'Living_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Machete'), ('Mean_Valence', 2.473684210526316), ('SD_Valence', 1.720101224319696), ('Mean_Arousal', 6.026315789473684), ('SD_Arousal', 2.1115748203428915), ('Mean_Familiarity', 3.12), ('SD_Familiarity', 2.3860706890897707), ('Mean_Concreteness', 7.56), ('SD_Concreteness', 1.1210114480533506), ('Frequency', 1.79), ('Length', 7), ('English', 'Machete'), ('log_frequency', 0.5822156198526637), ('picked', True), ('PATH', '../stimuli_figure/Machete.jpeg'), ('blank_dur', 0.6895565688745078), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Br\xe7\x85\xa4jula'), ('Mean_Valence', 5.105263157894737), ('SD_Valence', 1.5385053063037817), ('Mean_Arousal', 4.0), ('SD_Arousal', 1.9312508199945781), ('Mean_Familiarity', 3.84), ('SD_Familiarity', 2.230097157823697), ('Mean_Concreteness', 7.84), ('SD_Concreteness', 1.106044001535802), ('Frequency', 2.5), ('Length', 7), ('English', 'Compass'), ('log_frequency', 0.9162907318741552), ('picked', True), ('PATH', '../stimuli_figure/Compass.jpeg'), ('blank_dur', 0.4770215125454299), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Cebra'), ('Mean_Valence', 5.7105263157894735), ('SD_Valence', 1.4502170338382827), ('Mean_Arousal', 5.026315789473684), ('SD_Arousal', 1.731845478801922), ('Mean_Familiarity', 4.16), ('SD_Familiarity', 2.718455443813637), ('Mean_Concreteness', 7.52), ('SD_Concreteness', 2.2568414506414345), ('Frequency', 0.89), ('Length', 5), ('English', 'Zebra'), ('log_frequency', -0.11653381625595152), ('picked', True), ('PATH', '../stimuli_figure/Zebra.jpeg'), ('blank_dur', 0.6780495164580831), ('category', 'Living_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Arco'), ('Mean_Valence', 4.842105263157895), ('SD_Valence', 1.3259635107586647), ('Mean_Arousal', 4.052631578947368), ('SD_Arousal', 1.7076515946484954), ('Mean_Familiarity', 4.08), ('SD_Familiarity', 2.4650895859312425), ('Mean_Concreteness', 6.2), ('SD_Concreteness', 2.2546248764114467), ('Frequency', 22.86), ('Length', 4), ('English', 'Arc'), ('log_frequency', 3.1293886583666644), ('picked', True), ('PATH', '../stimuli_figure/Arc.jpeg'), ('blank_dur', 0.4242043722587088), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Culebra'), ('Mean_Valence', 1.8157894736842104), ('SD_Valence', 1.1821936357122866), ('Mean_Arousal', 7.578947368421053), ('SD_Arousal', 1.5357290538648978), ('Mean_Familiarity', 3.88), ('SD_Familiarity', 2.350886357667394), ('Mean_Concreteness', 7.32), ('SD_Concreteness', 1.5470401847829731), ('Frequency', 2.32), ('Length', 7), ('English', 'Snake'), ('log_frequency', 0.8415671856782185), ('picked', True), ('PATH', '../stimuli_figure/Snake.jpeg'), ('blank_dur', 0.5720166951302303), ('category', 'Living_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Lince'), ('Mean_Valence', 6.894736842105262), ('SD_Valence', 1.3313166351136376), ('Mean_Arousal', 6.657894736842105), ('SD_Arousal', 1.7285569014623643), ('Mean_Familiarity', 3.6), ('SD_Familiarity', 2.179449471770337), ('Mean_Concreteness', 6.76), ('SD_Concreteness', 2.1268129521265693), ('Frequency', 1.25), ('Length', 5), ('English', 'Lynx'), ('log_frequency', 0.22314355131420974), ('picked', True), ('PATH', '../stimuli_figure/Lynx.jpeg'), ('blank_dur', 0.4430948891756056), ('category', 'Living_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Alambre'), ('Mean_Valence', 3.263157894736842), ('SD_Valence', 1.605467188488873), ('Mean_Arousal', 4.026315789473684), ('SD_Arousal', 2.1496302900890374), ('Mean_Familiarity', 3.64), ('SD_Familiarity', 2.0591260281974), ('Mean_Concreteness', 7.4), ('SD_Concreteness', 1.3228756555322954), ('Frequency', 4.64), ('Length', 7), ('English', 'Wire'), ('log_frequency', 1.534714366238164), ('picked', True), ('PATH', '../stimuli_figure/Wire.jpeg'), ('blank_dur', 0.6209612541298068), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Orangut\xe8\xb0\xa9n'), ('Mean_Valence', 5.5), ('SD_Valence', 1.955587974069263), ('Mean_Arousal', 5.973684210526316), ('SD_Arousal', 1.9657450565400183), ('Mean_Familiarity', 3.16), ('SD_Familiarity', 2.173323108360405), ('Mean_Concreteness', 8.0), ('SD_Concreteness', 1.6329931618554518), ('Frequency', 1.07), ('Length', 9), ('English', 'Orangutan'), ('log_frequency', 0.06765864847381486), ('picked', True), ('PATH', '../stimuli_figure/Orangutan.jpeg'), ('blank_dur', 0.6722861990870898), ('category', 'Living_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Hamaca'), ('Mean_Valence', 7.0), ('SD_Valence', 1.506741607001768), ('Mean_Arousal', 3.3157894736842106), ('SD_Arousal', 2.267338756243072), ('Mean_Familiarity', 4.28), ('SD_Familiarity', 2.622339922028925), ('Mean_Concreteness', 7.88), ('SD_Concreteness', 1.3940349110884338), ('Frequency', 2.5), ('Length', 6), ('English', 'Hammock'), ('log_frequency', 0.9162907318741552), ('picked', True), ('PATH', '../stimuli_figure/Hammock.jpeg'), ('blank_dur', 0.36650836555215016), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Ciervo'), ('Mean_Valence', 6.526315789473684), ('SD_Valence', 1.2021791498743444), ('Mean_Arousal', 4.868421052631579), ('SD_Arousal', 1.7269102643641998), ('Mean_Familiarity', 3.24), ('SD_Familiarity', 2.259793500890439), ('Mean_Concreteness', 7.32), ('SD_Concreteness', 1.9941581348194704), ('Frequency', 1.79), ('Length', 6), ('English', 'Deer'), ('log_frequency', 0.5822156198526637), ('picked', True), ('PATH', '../stimuli_figure/Deer.jpeg'), ('blank_dur', 0.356584433268876), ('category', 'Living_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Babosa'), ('Mean_Valence', 2.131578947368421), ('SD_Valence', 1.3390406535939228), ('Mean_Arousal', 5.078947368421051), ('SD_Arousal', 2.5296253215496805), ('Mean_Familiarity', 3.44), ('SD_Familiarity', 2.2), ('Mean_Concreteness', 6.76), ('SD_Concreteness', 1.920937271229854), ('Frequency', 0.36), ('Length', 6), ('English', 'Slug'), ('log_frequency', -1.0216512475319814), ('picked', True), ('PATH', '../stimuli_figure/Slug.jpeg'), ('blank_dur', 0.4926109638741841), ('category', 'Living_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Patinete'), ('Mean_Valence', 5.7105263157894735), ('SD_Valence', 1.7692248224184892), ('Mean_Arousal', 5.105263157894737), ('SD_Arousal', 1.969901543488508), ('Mean_Familiarity', 3.52), ('SD_Familiarity', 2.181742422927143), ('Mean_Concreteness', 6.84), ('SD_Concreteness', 1.6753109164172073), ('Frequency', 0.18), ('Length', 8), ('English', 'Scooter'), ('log_frequency', -1.7147984280919266), ('picked', True), ('PATH', '../stimuli_figure/Scooter.jpeg'), ('blank_dur', 0.3395414379077053), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Cometa'), ('Mean_Valence', 6.315789473684211), ('SD_Valence', 1.416223817207838), ('Mean_Arousal', 5.184210526315789), ('SD_Arousal', 1.7375855126986577), ('Mean_Familiarity', 4.88), ('SD_Familiarity', 2.471841418861654), ('Mean_Concreteness', 7.24), ('SD_Concreteness', 1.8321208111548388), ('Frequency', 7.5), ('Length', 6), ('English', 'Kite'), ('log_frequency', 2.0149030205422647), ('picked', True), ('PATH', '../stimuli_figure/Kite.jpeg'), ('blank_dur', 0.6091721148344669), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Cocodrilo'), ('Mean_Valence', 4.631578947368421), ('SD_Valence', 1.93713430908564), ('Mean_Arousal', 6.605263157894738), ('SD_Arousal', 1.823858008997508), ('Mean_Familiarity', 4.52), ('SD_Familiarity', 2.5839246635044657), ('Mean_Concreteness', 7.88), ('SD_Concreteness', 1.4525839046333966), ('Frequency', 3.21), ('Length', 9), ('English', 'Crocodile'), ('log_frequency', 1.1662709371419244), ('picked', True), ('PATH', '../stimuli_figure/Crocodile.jpeg'), ('blank_dur', 0.6030256864678628), ('category', 'Living_Things')]), OrderedDict([('Category', 'animal'), ('Word', '\xe8\x84\x95guila'), ('Mean_Valence', 6.157894736842105), ('SD_Valence', 1.5513954623216122), ('Mean_Arousal', 6.0), ('SD_Arousal', 1.6765472885698187), ('Mean_Familiarity', 4.32), ('SD_Familiarity', 2.4447222064411878), ('Mean_Concreteness', 7.36), ('SD_Concreteness', 1.8), ('Frequency', 7.86), ('Length', 6), ('English', 'Eagle'), ('log_frequency', 2.0617866064411148), ('picked', True), ('PATH', '../stimuli_figure/Eagle.jpeg'), ('blank_dur', 0.40634409019617457), ('category', 'Living_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Ladrillo'), ('Mean_Valence', 4.2368421052631575), ('SD_Valence', 1.4965584036303192), ('Mean_Arousal', 3.3157894736842106), ('SD_Arousal', 1.817412225590012), ('Mean_Familiarity', 4.96), ('SD_Familiarity', 2.5735837529276826), ('Mean_Concreteness', 6.6), ('SD_Concreteness', 1.9578900207451213), ('Frequency', 8.04), ('Length', 8), ('English', 'Brick'), ('log_frequency', 2.0844290831908747), ('picked', True), ('PATH', '../stimuli_figure/Brick.jpeg'), ('blank_dur', 0.6857961239735098), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Ametralladora'), ('Mean_Valence', 1.4473684210526316), ('SD_Valence', 0.8913205635931025), ('Mean_Arousal', 7.315789473684211), ('SD_Arousal', 2.067839493456156), ('Mean_Familiarity', 3.6), ('SD_Familiarity', 2.3273733406281565), ('Mean_Concreteness', 6.84), ('SD_Concreteness', 2.321637353248779), ('Frequency', 0.08), ('Length', 13), ('English', 'Machine gun'), ('log_frequency', -2.525728644308256), ('picked', True), ('PATH', '../stimuli_figure/Machine gun.jpeg'), ('blank_dur', 0.6716018952169802), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'object'), ('Word', 'L\xe8\xb0\xa9tigo'), ('Mean_Valence', 3.0526315789473686), ('SD_Valence', 1.7850333999608572), ('Mean_Arousal', 5.815789473684211), ('SD_Arousal', 1.7219609054465201), ('Mean_Familiarity', 3.32), ('SD_Familiarity', 2.3043437243605824), ('Mean_Concreteness', 7.72), ('SD_Concreteness', 1.5143755588800725), ('Frequency', 4.46), ('Length', 6), ('English', 'Whip'), ('log_frequency', 1.4951487660319729), ('picked', True), ('PATH', '../stimuli_figure/Whip.jpeg'), ('blank_dur', 0.4297619487976969), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Ping\xe7\x9c\x89ino'), ('Mean_Valence', 7.0), ('SD_Valence', 1.506741607001768), ('Mean_Arousal', 4.947368421052632), ('SD_Arousal', 2.2773546581452395), ('Mean_Familiarity', 4.0), ('SD_Familiarity', 2.6770630673681683), ('Mean_Concreteness', 7.04), ('SD_Concreteness', 2.051016008388688), ('Frequency', 1.96), ('Length', 8), ('English', 'Penguin'), ('log_frequency', 0.6729444732424258), ('picked', True), ('PATH', '../stimuli_figure/Penguin.jpeg'), ('blank_dur', 0.5994736886779646), ('category', 'Living_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Mono'), ('Mean_Valence', 6.342105263157895), ('SD_Valence', 1.64852621796649), ('Mean_Arousal', 5.684210526315789), ('SD_Arousal', 2.041531793185916), ('Mean_Familiarity', 4.24), ('SD_Familiarity', 2.2412793965352322), ('Mean_Concreteness', 6.28), ('SD_Concreteness', 1.6713268182295562), ('Frequency', 18.21), ('Length', 4), ('English', 'Monkey'), ('log_frequency', 2.901970893739517), ('picked', True), ('PATH', '../stimuli_figure/Monkey.jpeg'), ('blank_dur', 0.49362509006778904), ('category', 'Living_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Camello'), ('Mean_Valence', 5.815789473684211), ('SD_Valence', 1.5041431637924283), ('Mean_Arousal', 4.868421052631579), ('SD_Arousal', 1.9054835894898383), ('Mean_Familiarity', 4.28), ('SD_Familiarity', 2.622339922028925), ('Mean_Concreteness', 7.56), ('SD_Concreteness', 1.293573860795485), ('Frequency', 2.32), ('Length', 7), ('English', 'Camel'), ('log_frequency', 0.8415671856782185), ('picked', True), ('PATH', '../stimuli_figure/Camel.jpeg'), ('blank_dur', 0.6761707371938879), ('category', 'Living_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Soplete'), ('Mean_Valence', 3.763157894736842), ('SD_Valence', 1.618043705792556), ('Mean_Arousal', 4.842105263157895), ('SD_Arousal', 2.0205206151355566), ('Mean_Familiarity', 3.9166666666666665), ('SD_Familiarity', 2.7491764247666524), ('Mean_Concreteness', 7.4), ('SD_Concreteness', 1.5275252316519468), ('Frequency', 2.5), ('Length', 7), ('English', 'Blowtorch'), ('log_frequency', 0.9162907318741552), ('picked', True), ('PATH', '../stimuli_figure/Blowtorch.jpeg'), ('blank_dur', 0.3265927378113443), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Asno'), ('Mean_Valence', 5.315789473684211), ('SD_Valence', 1.6942711604969272), ('Mean_Arousal', 4.526315789473684), ('SD_Arousal', 1.5894388284780532), ('Mean_Familiarity', 3.32), ('SD_Familiarity', 2.3043437243605824), ('Mean_Concreteness', 6.88), ('SD_Concreteness', 1.943364779619789), ('Frequency', 3.93), ('Length', 4), ('English', 'Donkey'), ('log_frequency', 1.3686394258811698), ('picked', True), ('PATH', '../stimuli_figure/Donkey.jpeg'), ('blank_dur', 0.5845153283008753), ('category', 'Living_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Escarabajo'), ('Mean_Valence', 3.3684210526315788), ('SD_Valence', 1.683321244598838), ('Mean_Arousal', 4.552631578947368), ('SD_Arousal', 2.2862381283489173), ('Mean_Familiarity', 3.36), ('SD_Familiarity', 1.8), ('Mean_Concreteness', 7.52), ('SD_Concreteness', 1.5307950004273383), ('Frequency', 1.43), ('Length', 10), ('English', 'Beetle'), ('log_frequency', 0.3576744442718159), ('picked', True), ('PATH', '../stimuli_figure/Beetle.jpeg'), ('blank_dur', 0.3994516770315879), ('category', 'Living_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Bengala'), ('Mean_Valence', 4.657894736842105), ('SD_Valence', 1.75955024642699), ('Mean_Arousal', 6.13157894736842), ('SD_Arousal', 1.5451939899481344), ('Mean_Familiarity', 3.16), ('SD_Familiarity', 1.8636880997992489), ('Mean_Concreteness', 7.08), ('SD_Concreteness', 1.5790292376436004), ('Frequency', 1.07), ('Length', 7), ('English', 'Bengal'), ('log_frequency', 0.06765864847381486), ('picked', True), ('PATH', '../stimuli_figure/Bengal.jpeg'), ('blank_dur', 0.4793428504331507), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Alfombra'), ('Mean_Valence', 5.026315789473684), ('SD_Valence', 1.1965455256191009), ('Mean_Arousal', 2.9210526315789487), ('SD_Arousal', 1.8215167268911472), ('Mean_Familiarity', 4.84), ('SD_Familiarity', 1.9723082923316024), ('Mean_Concreteness', 7.44), ('SD_Concreteness', 2.1617893822787955), ('Frequency', 16.07), ('Length', 8), ('English', 'Carpet'), ('log_frequency', 2.776954179749421), ('picked', True), ('PATH', '../stimuli_figure/Carpet.jpeg'), ('blank_dur', 0.4353028058083288), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Gaviota'), ('Mean_Valence', 5.0), ('SD_Valence', 1.9864405216230223), ('Mean_Arousal', 5.026315789473684), ('SD_Arousal', 1.9240559932469117), ('Mean_Familiarity', 4.36), ('SD_Familiarity', 2.325224003546038), ('Mean_Concreteness', 7.92), ('SD_Concreteness', 1.5524174696260014), ('Frequency', 2.5), ('Length', 7), ('English', 'Seagull'), ('log_frequency', 0.9162907318741552), ('picked', True), ('PATH', '../stimuli_figure/Seagull.jpeg'), ('blank_dur', 0.6335324363714059), ('category', 'Living_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Desag\xe7\x9c\x89e'), ('Mean_Valence', 2.9473684210526314), ('SD_Valence', 1.4877403221002128), ('Mean_Arousal', 4.078947368421051), ('SD_Arousal', 1.8362944318377408), ('Mean_Familiarity', 3.88), ('SD_Familiarity', 2.333095225946282), ('Mean_Concreteness', 7.36), ('SD_Concreteness', 1.380821011813865), ('Frequency', 1.07), ('Length', 7), ('English', 'Drain'), ('log_frequency', 0.06765864847381486), ('picked', True), ('PATH', '../stimuli_figure/Drain.jpeg'), ('blank_dur', 0.3688581622112192), ('category', 'Nonliving_Things')]), OrderedDict([('Category', 'animal'), ('Word', 'Gallina'), ('Mean_Valence', 4.578947368421051), ('SD_Valence', 1.2221288238233792), ('Mean_Arousal', 4.605263157894737), ('SD_Arousal', 1.6030287833434544), ('Mean_Familiarity', 4.64), ('SD_Familiarity', 2.6280537792569363), ('Mean_Concreteness', 6.92), ('SD_Concreteness', 2.3259406699226006), ('Frequency', 13.04), ('Length', 7), ('English', 'Hen'), ('log_frequency', 2.5680215564985067), ('picked', True), ('PATH', '../stimuli_figure/Hen.jpeg'), ('blank_dur', 0.6461740608013807), ('category', 'Living_Things')]), OrderedDict([('Category', 'object'), ('Word', 'Faja'), ('Mean_Valence', 3.684210526315789), ('SD_Valence', 1.6620609667468578), ('Mean_Arousal', 3.842105263157895), ('SD_Arousal', 1.808782116612434), ('Mean_Familiarity', 3.96), ('SD_Familiarity', 2.4913182588073064), ('Mean_Concreteness', 7.041666666666668), ('SD_Concreteness', 1.3344650993747542), ('Frequency', 2.32), ('Length', 4), ('English', 'Belt'), ('log_frequency', 0.8415671856782185), ('picked', True), ('PATH', '../stimuli_figure/Belt.jpeg'), ('blank_dur', 0.4318102199489893), ('category', 'Nonliving_Things')])]" valType="str"/>
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
     </LoopInitiator>
     <Routine name="fixation"/>
     <Routine name="premask"/>
