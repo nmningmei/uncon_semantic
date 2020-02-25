@@ -1,8 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-This experiment was created using PsychoPy2 Experiment Builder (v1.90.1),
-    on February 24, 2020, at 17:17
+This experiment was created using PsychoPy2 Experiment Builder (v1.85.4),
+    on February 25, 2020, at 11:13
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -11,7 +11,7 @@ If you publish work using this script please cite the PsychoPy publications:
 """
 
 from __future__ import absolute_import, division
-from psychopy import locale_setup, sound, gui, visual, core, data, event, logging, clock
+from psychopy import locale_setup, sound, gui, visual, core, data, event, logging
 from psychopy.constants import (NOT_STARTED, STARTED, PLAYING, PAUSED,
                                 STOPPED, FINISHED, PRESSED, RELEASED, FOREVER)
 import numpy as np  # whole numpy lib is available, prepend 'np.'
@@ -26,8 +26,8 @@ _thisDir = os.path.dirname(os.path.abspath(__file__)).decode(sys.getfilesystemen
 os.chdir(_thisDir)
 
 # Store info about the experiment session
-expName = u'experiment'  # from the Builder filename that created this script
-expInfo = {u'n_square': u'64', u'opacity': u'0.1', u'lowest_opacity': u'0.1', u'probeFrames': u'4', u'participant': u'test', u'session': u'1', u'image_size': u'512', u'premask': u'4', u'step_size': u'0.1', u'postmask': u'4'}
+expName = 'experiment'  # from the Builder filename that created this script
+expInfo = {u'opacity': u'0.1', u'n_square': u'64', u'lowest_opacity': u'0.02', u'probeFrames': u'4', u'participant': u'test', u'mask_dur': u'4', u'step_size': u'0.05', u'session': u'1', u'image_size': u'512'}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False:
     core.quit()  # user pressed cancel
@@ -35,7 +35,7 @@ expInfo['date'] = data.getDateStr()  # add a simple timestamp
 expInfo['expName'] = expName
 
 # Data file name stem = absolute path + name; later add .psyexp, .csv, .log, etc
-filename = _thisDir + os.sep + 'data/%s/%s_%s' %(expInfo['participant'], expName, expInfo['date'])
+filename = _thisDir + os.sep + u'data/%s/%s_%s' % (expInfo['participant'], expName, expInfo['date'])
 
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
@@ -53,9 +53,9 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
 # Setup the Window
 win = visual.Window(
-    size=[1280, 720], fullscr=True, screen=0,
+    size=(1280, 720), fullscr=True, screen=0,
     allowGUI=False, allowStencil=False,
-    monitor=u'testMonitor', color=[-1.000,-1.000,-1.000], colorSpace='rgb',
+    monitor='testMonitor', color=[-1,-1,-1], colorSpace='rgb',
     blendMode='avg', useFBO=True)
 # store frame rate of monitor if we can measure it
 expInfo['frameRate'] = win.getActualFrameRate()
@@ -68,8 +68,7 @@ else:
 introClock = core.Clock()
 globalClock = core.Clock()
 
-premask_dur = int(expInfo['premask'])
-postmask_dur = int(expInfo['postmask'])
+mask_dur = int(expInfo['mask_dur'])
 n_square = int(expInfo['n_square'])
 image_size = int(expInfo['image_size'])
 opacity = float(expInfo['opacity'])
@@ -106,15 +105,15 @@ n_unconscious = 0
 # Initialize components for Routine "intoPrepare"
 intoPrepareClock = core.Clock()
 preparation = visual.TextStim(win=win, name='preparation',
-    text=None,
+    text='+',
     font='Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
     depth=0.0);
 first_blank = visual.TextStim(win=win, name='first_blank',
     text=None,
     font='Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
     depth=-1.0);
 
@@ -123,13 +122,13 @@ fixationClock = core.Clock()
 fixation_cross = visual.TextStim(win=win, name='fixation_cross',
     text='+',
     font='Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
     depth=0.0);
 blank_period = visual.TextStim(win=win, name='blank_period',
     text=None,
     font='Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
     depth=-1.0);
 
@@ -139,19 +138,19 @@ premaskClock = core.Clock()
 premasking = visual.GratingStim(
     win=win, name='premasking',units='pix', 
     tex=masks, mask=None,
-    ori=0, pos=[0, 0], size=(image_size/1.5, image_size/1.5), sf=None, phase=0.0,
-    color=[1,1,1], colorSpace='rgb', opacity=1,blendmode='avg',
+    ori=0, pos=(0, 0), size=(image_size/1.75,image_size/1.75), sf=None, phase=0.0,
+    color=[1,1,1], colorSpace='rgb', opacity=1,
     texRes=256, interpolate=True, depth=0.0)
 
 # Initialize components for Routine "trial"
 trialClock = core.Clock()
 import sys
 reload(sys)
-sys.setdefaultencoding("latin-1")
+sys.setdefaultencoding('latin-1')
 presentation = visual.ImageStim(
     win=win, name='presentation',units='pix', 
     image='sin', mask=None,
-    ori=0, pos=(0, 0), size=(image_size, image_size),
+    ori=0, pos=(0, 0), size=(image_size,image_size),
     color=[1,1,1], colorSpace='rgb', opacity=1.0,
     flipHoriz=False, flipVert=False,
     texRes=256, interpolate=True, depth=-1.0)
@@ -161,16 +160,16 @@ postmaskClock = core.Clock()
 postmasking = visual.GratingStim(
     win=win, name='postmasking',units='pix', 
     tex=masks, mask=None,
-    ori=0, pos=[0, 0], size=(image_size/1.5, image_size/1.5), sf=None, phase=0.0,
-    color=[1,1,1], colorSpace='rgb', opacity=1,blendmode='avg',
-    texRes=256, interpolate=True, depth=0.0)
+    ori=0, pos=(0, 0), size=(image_size/1.75,image_size/1.75), sf=None, phase=0.0,
+    color=[1,1,1], colorSpace='rgb', opacity=1,
+    texRes=512, interpolate=True, depth=0.0)
 
 # Initialize components for Routine "jitter1"
 jitter1Clock = core.Clock()
 jitter_delay = visual.TextStim(win=win, name='jitter_delay',
     text='+',
     font='Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
     depth=0.0);
 
@@ -181,7 +180,7 @@ discriminateClock = core.Clock()
 response_options = visual.TextStim(win=win, name='response_options',
     text='default text',
     font='Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
     depth=-1.0);
 
@@ -189,20 +188,20 @@ response_options = visual.TextStim(win=win, name='response_options',
 visibilityClock = core.Clock()
 
 visibility_message = visual.TextStim(win=win, name='visibility_message',
-    text=u'?',
-    font=u'Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
-    color=u'white', colorSpace='rgb', opacity=1,
+    text='?',
+    font='Arial',
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1,
     depth=-1.0);
 
 # Initialize components for Routine "jitter2"
 jitter2Clock = core.Clock()
 
 post_jitter = visual.TextStim(win=win, name='post_jitter',
-    text='default text',
-    font=u'Arial',
-    pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
-    color=u'white', colorSpace='rgb', opacity=1,
+    text='+',
+    font='Arial',
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1,
     depth=-1.0);
 
 # Initialize components for Routine "end_experiment"
@@ -273,7 +272,6 @@ t = 0
 intoPrepareClock.reset()  # clock
 frameN = -1
 continueRoutine = True
-routineTimer.add(0.400000)
 # update component parameters for each repeat
 # keep track of which components have finished
 intoPrepareComponents = [preparation, first_blank]
@@ -282,7 +280,7 @@ for thisComponent in intoPrepareComponents:
         thisComponent.status = NOT_STARTED
 
 # -------Start Routine "intoPrepare"-------
-while continueRoutine and routineTimer.getTime() > 0:
+while continueRoutine:
     # get current time
     t = intoPrepareClock.getTime()
     frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
@@ -294,18 +292,17 @@ while continueRoutine and routineTimer.getTime() > 0:
         preparation.tStart = t
         preparation.frameNStart = frameN  # exact frame index
         preparation.setAutoDraw(True)
-    frameRemains = 0.0 + .3- win.monitorFramePeriod * 0.75  # most of one frame period left
+    frameRemains = 0.0 + 5- win.monitorFramePeriod * 0.75  # most of one frame period left
     if preparation.status == STARTED and t >= frameRemains:
         preparation.setAutoDraw(False)
     
     # *first_blank* updates
-    if t >= .3 and first_blank.status == NOT_STARTED:
+    if (preparation.status == FINISHED) and first_blank.status == NOT_STARTED:
         # keep track of start time/frame for later
         first_blank.tStart = t
         first_blank.frameNStart = frameN  # exact frame index
         first_blank.setAutoDraw(True)
-    frameRemains = .3 + .1- win.monitorFramePeriod * 0.75  # most of one frame period left
-    if first_blank.status == STARTED and t >= frameRemains:
+    if first_blank.status == STARTED and t >= (first_blank.tStart + 5):
         first_blank.setAutoDraw(False)
     
     # check if all components have finished
@@ -329,6 +326,8 @@ while continueRoutine and routineTimer.getTime() > 0:
 for thisComponent in intoPrepareComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
+# the Routine "intoPrepare" was not non-slip safe, so reset the non-slip timer
+routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
 main_loop = data.TrialHandler(nReps=1, method='random', 
@@ -339,15 +338,15 @@ thisExp.addLoop(main_loop)  # add the loop to the experiment
 thisMain_loop = main_loop.trialList[0]  # so we can initialise stimuli with some values
 # abbreviate parameter names if possible (e.g. rgb = thisMain_loop.rgb)
 if thisMain_loop != None:
-    for paramName in thisMain_loop:
-        exec('{} = thisMain_loop[paramName]'.format(paramName))
+    for paramName in thisMain_loop.keys():
+        exec(paramName + '= thisMain_loop.' + paramName)
 
 for thisMain_loop in main_loop:
     currentLoop = main_loop
     # abbreviate parameter names if possible (e.g. rgb = thisMain_loop.rgb)
     if thisMain_loop != None:
-        for paramName in thisMain_loop:
-            exec('{} = thisMain_loop[paramName]'.format(paramName))
+        for paramName in thisMain_loop.keys():
+            exec(paramName + '= thisMain_loop.' + paramName)
     
     # ------Prepare to start Routine "fixation"-------
     t = 0
@@ -441,7 +440,7 @@ for thisMain_loop in main_loop:
             premasking.tStart = t
             premasking.frameNStart = frameN  # exact frame index
             premasking.setAutoDraw(True)
-        if premasking.status == STARTED and frameN >= (premasking.frameNStart + premask_dur):
+        if premasking.status == STARTED and frameN >= (premasking.frameNStart + mask_dur):
             premasking.setAutoDraw(False)
         
         # check if all components have finished
@@ -474,9 +473,9 @@ for thisMain_loop in main_loop:
     frameN = -1
     continueRoutine = True
     # update component parameters for each repeat
-    main_loop.addData("image_onset_time", globalClock.getTime() - startTime)
-    presentation.setImage(PATH_english)
+    main_loop.addData("image_onset_time",globalClock.getTime() - startTime)
     presentation.setOpacity(opacity)
+    presentation.setImage(PATH_english)
     # keep track of which components have finished
     trialComponents = [presentation]
     for thisComponent in trialComponents:
@@ -551,7 +550,7 @@ for thisMain_loop in main_loop:
             postmasking.tStart = t
             postmasking.frameNStart = frameN  # exact frame index
             postmasking.setAutoDraw(True)
-        if postmasking.status == STARTED and frameN >= (postmasking.frameNStart + postmask_dur):
+        if postmasking.status == STARTED and frameN >= (postmasking.frameNStart + mask_dur):
             postmasking.setAutoDraw(False)
         
         # check if all components have finished
@@ -787,7 +786,7 @@ for thisMain_loop in main_loop:
                 visible.keys = theseKeys[-1]  # just the last key pressed
                 visible.rt = visible.clock.getTime()
                 # was this 'correct'?
-                if (visible.keys == str(u"'1'")) or (visible.keys == u"'1'"):
+                if (visible.keys == str("'1'")) or (visible.keys == "'1'"):
                     visible.corr = 1
                 else:
                     visible.corr = 0
@@ -850,7 +849,7 @@ for thisMain_loop in main_loop:
     if visible.keys in ['', [], None]:  # No response was made
         visible.keys=None
         # was no response the correct answer?!
-        if str(u"'1'").lower() == 'none':
+        if str("'1'").lower() == 'none':
            visible.corr = 1  # correct non-response
         else:
            visible.corr = 0  # failed to respond (incorrectly)
@@ -876,7 +875,6 @@ for thisMain_loop in main_loop:
     msg_post = '{}/{}, mean unconscious = {:.2f},opacity = {:.1f},p(correct) = {:.2f}'.format(
             main_loop.thisN+1,main_loop.nTotal,
             n_unconscious/(main_loop.thisN+1),opacity,meanacc)
-    post_jitter.setText(msg_post)
     # keep track of which components have finished
     jitter2Components = [post_jitter]
     for thisComponent in jitter2Components:
@@ -994,8 +992,9 @@ routineTimer.reset()
 
 
 print(globalClock.getTime() - startTime)
-print("mean unconscious = {:.2f}, frame = {}, p(correct) = {:.2f}".format(
-    meanvis,curr,meanacc))
+print('{}/{}, mean unconscious = {:.2f},opacity = {:.1f},p(correct) = {:.2f}'.format(
+        main_loop.thisN+1,main_loop.nTotal,
+        n_unconscious/(main_loop.thisN+1),opacity,meanacc))
 # these shouldn't be strictly necessary (should auto-save)
 thisExp.saveAsWideText(filename+'.csv')
 thisExp.saveAsPickle(filename)
