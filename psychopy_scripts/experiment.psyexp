@@ -1,4 +1,5 @@
 <?xml version="1.0" ?>
+<<<<<<< HEAD
 <PsychoPy2experiment encoding="utf-8" version="1.83.04">
   <Settings>
     <Param name="Monitor" updates="None" val="testMonitor" valType="str"/>
@@ -14,10 +15,26 @@
     <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
     <Param name="Window size (pixels)" updates="None" val="[1024, 768]" valType="code"/>
     <Param name="Audio latency priority" updates="None" val="use prefs" valType="str"/>
+=======
+<PsychoPy2experiment encoding="utf-8" version="1.85.4">
+  <Settings>
+    <Param name="Monitor" updates="None" val="testMonitor" valType="str"/>
+    <Param name="color" updates="None" val="$[-1,-1,-1]" valType="str"/>
+    <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
+    <Param name="Experiment info" updates="None" val="{u'opacity': u'0.1', u'n_square': u'64', u'lowest_opacity': u'0.02', u'probeFrames': u'4', u'participant': u'test', u'mask_dur': u'4', u'step_size': u'0.05', u'session': u'1', u'image_size': u'512'}" valType="code"/>
+    <Param name="JS libs" updates="None" val="packaged" valType="str"/>
+    <Param name="Units" updates="None" val="use prefs" valType="str"/>
+    <Param name="Save excel file" updates="None" val="False" valType="bool"/>
+    <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
+    <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
+    <Param name="Window size (pixels)" updates="None" val="[1280, 720]" valType="code"/>
+    <Param name="Full-screen window" updates="None" val="True" valType="bool"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
     <Param name="blendMode" updates="None" val="avg" valType="str"/>
     <Param name="Use version" updates="None" val="" valType="str"/>
     <Param name="HTML path" updates="None" val="html" valType="str"/>
     <Param name="Save csv file" updates="None" val="True" valType="bool"/>
+<<<<<<< HEAD
     <Param name="Save log file" updates="None" val="True" valType="bool"/>
     <Param name="Save wide csv file" updates="None" val="True" valType="bool"/>
     <Param name="exportHTML" updates="None" val="on Sync" valType="str"/>
@@ -55,6 +72,48 @@
         <Param name="sf" updates="constant" val="None" valType="code"/>
         <Param name="size" updates="constant" val="$(image_size/1.5, image_size/1.5)" valType="code"/>
       </GratingComponent>
+=======
+    <Param name="OSF Project ID" updates="None" val="" valType="str"/>
+    <Param name="Save log file" updates="None" val="True" valType="bool"/>
+    <Param name="Save wide csv file" updates="None" val="True" valType="bool"/>
+    <Param name="Show mouse" updates="None" val="False" valType="bool"/>
+    <Param name="Data filename" updates="None" val="u'data/%s/%s_%s' % (expInfo['participant'], expName, expInfo['date'])" valType="code"/>
+    <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
+    <Param name="expName" updates="None" val="experiment" valType="str"/>
+    <Param name="logging level" updates="None" val="exp" valType="code"/>
+    <Param name="Screen" updates="None" val="1" valType="num"/>
+  </Settings>
+  <Routines>
+    <Routine name="jitter1">
+      <TextComponent name="jitter_delay">
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="jitter_delay" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="constant" val="+" valType="str"/>
+        <Param name="stopVal" updates="constant" val="$jitter1_dur" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+      </TextComponent>
+      <CodeComponent name="log_jitter_delay">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="name" updates="None" val="log_jitter_delay" valType="code"/>
+        <Param name="Begin Routine" updates="constant" val="jitter1_dur = jitter1_dur_options[jitter_counter]&amp;#10;main_loop.addData('jitter1',jitter1_dur)" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+      </CodeComponent>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
     </Routine>
     <Routine name="discriminate">
       <CodeComponent name="get_response">
@@ -74,7 +133,11 @@
         <Param name="text" updates="set every repeat" val="$resp_msg" valType="str"/>
         <Param name="stopVal" updates="constant" val="1.5" valType="code"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
+<<<<<<< HEAD
         <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+=======
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
         <Param name="flip" updates="constant" val="" valType="str"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
@@ -112,7 +175,11 @@
         <Param name="text" updates="constant" val="+" valType="str"/>
         <Param name="stopVal" updates="constant" val="0.5" valType="code"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
+<<<<<<< HEAD
         <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+=======
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
         <Param name="flip" updates="constant" val="" valType="str"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
@@ -132,7 +199,11 @@
         <Param name="text" updates="constant" val="" valType="str"/>
         <Param name="stopVal" updates="constant" val="$blank_dur" valType="code"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
+<<<<<<< HEAD
         <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+=======
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
         <Param name="flip" updates="constant" val="" valType="str"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
@@ -157,7 +228,11 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="name" updates="None" val="trigger_visibility" valType="code"/>
         <Param name="Begin Routine" updates="constant" val="main_loop.addData(&quot;visible_resptime&quot;, globalClock.getTime() - startTime)" valType="extendedCode"/>
+<<<<<<< HEAD
         <Param name="End Routine" updates="constant" val="count += 1&amp;#10;main_loop.addData('opacity',opacity)&amp;#10;&amp;#10;#if (visible.keys == str('1')) or (visible.keys == '1'):# invisible&amp;#10;#    opacity += np.random.choice([0.1, 0.2, 0.3],size = 1)[0]&amp;#10;#    if opacity &gt; 1: opacity = 1&amp;#10;#    #curr += np.random.choice([1,2,3],size=1)[0]&amp;#10;#    #if curr &lt; 1:  curr = 1&amp;#10;#elif (visible.keys == str('2')) or (visible.keys == '2'):# partially aware&amp;#10;#    opacity -= 0.1&amp;#10;#    if opacity &lt; lowest_opacity: opacity = lowest_opacity&amp;#10;#    #curr -= 1&amp;#10;#    #if curr &lt; 1:  curr = 1 &amp;#10;#elif (visible.keys == str('3')) or (visible.keys == '3'): # visible&amp;#10;#    opacity -= np.random.choice([0.1, 0.2, 0.3],size = 1)[0]&amp;#10;#    if opacity &lt; lowest_opacity: opacity = lowest_opacity&amp;#10;#    #curr -= np.random.choice([2,3],size=1,p=[0.5,0.5])[0]&amp;#10;#    #if curr &lt; 1: curr = 1&amp;#10;&amp;#10;temp_corr&amp;#10;if ((visible.keys == str('1')) or (visible.keys == '1')) and (temp_corr == 0): #invisible and incorrect&amp;#10;    opacity += 0.2&amp;#10;elif ((visible.keys == str('1')) or (visible.keys == '1')) and (temp_corr == 1): #invisible and correct&amp;#10;    opacity += 0.1&amp;#10;elif ((visible.keys == str('2')) or (visible.keys == '2')) and (temp_corr == 0): #visible and incorrect&amp;#10;    opacity -= 0.1&amp;#10;elif ((visible.keys == str('2')) or (visible.keys == '2')) and (temp_corr == 1): #visible and correct&amp;#10;    opacity -= 0.2" valType="extendedCode"/>
+=======
+        <Param name="End Routine" updates="constant" val="count += 1&amp;#10;main_loop.addData('opacity',opacity)&amp;#10;&amp;#10;#if (visible.keys == str('1')) or (visible.keys == '1'):# invisible&amp;#10;#    opacity += np.random.choice([0.02, 0.04, 0.08],size = 1)[0]&amp;#10;#    if opacity &gt; 1: opacity = 1&amp;#10;#    #curr += np.random.choice([1,2,3],size=1)[0]&amp;#10;#    #if curr &lt; 1:  curr = 1&amp;#10;#elif (visible.keys == str('2')) or (visible.keys == '2'):# partially aware&amp;#10;#    opacity -= 0.1&amp;#10;#    if opacity &lt; lowest_opacity: opacity = lowest_opacity&amp;#10;#    #curr -= 1&amp;#10;#    #if curr &lt; 1:  curr = 1 &amp;#10;#elif (visible.keys == str('3')) or (visible.keys == '3'): # visible&amp;#10;#    opacity -= np.random.choice([0.02, 0.04, 0.08],size = 1)[0]&amp;#10;#    if opacity &lt; lowest_opacity: opacity = lowest_opacity&amp;#10;#    #curr -= np.random.choice([2,3],size=1,p=[0.5,0.5])[0]&amp;#10;#    #if curr &lt; 1: curr = 1&amp;#10;&amp;#10;if ((visible.keys == str('1')) or (visible.keys == '1')) and (temp_corr == 0): # invisible and incorrect&amp;#10;    opacity += 2 * step_size&amp;#10;    unconscious_trials.append(temp_corr)&amp;#10;    n_unconscious += 1&amp;#10;elif ((visible.keys == str('1')) or (visible.keys == '1')) and (temp_corr == 1): # invisible and correct&amp;#10;    opacity += step_size&amp;#10;    unconscious_trials.append(temp_corr)&amp;#10;    n_unconscious += 1&amp;#10;elif ((visible.keys == str('2')) or (visible.keys == '2')) and (temp_corr == 0): # visible and incorrect&amp;#10;    opacity -= step_size&amp;#10;    if opacity &lt; lowest_opacity: opacity = lowest_opacity&amp;#10;elif ((visible.keys == str('2')) or (visible.keys == '2')) and (temp_corr == 1): # visible and correct&amp;#10;    opacity -= 2 * step_size&amp;#10;    if opacity &lt; lowest_opacity: opacity = lowest_opacity" valType="extendedCode"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
       </CodeComponent>
@@ -170,7 +245,11 @@
         <Param name="text" updates="constant" val="?" valType="str"/>
         <Param name="stopVal" updates="constant" val="1.5" valType="code"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
+<<<<<<< HEAD
         <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+=======
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
         <Param name="flip" updates="constant" val="" valType="str"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
@@ -198,6 +277,7 @@
         <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
       </KeyboardComponent>
     </Routine>
+<<<<<<< HEAD
     <Routine name="jitter1">
       <TextComponent name="jitter_delay">
         <Param name="opacity" updates="constant" val="1" valType="code"/>
@@ -241,10 +321,43 @@
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+=======
+    <Routine name="premask">
+      <GratingComponent name="premasking">
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="tex" updates="set every repeat" val="$masks" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="premasking" valType="code"/>
+        <Param name="color" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="stopVal" updates="constant" val="$mask_dur" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="pix" valType="str"/>
+        <Param name="texture resolution" updates="constant" val="256" valType="code"/>
+        <Param name="phase" updates="constant" val="0.0" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="sf" updates="constant" val="None" valType="code"/>
+        <Param name="size" updates="constant" val="(image_size/1.75,image_size/1.75)" valType="code"/>
+      </GratingComponent>
+    </Routine>
+    <Routine name="trial">
+      <CodeComponent name="importing">
+        <Param name="Begin Experiment" updates="constant" val="import sys&amp;#10;reload(sys)&amp;#10;sys.setdefaultencoding('latin-1')" valType="extendedCode"/>
+        <Param name="name" updates="None" val="importing" valType="code"/>
+        <Param name="Begin Routine" updates="constant" val="main_loop.addData(&quot;image_onset_time&quot;,globalClock.getTime() - startTime)" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
       </CodeComponent>
       <ImageComponent name="presentation">
+<<<<<<< HEAD
         <Param name="flipVert" updates="constant" val="False" valType="bool"/>
         <Param name="color" updates="constant" val="$[1,1,1]" valType="str"/>
         <Param name="image" updates="set every repeat" val="$PATH" valType="str"/>
@@ -268,11 +381,37 @@
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
         <Param name="mask" updates="constant" val="None" valType="str"/>
         <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
+=======
+        <Param name="opacity" updates="set every repeat" val="$opacity" valType="code"/>
+        <Param name="flipVert" updates="constant" val="False" valType="bool"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="presentation" valType="code"/>
+        <Param name="color" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="stopVal" updates="constant" val="$curr" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="pix" valType="str"/>
+        <Param name="texture resolution" updates="constant" val="256" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
+        <Param name="image" updates="set every repeat" val="$PATH_english" valType="str"/>
+        <Param name="size" updates="constant" val="(image_size,image_size)" valType="code"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
       </ImageComponent>
     </Routine>
     <Routine name="intro">
       <CodeComponent name="settingThingsUp">
+<<<<<<< HEAD
         <Param name="Begin Experiment" updates="constant" val="globalClock = core.Clock()&amp;#10;&amp;#10;premask_dur = int(expInfo['premask'])&amp;#10;postmask_dur = int(expInfo['postmask'])&amp;#10;n_square = int(expInfo['n_square'])&amp;#10;image_size = int(expInfo['image_size'])&amp;#10;opacity = float(expInfo['opacity'])&amp;#10;session = int(expInfo['session'])&amp;#10;&amp;#10;curr = int(expInfo['probeFrames'])&amp;#10;lowest_opacity = float(expInfo['lowest_opacity'])&amp;#10;count = 0&amp;#10;&amp;#10;import time&amp;#10;from psychopy import parallel&amp;#10;parallel.setPortAddress(888)&amp;#10;wait_msg = &quot;Wating for Scanner ...&quot;&amp;#10;msg = visual.TextStim(win,color = 'DarkGray',text = wait_msg)&amp;#10;&amp;#10;# jitter 1&amp;#10;jitter_counter = 0&amp;#10;jitter1_dur_options = np.concatenate([[1.5]*16,[2.0]*8,[2.5]*6,[3.0]*4,[3.5]*4])&amp;#10;np.random.shuffle(jitter1_dur_options)&amp;#10;&amp;#10;# jitter 2&amp;#10;jitter2_dur_options = np.concatenate([[6.0]*16,[6.5]*8,[7.0]*6,[7.5]*4,[8.0]*4])&amp;#10;np.random.shuffle(jitter2_dur_options)&amp;#10;&amp;#10;np.random.seed(12345)&amp;#10;pepe = np.random.rand(n_square,n_square)*2 - 1" valType="extendedCode"/>
+=======
+        <Param name="Begin Experiment" updates="constant" val="globalClock = core.Clock()&amp;#10;&amp;#10;mask_dur = int(expInfo['mask_dur'])&amp;#10;n_square = int(expInfo['n_square'])&amp;#10;image_size = int(expInfo['image_size'])&amp;#10;opacity = float(expInfo['opacity'])&amp;#10;session = int(expInfo['session'])&amp;#10;step_size = float(expInfo['step_size'])&amp;#10;&amp;#10;curr = int(expInfo['probeFrames'])&amp;#10;lowest_opacity = float(expInfo['lowest_opacity'])&amp;#10;count = 0&amp;#10;&amp;#10;import time&amp;#10;from psychopy import parallel&amp;#10;parallel.setPortAddress(888)&amp;#10;wait_msg = &quot;Wating for Scanner ...&quot;&amp;#10;msg = visual.TextStim(win,color = 'DarkGray',text = wait_msg)&amp;#10;&amp;#10;# jitter 1&amp;#10;jitter_counter = 0&amp;#10;jitter1_dur_options = np.concatenate([[1.5]*16,[2.0]*8,[2.5]*6,[3.0]*4,[3.5]*4])&amp;#10;np.random.shuffle(jitter1_dur_options)&amp;#10;&amp;#10;# jitter 2&amp;#10;jitter2_dur_options = np.concatenate([[6.0]*16,[6.5]*8,[7.0]*6,[7.5]*4,[8.0]*4])&amp;#10;np.random.shuffle(jitter2_dur_options)&amp;#10;&amp;#10;np.random.seed(12345)&amp;#10;masks = np.random.rand(n_square,n_square)*2 - 1&amp;#10;&amp;#10;# save corrections of trials of unconscious&amp;#10;unconscious_trials = []&amp;#10;# count unconscious trials&amp;#10;n_unconscious = 0" valType="extendedCode"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
         <Param name="name" updates="None" val="settingThingsUp" valType="code"/>
         <Param name="Begin Routine" updates="constant" val="msg.draw()&amp;#10;win.flip()&amp;#10;&amp;#10;while True:&amp;#10;    if (event.getKeys() == ['q']):#(parallel.readPin(10) == 1) or &amp;#10;        break&amp;#10;    else:&amp;#10;        time.sleep(0.0001) # give 1ms to other processes&amp;#10;globalClock.reset()&amp;#10;startTime = globalClock.getTime()" valType="extendedCode"/>
         <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
@@ -286,7 +425,11 @@
         <Param name="name" updates="None" val="theEnd" valType="code"/>
         <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+<<<<<<< HEAD
         <Param name="End Experiment" updates="constant" val="print(globalClock.getTime() - startTime)&amp;#10;print(&quot;mean unconscious = {:.2f}, frame = {}, p(correct) = {:.2f}&quot;.format(&amp;#10;    meanvis,curr,meanacc))" valType="extendedCode"/>
+=======
+        <Param name="End Experiment" updates="constant" val="print(globalClock.getTime() - startTime)&amp;#10;print('{}/{}, mean unconscious = {:.2f},opacity = {:.1f},p(correct) = {:.2f}'.format(&amp;#10;        main_loop.thisN+1,main_loop.nTotal,&amp;#10;        n_unconscious/(main_loop.thisN+1),opacity,meanacc))" valType="extendedCode"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
       </CodeComponent>
     </Routine>
@@ -297,10 +440,17 @@
         <Param name="name" updates="None" val="preparation" valType="code"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
         <Param name="color" updates="constant" val="white" valType="str"/>
+<<<<<<< HEAD
         <Param name="text" updates="constant" val="" valType="str"/>
         <Param name="stopVal" updates="constant" val=".3" valType="code"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
         <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+=======
+        <Param name="text" updates="constant" val="+" valType="str"/>
+        <Param name="stopVal" updates="constant" val="5" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
         <Param name="flip" updates="constant" val="" valType="str"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
@@ -318,6 +468,7 @@
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
         <Param name="color" updates="constant" val="white" valType="str"/>
         <Param name="text" updates="constant" val="" valType="str"/>
+<<<<<<< HEAD
         <Param name="stopVal" updates="constant" val=".1" valType="code"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
         <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
@@ -328,6 +479,18 @@
         <Param name="ori" updates="constant" val="0" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="startVal" updates="None" val=".3" valType="code"/>
+=======
+        <Param name="stopVal" updates="constant" val="5" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="condition" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="$preparation.status == FINISHED" valType="code"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
         <Param name="font" updates="constant" val="Arial" valType="str"/>
         <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
       </TextComponent>
@@ -336,8 +499,13 @@
       <CodeComponent name="code_2">
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="name" updates="None" val="code_2" valType="code"/>
+<<<<<<< HEAD
         <Param name="Begin Routine" updates="constant" val="jitter2_delay_dur = jitter2_dur_options[jitter_counter]&amp;#10;main_loop.addData('jitter2',jitter2_delay_dur)&amp;#10;jitter_counter += 1" valType="extendedCode"/>
         <Param name="End Routine" updates="constant" val="meanacc = main_loop.data['response.corr'].mean()&amp;#10;meanvis = main_loop.data['visible.corr'].mean()&amp;#10;&amp;#10;print('{}/{}, mean unconscious = {:.2f},opacity = {},p(correct) = {:.2f}'.format(&amp;#10;        main_loop.thisN,main_loop.nTotal,&amp;#10;        meanvis,opacity,meanacc))" valType="extendedCode"/>
+=======
+        <Param name="Begin Routine" updates="constant" val="jitter2_delay_dur = jitter2_dur_options[jitter_counter]&amp;#10;main_loop.addData('jitter2',jitter2_delay_dur)&amp;#10;jitter_counter += 1&amp;#10;&amp;#10;meanacc = main_loop.data['response.corr'].mean()&amp;#10;&amp;#10;&amp;#10;msg_post = '{}/{}, mean unconscious = {:.2f},opacity = {:.1f},p(correct) = {:.2f}'.format(&amp;#10;        main_loop.thisN+1,main_loop.nTotal,&amp;#10;        n_unconscious/(main_loop.thisN+1),opacity,meanacc)" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="print('{}/{}, mean unconscious = {:.2f},opacity = {:.1f},p(correct) = {:.2f}'.format(&amp;#10;        main_loop.thisN+1,main_loop.nTotal,&amp;#10;        n_unconscious/(main_loop.thisN+1),opacity,meanacc))" valType="extendedCode"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
       </CodeComponent>
@@ -348,9 +516,15 @@
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
         <Param name="color" updates="constant" val="white" valType="str"/>
         <Param name="text" updates="constant" val="+" valType="str"/>
+<<<<<<< HEAD
         <Param name="stopVal" updates="constant" val="1" valType="code"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
         <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+=======
+        <Param name="stopVal" updates="constant" val="$jitter2_delay_dur" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
         <Param name="flip" updates="constant" val="" valType="str"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
@@ -365,6 +539,7 @@
     <Routine name="postmask">
       <GratingComponent name="postmasking">
         <Param name="opacity" updates="constant" val="1" valType="code"/>
+<<<<<<< HEAD
         <Param name="tex" updates="constant" val="$pepe" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
         <Param name="name" updates="None" val="postmasking" valType="code"/>
@@ -377,13 +552,31 @@
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="units" updates="None" val="pix" valType="str"/>
         <Param name="texture resolution" updates="constant" val="256" valType="code"/>
+=======
+        <Param name="tex" updates="set every repeat" val="$masks" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="postmasking" valType="code"/>
+        <Param name="color" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="stopVal" updates="constant" val="mask_dur" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="pix" valType="str"/>
+        <Param name="texture resolution" updates="constant" val="512" valType="code"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
         <Param name="phase" updates="constant" val="0.0" valType="code"/>
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
         <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
         <Param name="startVal" updates="None" val="0.0" valType="code"/>
         <Param name="sf" updates="constant" val="None" valType="code"/>
+<<<<<<< HEAD
         <Param name="size" updates="constant" val="$(image_size/1.5, image_size/1.5)" valType="code"/>
+=======
+        <Param name="size" updates="constant" val="(image_size/1.75,image_size/1.75)" valType="code"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
       </GratingComponent>
     </Routine>
   </Routines>
@@ -398,7 +591,11 @@
       <Param name="loopType" updates="None" val="random" valType="str"/>
       <Param name="nReps" updates="None" val="1" valType="code"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+<<<<<<< HEAD
       <Param name="conditions" updates="None" val="[{'Category': 'animal', 'Mean_Familiarity': 4.36, 'SD_Concreteness': 1.5524174696260014, 'Word': 'Gaviota', 'picked': True, 'Mean_Arousal': 5.026315789473684, 'Mean_Valence': 5.0, 'SD_Familiarity': 2.325224003546038, 'Length': 7, 'Frequency': 2.5, 'blank_dur': 0.6335324363714059, 'English': 'Seagull', 'log_frequency': 0.9162907318741552, 'PATH': '../stimuli_figure/Seagull.jpeg', 'category': 'Living_Things', 'SD_Arousal': 1.9240559932469117, 'SD_Valence': 1.9864405216230223, 'Mean_Concreteness': 7.92}, {'Category': 'animal', 'Mean_Familiarity': 4.24, 'SD_Concreteness': 2.6223399220289245, 'Word': 'Almeja', 'picked': True, 'Mean_Arousal': 3.4210526315789487, 'Mean_Valence': 4.921052631578949, 'SD_Familiarity': 2.3853720883753127, 'Length': 6, 'Frequency': 0.54, 'blank_dur': 0.35022490885271323, 'English': 'Clam', 'log_frequency': -0.6161861394238171, 'PATH': '../stimuli_figure/Clam.jpeg', 'category': 'Living_Things', 'SD_Arousal': 1.7496189383941527, 'SD_Valence': 1.6986732334124204, 'Mean_Concreteness': 6.72}, {'Category': 'animal', 'Mean_Familiarity': 4.72, 'SD_Concreteness': 1.468559384794046, 'Word': 'Oso', 'picked': True, 'Mean_Arousal': 5.2368421052631575, 'Mean_Valence': 5.605263157894738, 'SD_Familiarity': 2.685144316419509, 'Length': 3, 'Frequency': 11.43, 'blank_dur': 0.4893778749568593, 'English': 'Bear', 'log_frequency': 2.4362414778067194, 'PATH': '../stimuli_figure/Bear.jpeg', 'category': 'Living_Things', 'SD_Arousal': 2.07213443326696, 'SD_Valence': 1.7939760112321024, 'Mean_Concreteness': 7.64}, {'Category': 'object', 'Mean_Familiarity': 3.6, 'SD_Concreteness': 1.3228756555322954, 'Word': 'Misil', 'picked': True, 'Mean_Arousal': 6.789473684210527, 'Mean_Valence': 1.5526315789473684, 'SD_Familiarity': 2.3804761428476167, 'Length': 5, 'Frequency': 5.0, 'blank_dur': 0.4136258849875571, 'English': 'Missile', 'log_frequency': 1.6094379124341005, 'PATH': '../stimuli_figure/Missile.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 1.9885876386486108, 'SD_Valence': 0.7240041966823505, 'Mean_Concreteness': 7.8}, {'Category': 'object', 'Mean_Familiarity': 3.9166666666666665, 'SD_Concreteness': 1.5275252316519468, 'Word': 'Soplete', 'picked': True, 'Mean_Arousal': 4.842105263157895, 'Mean_Valence': 3.763157894736842, 'SD_Familiarity': 2.7491764247666524, 'Length': 7, 'Frequency': 2.5, 'blank_dur': 0.3265927378113443, 'English': 'Blowtorch', 'log_frequency': 0.9162907318741552, 'PATH': '../stimuli_figure/Blowtorch.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 2.0205206151355566, 'SD_Valence': 1.618043705792556, 'Mean_Concreteness': 7.4}, {'Category': 'object', 'Mean_Familiarity': 4.8, 'SD_Concreteness': 2.142428528562856, 'Word': 'Peluche', 'picked': True, 'Mean_Arousal': 4.157894736842104, 'Mean_Valence': 7.473684210526316, 'SD_Familiarity': 2.4152294576982403, 'Length': 7, 'Frequency': 2.14, 'blank_dur': 0.5806393224773664, 'English': 'Teddy', 'log_frequency': 0.7608058290337602, 'PATH': '../stimuli_figure/Teddy.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 2.5204709533057583, 'SD_Valence': 1.2244544754488242, 'Mean_Concreteness': 6.56}, {'Category': 'animal', 'Mean_Familiarity': 3.68, 'SD_Concreteness': 1.2476644848141918, 'Word': 'Oveja', 'picked': True, 'Mean_Arousal': 4.026315789473684, 'Mean_Valence': 5.657894736842105, 'SD_Familiarity': 2.1354156504062622, 'Length': 5, 'Frequency': 6.61, 'blank_dur': 0.5424277486920208, 'English': 'Sheep', 'log_frequency': 1.8885836538635947, 'PATH': '../stimuli_figure/Sheep.jpeg', 'category': 'Living_Things', 'SD_Arousal': 1.9794463067649943, 'SD_Valence': 1.3411635889793536, 'Mean_Concreteness': 7.84}, {'Category': 'animal', 'Mean_Familiarity': 3.88, 'SD_Concreteness': 1.5470401847829731, 'Word': 'Culebra', 'picked': True, 'Mean_Arousal': 7.578947368421053, 'Mean_Valence': 1.8157894736842104, 'SD_Familiarity': 2.350886357667394, 'Length': 7, 'Frequency': 2.32, 'blank_dur': 0.5720166951302303, 'English': 'Snake', 'log_frequency': 0.8415671856782185, 'PATH': '../stimuli_figure/Snake.jpeg', 'category': 'Living_Things', 'SD_Arousal': 1.5357290538648978, 'SD_Valence': 1.1821936357122866, 'Mean_Concreteness': 7.32}, {'Category': 'object', 'Mean_Familiarity': 4.88, 'SD_Concreteness': 1.6329931618554518, 'Word': 'Retrete', 'picked': True, 'Mean_Arousal': 3.736842105263158, 'Mean_Valence': 3.1578947368421053, 'SD_Familiarity': 2.8331372481167696, 'Length': 7, 'Frequency': 8.04, 'blank_dur': 0.34312174391520744, 'English': 'Toilet', 'log_frequency': 2.0844290831908747, 'PATH': '../stimuli_figure/Toilet.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 2.049181913578194, 'SD_Valence': 1.70097453449444, 'Mean_Concreteness': 7.8}, {'Category': 'object', 'Mean_Familiarity': 4.08, 'SD_Concreteness': 2.2546248764114467, 'Word': 'Arco', 'picked': True, 'Mean_Arousal': 4.052631578947368, 'Mean_Valence': 4.842105263157895, 'SD_Familiarity': 2.4650895859312425, 'Length': 4, 'Frequency': 22.86, 'blank_dur': 0.4242043722587088, 'English': 'Arc', 'log_frequency': 3.1293886583666644, 'PATH': '../stimuli_figure/Arc.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 1.7076515946484954, 'SD_Valence': 1.3259635107586647, 'Mean_Concreteness': 6.2}, {'Category': 'object', 'Mean_Familiarity': 5.0, 'SD_Concreteness': 1.8230011885167088, 'Word': 'Inyecci\xc3\xb3n', 'picked': True, 'Mean_Arousal': 7.0, 'Mean_Valence': 2.0526315789473686, 'SD_Familiarity': 1.8708286933869709, 'Length': 9, 'Frequency': 6.96, 'blank_dur': 0.3398883566167853, 'English': 'Injection', 'log_frequency': 1.9401794743463283, 'PATH': '../stimuli_figure/Injection.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 1.4886961463697743, 'SD_Valence': 1.2290925771886112, 'Mean_Concreteness': 6.64}, {'Category': 'animal', 'Mean_Familiarity': 4.28, 'SD_Concreteness': 1.293573860795485, 'Word': 'Camello', 'picked': True, 'Mean_Arousal': 4.868421052631579, 'Mean_Valence': 5.815789473684211, 'SD_Familiarity': 2.622339922028925, 'Length': 7, 'Frequency': 2.32, 'blank_dur': 0.6761707371938879, 'English': 'Camel', 'log_frequency': 0.8415671856782185, 'PATH': '../stimuli_figure/Camel.jpeg', 'category': 'Living_Things', 'SD_Arousal': 1.9054835894898383, 'SD_Valence': 1.5041431637924283, 'Mean_Concreteness': 7.56}, {'Category': 'animal', 'Mean_Familiarity': 4.4, 'SD_Concreteness': 1.7729448195962938, 'Word': 'Lobo', 'picked': True, 'Mean_Arousal': 6.815789473684211, 'Mean_Valence': 4.815789473684211, 'SD_Familiarity': 2.4152294576982403, 'Length': 4, 'Frequency': 15.18, 'blank_dur': 0.33011582516855226, 'English': 'Wolf', 'log_frequency': 2.719978771967484, 'PATH': '../stimuli_figure/Wolf.jpeg', 'category': 'Living_Things', 'SD_Arousal': 1.7375855126986566, 'SD_Valence': 2.357910930141509, 'Mean_Concreteness': 7.68}, {'Category': 'object', 'Mean_Familiarity': 3.12, 'SD_Concreteness': 1.4798648586948735, 'Word': 'Sierra', 'picked': True, 'Mean_Arousal': 5.052631578947368, 'Mean_Valence': 3.7105263157894735, 'SD_Familiarity': 1.9646882704388504, 'Length': 6, 'Frequency': 14.82, 'blank_dur': 0.3372105295874164, 'English': 'Mountain range', 'log_frequency': 2.695977619867941, 'PATH': '../stimuli_figure/Mountain range.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 2.1428368216878355, 'SD_Valence': 2.0912674901850736, 'Mean_Concreteness': 6.76}, {'Category': 'animal', 'Mean_Familiarity': 3.16, 'SD_Concreteness': 1.6329931618554518, 'Word': 'Orangut\xc3\xa1n', 'picked': True, 'Mean_Arousal': 5.973684210526316, 'Mean_Valence': 5.5, 'SD_Familiarity': 2.173323108360405, 'Length': 9, 'Frequency': 1.07, 'blank_dur': 0.6722861990870898, 'English': 'Orangutan', 'log_frequency': 0.06765864847381486, 'PATH': '../stimuli_figure/Orangutan.jpeg', 'category': 'Living_Things', 'SD_Arousal': 1.9657450565400183, 'SD_Valence': 1.955587974069263, 'Mean_Concreteness': 8.0}, {'Category': 'animal', 'Mean_Familiarity': 4.68, 'SD_Concreteness': 1.2909944487358056, 'Word': 'Perdiz', 'picked': True, 'Mean_Arousal': 3.947368421052632, 'Mean_Valence': 5.315789473684211, 'SD_Familiarity': 2.5119713374160946, 'Length': 6, 'Frequency': 1.07, 'blank_dur': 0.32305954124494823, 'English': 'Partridge', 'log_frequency': 0.06765864847381486, 'PATH': '../stimuli_figure/Partridge.jpeg', 'category': 'Living_Things', 'SD_Arousal': 1.9023082482626867, 'SD_Valence': 1.678243340888785, 'Mean_Concreteness': 8.0}, {'Category': 'object', 'Mean_Familiarity': 3.64, 'SD_Concreteness': 1.7860571099491744, 'Word': 'Navaja', 'picked': True, 'Mean_Arousal': 6.421052631578947, 'Mean_Valence': 2.0789473684210527, 'SD_Familiarity': 1.7767010628315238, 'Length': 6, 'Frequency': 13.39, 'blank_dur': 0.5998300580647877, 'English': 'Razor', 'log_frequency': 2.594508159703081, 'PATH': '../stimuli_figure/Razor.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 2.1514492783133536, 'SD_Valence': 1.4590181620374196, 'Mean_Concreteness': 7.24}, {'Category': 'object', 'Mean_Familiarity': 3.96, 'SD_Concreteness': 1.3344650993747542, 'Word': 'Faja', 'picked': True, 'Mean_Arousal': 3.842105263157895, 'Mean_Valence': 3.684210526315789, 'SD_Familiarity': 2.4913182588073064, 'Length': 4, 'Frequency': 2.32, 'blank_dur': 0.4318102199489893, 'English': 'Belt', 'log_frequency': 0.8415671856782185, 'PATH': '../stimuli_figure/Belt.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 1.808782116612434, 'SD_Valence': 1.6620609667468578, 'Mean_Concreteness': 7.041666666666668}, {'Category': 'object', 'Mean_Familiarity': 3.8, 'SD_Concreteness': 2.6454089297870573, 'Word': 'Escudo', 'picked': True, 'Mean_Arousal': 4.947368421052632, 'Mean_Valence': 4.7368421052631575, 'SD_Familiarity': 2.309401076758503, 'Length': 6, 'Frequency': 8.93, 'blank_dur': 0.4490508469968241, 'English': 'Shield', 'log_frequency': 2.1894163948884082, 'PATH': '../stimuli_figure/Shield.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 1.7698277274700398, 'SD_Valence': 1.4460423253929602, 'Mean_Concreteness': 6.291666666666668}, {'Category': 'animal', 'Mean_Familiarity': 3.32, 'SD_Concreteness': 2.103172207246315, 'Word': 'Gorri\xc3\xb3n', 'picked': True, 'Mean_Arousal': 4.368421052631579, 'Mean_Valence': 5.7105263157894735, 'SD_Familiarity': 2.478574859336174, 'Length': 7, 'Frequency': 0.89, 'blank_dur': 0.6347452327198453, 'English': 'Sparrow', 'log_frequency': -0.11653381625595152, 'PATH': '../stimuli_figure/Sparrow.jpeg', 'category': 'Living_Things', 'SD_Arousal': 1.894815866852117, 'SD_Valence': 1.3931860188332874, 'Mean_Concreteness': 7.56}, {'Category': 'animal', 'Mean_Familiarity': 4.16, 'SD_Concreteness': 2.2568414506414345, 'Word': 'Cebra', 'picked': True, 'Mean_Arousal': 5.026315789473684, 'Mean_Valence': 5.7105263157894735, 'SD_Familiarity': 2.718455443813637, 'Length': 5, 'Frequency': 0.89, 'blank_dur': 0.6780495164580831, 'English': 'Zebra', 'log_frequency': -0.11653381625595152, 'PATH': '../stimuli_figure/Zebra.jpeg', 'category': 'Living_Things', 'SD_Arousal': 1.731845478801922, 'SD_Valence': 1.4502170338382827, 'Mean_Concreteness': 7.52}, {'Category': 'animal', 'Mean_Familiarity': 5.0, 'SD_Concreteness': 1.2355835328567109, 'Word': 'Caracol', 'picked': True, 'Mean_Arousal': 3.210526315789473, 'Mean_Valence': 5.052631578947368, 'SD_Familiarity': 1.9790570145063195, 'Length': 7, 'Frequency': 5.36, 'blank_dur': 0.6522509812740682, 'English': 'Snail', 'log_frequency': 1.6789639750827108, 'PATH': '../stimuli_figure/Snail.jpeg', 'category': 'Living_Things', 'SD_Arousal': 2.1073602641865827, 'SD_Valence': 1.9583137868136629, 'Mean_Concreteness': 7.88}, {'Category': 'animal', 'Mean_Familiarity': 3.36, 'SD_Concreteness': 1.5307950004273383, 'Word': 'Escarabajo', 'picked': True, 'Mean_Arousal': 4.552631578947368, 'Mean_Valence': 3.3684210526315788, 'SD_Familiarity': 1.8, 'Length': 10, 'Frequency': 1.43, 'blank_dur': 0.3994516770315879, 'English': 'Beetle', 'log_frequency': 0.3576744442718159, 'PATH': '../stimuli_figure/Beetle.jpeg', 'category': 'Living_Things', 'SD_Arousal': 2.2862381283489173, 'SD_Valence': 1.683321244598838, 'Mean_Concreteness': 7.52}, {'Category': 'object', 'Mean_Familiarity': 4.88, 'SD_Concreteness': 2.165272684236664, 'Word': 'Sacapuntas', 'picked': True, 'Mean_Arousal': 3.684210526315789, 'Mean_Valence': 4.7105263157894735, 'SD_Familiarity': 3.073000705065545, 'Length': 10, 'Frequency': 0.18, 'blank_dur': 0.4145219392456877, 'English': 'Sharpener', 'log_frequency': -1.7147984280919266, 'PATH': '../stimuli_figure/Sharpener.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 1.861491165675036, 'SD_Valence': 1.2060185722392749, 'Mean_Concreteness': 7.416666666666668}, {'Category': 'object', 'Mean_Familiarity': 4.84, 'SD_Concreteness': 2.1617893822787955, 'Word': 'Alfombra', 'picked': True, 'Mean_Arousal': 2.9210526315789487, 'Mean_Valence': 5.026315789473684, 'SD_Familiarity': 1.9723082923316024, 'Length': 8, 'Frequency': 16.07, 'blank_dur': 0.4353028058083288, 'English': 'Carpet', 'log_frequency': 2.776954179749421, 'PATH': '../stimuli_figure/Carpet.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 1.8215167268911472, 'SD_Valence': 1.1965455256191009, 'Mean_Concreteness': 7.44}, {'Category': 'animal', 'Mean_Familiarity': 3.76, 'SD_Concreteness': 1.8484227510682358, 'Word': 'Tigre', 'picked': True, 'Mean_Arousal': 7.236842105263157, 'Mean_Valence': 5.973684210526316, 'SD_Familiarity': 2.50466231922256, 'Length': 5, 'Frequency': 4.29, 'blank_dur': 0.3831961062787288, 'English': 'Tiger', 'log_frequency': 1.4562867329399256, 'PATH': '../stimuli_figure/Tiger.jpeg', 'category': 'Living_Things', 'SD_Arousal': 1.837068912864095, 'SD_Valence': 2.019992535512876, 'Mean_Concreteness': 7.6}, {'Category': 'animal', 'Mean_Familiarity': 3.44, 'SD_Concreteness': 1.920937271229854, 'Word': 'Babosa', 'picked': True, 'Mean_Arousal': 5.078947368421051, 'Mean_Valence': 2.131578947368421, 'SD_Familiarity': 2.2, 'Length': 6, 'Frequency': 0.36, 'blank_dur': 0.4926109638741841, 'English': 'Slug', 'log_frequency': -1.0216512475319814, 'PATH': '../stimuli_figure/Slug.jpeg', 'category': 'Living_Things', 'SD_Arousal': 2.5296253215496805, 'SD_Valence': 1.3390406535939228, 'Mean_Concreteness': 6.76}, {'Category': 'object', 'Mean_Familiarity': 3.84, 'SD_Concreteness': 1.106044001535802, 'Word': 'Br\xc3\xbajula', 'picked': True, 'Mean_Arousal': 4.0, 'Mean_Valence': 5.105263157894737, 'SD_Familiarity': 2.230097157823697, 'Length': 7, 'Frequency': 2.5, 'blank_dur': 0.4770215125454299, 'English': 'Compass', 'log_frequency': 0.9162907318741552, 'PATH': '../stimuli_figure/Compass.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 1.9312508199945781, 'SD_Valence': 1.5385053063037817, 'Mean_Concreteness': 7.84}, {'Category': 'object', 'Mean_Familiarity': 4.84, 'SD_Concreteness': 1.9510680835549183, 'Word': 'Cheque', 'picked': True, 'Mean_Arousal': 5.684210526315789, 'Mean_Valence': 6.2105263157894735, 'SD_Familiarity': 2.32163735324878, 'Length': 6, 'Frequency': 4.11, 'blank_dur': 0.5666331038726847, 'English': 'Check', 'log_frequency': 1.4134230285081433, 'PATH': '../stimuli_figure/Check.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 1.7414697607061016, 'SD_Valence': 1.4361716139424865, 'Mean_Concreteness': 6.84}, {'Category': 'object', 'Mean_Familiarity': 3.52, 'SD_Concreteness': 1.6753109164172073, 'Word': 'Patinete', 'picked': True, 'Mean_Arousal': 5.105263157894737, 'Mean_Valence': 5.7105263157894735, 'SD_Familiarity': 2.181742422927143, 'Length': 8, 'Frequency': 0.18, 'blank_dur': 0.3395414379077053, 'English': 'Scooter', 'log_frequency': -1.7147984280919266, 'PATH': '../stimuli_figure/Scooter.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 1.969901543488508, 'SD_Valence': 1.7692248224184892, 'Mean_Concreteness': 6.84}, {'Category': 'animal', 'Mean_Familiarity': 3.32, 'SD_Concreteness': 1.943364779619789, 'Word': 'Asno', 'picked': True, 'Mean_Arousal': 4.526315789473684, 'Mean_Valence': 5.315789473684211, 'SD_Familiarity': 2.3043437243605824, 'Length': 4, 'Frequency': 3.93, 'blank_dur': 0.5845153283008753, 'English': 'Donkey', 'log_frequency': 1.3686394258811698, 'PATH': '../stimuli_figure/Donkey.jpeg', 'category': 'Living_Things', 'SD_Arousal': 1.5894388284780532, 'SD_Valence': 1.6942711604969272, 'Mean_Concreteness': 6.88}, {'Category': 'object', 'Mean_Familiarity': 4.96, 'SD_Concreteness': 1.9578900207451213, 'Word': 'Ladrillo', 'picked': True, 'Mean_Arousal': 3.3157894736842106, 'Mean_Valence': 4.2368421052631575, 'SD_Familiarity': 2.5735837529276826, 'Length': 8, 'Frequency': 8.04, 'blank_dur': 0.6857961239735098, 'English': 'Brick', 'log_frequency': 2.0844290831908747, 'PATH': '../stimuli_figure/Brick.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 1.817412225590012, 'SD_Valence': 1.4965584036303192, 'Mean_Concreteness': 6.6}, {'Category': 'animal', 'Mean_Familiarity': 3.96, 'SD_Concreteness': 2.0631690833925047, 'Word': 'Canario', 'picked': True, 'Mean_Arousal': 4.3421052631578965, 'Mean_Valence': 6.052631578947367, 'SD_Familiarity': 2.207562758639793, 'Length': 7, 'Frequency': 5.54, 'blank_dur': 0.3157727789471784, 'English': 'Canary', 'log_frequency': 1.7119945007591924, 'PATH': '../stimuli_figure/Canary.jpeg', 'category': 'Living_Things', 'SD_Arousal': 2.030528033967596, 'SD_Valence': 1.6431243874063004, 'Mean_Concreteness': 6.44}, {'Category': 'object', 'Mean_Familiarity': 3.56, 'SD_Concreteness': 2.565800719723442, 'Word': 'Jeringa', 'picked': True, 'Mean_Arousal': 6.947368421052633, 'Mean_Valence': 2.0, 'SD_Familiarity': 2.3108440016582685, 'Length': 7, 'Frequency': 1.07, 'blank_dur': 0.4645065889559096, 'English': 'Syringe', 'log_frequency': 0.06765864847381486, 'PATH': '../stimuli_figure/Syringe.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 1.6594914300903707, 'SD_Valence': 1.2080808993852437, 'Mean_Concreteness': 6.4}, {'Category': 'animal', 'Mean_Familiarity': 4.16, 'SD_Concreteness': 1.8929694486000912, 'Word': 'Liebre', 'picked': True, 'Mean_Arousal': 4.684210526315789, 'Mean_Valence': 5.605263157894738, 'SD_Familiarity': 2.230097157823697, 'Length': 6, 'Frequency': 5.0, 'blank_dur': 0.4650543216850973, 'English': 'Hare', 'log_frequency': 1.6094379124341005, 'PATH': '../stimuli_figure/Hare.jpeg', 'category': 'Living_Things', 'SD_Arousal': 1.8759540010192832, 'SD_Valence': 1.220090242214286, 'Mean_Concreteness': 7.4}, {'Category': 'object', 'Mean_Familiarity': 4.04, 'SD_Concreteness': 1.6753109164172073, 'Word': 'Bistur\xc3\xad', 'picked': True, 'Mean_Arousal': 6.526315789473684, 'Mean_Valence': 3.263157894736842, 'SD_Familiarity': 2.4234960972391377, 'Length': 7, 'Frequency': 6.07, 'blank_dur': 0.6916519647918088, 'English': 'Scalpel', 'log_frequency': 1.803358605071407, 'PATH': '../stimuli_figure/Scalpel.jpeg', 'category': 'Nonliving_Things', 'SD_Arousal': 2.063018545530653, 'SD_Valence': 2.0883746496014908, 'Mean_Concreteness': 7.84}]" valType="str"/>
+=======
+      <Param name="conditions" updates="None" val="[{'Category': u'object', 'Mean_Familiarity': 4.08, 'SD_Concreteness': 2.2546248764114467, 'Word': u'Arco', 'picked': True, 'Mean_Arousal': 4.052631578947368, 'Mean_Valence': 4.842105263157895, 'SD_Familiarity': 2.4650895859312425, 'Length': 4, 'Frequency': 22.86, 'PATH_spanish': u'../stimuli_figure/Arc_es.jpeg', 'blank_dur': 0.6949854698841671, 'English': u'Arc', 'log_frequency': 3.1293886583666644, 'PATH_english': u'../stimuli_figure/Arc_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 1.7076515946484954, 'SD_Valence': 1.3259635107586647, 'Mean_Concreteness': 6.2}, {'Category': u'object', 'Mean_Familiarity': 3.96, 'SD_Concreteness': 1.3344650993747542, 'Word': u'Faja', 'picked': True, 'Mean_Arousal': 3.842105263157895, 'Mean_Valence': 3.684210526315789, 'SD_Familiarity': 2.4913182588073064, 'Length': 4, 'Frequency': 2.32, 'PATH_spanish': u'../stimuli_figure/Belt_es.jpeg', 'blank_dur': 0.5472482527843919, 'English': u'Belt', 'log_frequency': 0.8415671856782185, 'PATH_english': u'../stimuli_figure/Belt_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 1.808782116612434, 'SD_Valence': 1.6620609667468578, 'Mean_Concreteness': 7.041666666666668}, {'Category': u'animal', 'Mean_Familiarity': 4.32, 'SD_Concreteness': 1.8, 'Word': u'\xc1guila', 'picked': True, 'Mean_Arousal': 6.0, 'Mean_Valence': 6.157894736842105, 'SD_Familiarity': 2.4447222064411878, 'Length': 6, 'Frequency': 7.86, 'PATH_spanish': u'../stimuli_figure/Eagle_es.jpeg', 'blank_dur': 0.6622124312981593, 'English': u'Eagle', 'log_frequency': 2.0617866064411148, 'PATH_english': u'../stimuli_figure/Eagle_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 1.6765472885698187, 'SD_Valence': 1.5513954623216122, 'Mean_Concreteness': 7.36}, {'Category': u'object', 'Mean_Familiarity': 3.9166666666666665, 'SD_Concreteness': 1.5275252316519468, 'Word': u'Soplete', 'picked': True, 'Mean_Arousal': 4.842105263157895, 'Mean_Valence': 3.763157894736842, 'SD_Familiarity': 2.7491764247666524, 'Length': 7, 'Frequency': 2.5, 'PATH_spanish': u'../stimuli_figure/Blowtorch_es.jpeg', 'blank_dur': 0.3443782377496841, 'English': u'Blowtorch', 'log_frequency': 0.9162907318741552, 'PATH_english': u'../stimuli_figure/Blowtorch_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 2.0205206151355566, 'SD_Valence': 1.618043705792556, 'Mean_Concreteness': 7.4}, {'Category': u'object', 'Mean_Familiarity': 4.76, 'SD_Concreteness': 1.0535653752852758, 'Word': u'Sombrilla', 'picked': True, 'Mean_Arousal': 3.763157894736842, 'Mean_Valence': 5.842105263157895, 'SD_Familiarity': 2.241279396535232, 'Length': 9, 'Frequency': 4.29, 'PATH_spanish': u'../stimuli_figure/Umbrella_es.jpeg', 'blank_dur': 0.3233334448475426, 'English': u'Umbrella', 'log_frequency': 1.4562867329399256, 'PATH_english': u'../stimuli_figure/Umbrella_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 1.951218753252463, 'SD_Valence': 1.405131825872454, 'Mean_Concreteness': 7.88}, {'Category': u'animal', 'Mean_Familiarity': 4.68, 'SD_Concreteness': 1.2909944487358056, 'Word': u'Perdiz', 'picked': True, 'Mean_Arousal': 3.947368421052632, 'Mean_Valence': 5.315789473684211, 'SD_Familiarity': 2.5119713374160946, 'Length': 6, 'Frequency': 1.07, 'PATH_spanish': u'../stimuli_figure/Partridge_es.jpeg', 'blank_dur': 0.3387734587545239, 'English': u'Partridge', 'log_frequency': 0.06765864847381486, 'PATH_english': u'../stimuli_figure/Partridge_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 1.9023082482626867, 'SD_Valence': 1.678243340888785, 'Mean_Concreteness': 8.0}, {'Category': u'object', 'Mean_Familiarity': 3.84, 'SD_Concreteness': 1.106044001535802, 'Word': u'Br\xfajula', 'picked': True, 'Mean_Arousal': 4.0, 'Mean_Valence': 5.105263157894737, 'SD_Familiarity': 2.230097157823697, 'Length': 7, 'Frequency': 2.5, 'PATH_spanish': u'../stimuli_figure/Compass_es.jpeg', 'blank_dur': 0.3299364783970917, 'English': u'Compass', 'log_frequency': 0.9162907318741552, 'PATH_english': u'../stimuli_figure/Compass_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 1.9312508199945781, 'SD_Valence': 1.5385053063037817, 'Mean_Concreteness': 7.84}, {'Category': u'animal', 'Mean_Familiarity': 4.36, 'SD_Concreteness': 1.7146428199482242, 'Word': u'Mejill\xf3n', 'picked': True, 'Mean_Arousal': 3.5789473684210527, 'Mean_Valence': 5.342105263157895, 'SD_Familiarity': 2.3430749027719964, 'Length': 8, 'Frequency': 3.21, 'PATH_spanish': u'../stimuli_figure/Mussel_es.jpeg', 'blank_dur': 0.6391425792144511, 'English': u'Mussel', 'log_frequency': 1.1662709371419244, 'PATH_english': u'../stimuli_figure/Mussel_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 2.0747071294114563, 'SD_Valence': 1.6648401561041688, 'Mean_Concreteness': 7.76}, {'Category': u'object', 'Mean_Familiarity': 3.16, 'SD_Concreteness': 1.5790292376436004, 'Word': u'Bengala', 'picked': True, 'Mean_Arousal': 6.13157894736842, 'Mean_Valence': 4.657894736842105, 'SD_Familiarity': 1.8636880997992489, 'Length': 7, 'Frequency': 1.07, 'PATH_spanish': u'../stimuli_figure/Bengal_es.jpeg', 'blank_dur': 0.5290724997090475, 'English': u'Bengal', 'log_frequency': 0.06765864847381486, 'PATH_english': u'../stimuli_figure/Bengal_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 1.5451939899481344, 'SD_Valence': 1.75955024642699, 'Mean_Concreteness': 7.08}, {'Category': u'object', 'Mean_Familiarity': 3.64, 'SD_Concreteness': 1.3228756555322954, 'Word': u'Alambre', 'picked': True, 'Mean_Arousal': 4.026315789473684, 'Mean_Valence': 3.263157894736842, 'SD_Familiarity': 2.0591260281974, 'Length': 7, 'Frequency': 4.64, 'PATH_spanish': u'../stimuli_figure/Wire_es.jpeg', 'blank_dur': 0.3099716753942492, 'English': u'Wire', 'log_frequency': 1.534714366238164, 'PATH_english': u'../stimuli_figure/Wire_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 2.1496302900890374, 'SD_Valence': 1.605467188488873, 'Mean_Concreteness': 7.4}, {'Category': u'object', 'Mean_Familiarity': 4.04, 'SD_Concreteness': 1.6753109164172073, 'Word': u'Bistur\xed', 'picked': True, 'Mean_Arousal': 6.526315789473684, 'Mean_Valence': 3.263157894736842, 'SD_Familiarity': 2.4234960972391377, 'Length': 7, 'Frequency': 6.07, 'PATH_spanish': u'../stimuli_figure/Scalpel_es.jpeg', 'blank_dur': 0.6316941522223725, 'English': u'Scalpel', 'log_frequency': 1.803358605071407, 'PATH_english': u'../stimuli_figure/Scalpel_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 2.063018545530653, 'SD_Valence': 2.0883746496014908, 'Mean_Concreteness': 7.84}, {'Category': u'animal', 'Mean_Familiarity': 3.16, 'SD_Concreteness': 1.6329931618554518, 'Word': u'Orangut\xe1n', 'picked': True, 'Mean_Arousal': 5.973684210526316, 'Mean_Valence': 5.5, 'SD_Familiarity': 2.173323108360405, 'Length': 9, 'Frequency': 1.07, 'PATH_spanish': u'../stimuli_figure/Orangutan_es.jpeg', 'blank_dur': 0.6618224242132063, 'English': u'Orangutan', 'log_frequency': 0.06765864847381486, 'PATH_english': u'../stimuli_figure/Orangutan_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 1.9657450565400183, 'SD_Valence': 1.955587974069263, 'Mean_Concreteness': 8.0}, {'Category': u'animal', 'Mean_Familiarity': 4.28, 'SD_Concreteness': 1.293573860795485, 'Word': u'Camello', 'picked': True, 'Mean_Arousal': 4.868421052631579, 'Mean_Valence': 5.815789473684211, 'SD_Familiarity': 2.622339922028925, 'Length': 7, 'Frequency': 2.32, 'PATH_spanish': u'../stimuli_figure/Camel_es.jpeg', 'blank_dur': 0.3334736844836794, 'English': u'Camel', 'log_frequency': 0.8415671856782185, 'PATH_english': u'../stimuli_figure/Camel_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 1.9054835894898383, 'SD_Valence': 1.5041431637924283, 'Mean_Concreteness': 7.56}, {'Category': u'animal', 'Mean_Familiarity': 3.32, 'SD_Concreteness': 2.103172207246315, 'Word': u'Gorri\xf3n', 'picked': True, 'Mean_Arousal': 4.368421052631579, 'Mean_Valence': 5.7105263157894735, 'SD_Familiarity': 2.478574859336174, 'Length': 7, 'Frequency': 0.89, 'PATH_spanish': u'../stimuli_figure/Sparrow_es.jpeg', 'blank_dur': 0.4846369703094288, 'English': u'Sparrow', 'log_frequency': -0.11653381625595152, 'PATH_english': u'../stimuli_figure/Sparrow_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 1.894815866852117, 'SD_Valence': 1.3931860188332874, 'Mean_Concreteness': 7.56}, {'Category': u'animal', 'Mean_Familiarity': 3.48, 'SD_Concreteness': 1.2741009902410934, 'Word': u'Leopardo', 'picked': True, 'Mean_Arousal': 6.289473684210527, 'Mean_Valence': 6.078947368421053, 'SD_Familiarity': 1.939071942966532, 'Length': 8, 'Frequency': 0.54, 'PATH_spanish': u'../stimuli_figure/Leopard_es.jpeg', 'blank_dur': 0.5395122110157778, 'English': u'Leopard', 'log_frequency': -0.6161861394238171, 'PATH_english': u'../stimuli_figure/Leopard_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 1.844024604643876, 'SD_Valence': 1.9225768033352053, 'Mean_Concreteness': 7.96}, {'Category': u'animal', 'Mean_Familiarity': 3.96, 'SD_Concreteness': 2.0631690833925047, 'Word': u'Canario', 'picked': True, 'Mean_Arousal': 4.3421052631578965, 'Mean_Valence': 6.052631578947367, 'SD_Familiarity': 2.207562758639793, 'Length': 7, 'Frequency': 5.54, 'PATH_spanish': u'../stimuli_figure/Canary_es.jpeg', 'blank_dur': 0.3116836543755239, 'English': u'Canary', 'log_frequency': 1.7119945007591924, 'PATH_english': u'../stimuli_figure/Canary_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 2.030528033967596, 'SD_Valence': 1.6431243874063004, 'Mean_Concreteness': 6.44}, {'Category': u'object', 'Mean_Familiarity': 3.6, 'SD_Concreteness': 1.3228756555322954, 'Word': u'Misil', 'picked': True, 'Mean_Arousal': 6.789473684210527, 'Mean_Valence': 1.5526315789473684, 'SD_Familiarity': 2.3804761428476167, 'Length': 5, 'Frequency': 5.0, 'PATH_spanish': u'../stimuli_figure/Missile_es.jpeg', 'blank_dur': 0.6344728964787287, 'English': u'Missile', 'log_frequency': 1.6094379124341005, 'PATH_english': u'../stimuli_figure/Missile_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 1.9885876386486108, 'SD_Valence': 0.7240041966823505, 'Mean_Concreteness': 7.8}, {'Category': u'object', 'Mean_Familiarity': 4.96, 'SD_Concreteness': 1.9578900207451213, 'Word': u'Ladrillo', 'picked': True, 'Mean_Arousal': 3.3157894736842106, 'Mean_Valence': 4.2368421052631575, 'SD_Familiarity': 2.5735837529276826, 'Length': 8, 'Frequency': 8.04, 'PATH_spanish': u'../stimuli_figure/Brick_es.jpeg', 'blank_dur': 0.4486928632895604, 'English': u'Brick', 'log_frequency': 2.0844290831908747, 'PATH_english': u'../stimuli_figure/Brick_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 1.817412225590012, 'SD_Valence': 1.4965584036303192, 'Mean_Concreteness': 6.6}, {'Category': u'object', 'Mean_Familiarity': 3.64, 'SD_Concreteness': 1.8726095873584199, 'Word': u'Tr\xedpode', 'picked': True, 'Mean_Arousal': 3.8157894736842106, 'Mean_Valence': 4.578947368421051, 'SD_Familiarity': 2.5311394008759507, 'Length': 7, 'Frequency': 1.79, 'PATH_spanish': u'../stimuli_figure/Tripod_es.jpeg', 'blank_dur': 0.5534253358111687, 'English': u'Tripod', 'log_frequency': 0.5822156198526637, 'PATH_english': u'../stimuli_figure/Tripod_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 2.179204704397911, 'SD_Valence': 1.2867637794801643, 'Mean_Concreteness': 6.56}, {'Category': u'animal', 'Mean_Familiarity': 5.0, 'SD_Concreteness': 1.2355835328567109, 'Word': u'Caracol', 'picked': True, 'Mean_Arousal': 3.210526315789473, 'Mean_Valence': 5.052631578947368, 'SD_Familiarity': 1.9790570145063195, 'Length': 7, 'Frequency': 5.36, 'PATH_spanish': u'../stimuli_figure/Snail_es.jpeg', 'blank_dur': 0.3381709018968053, 'English': u'Snail', 'log_frequency': 1.6789639750827108, 'PATH_english': u'../stimuli_figure/Snail_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 2.1073602641865827, 'SD_Valence': 1.9583137868136629, 'Mean_Concreteness': 7.88}, {'Category': u'object', 'Mean_Familiarity': 3.6, 'SD_Concreteness': 2.321637353248779, 'Word': u'Ametralladora', 'picked': True, 'Mean_Arousal': 7.315789473684211, 'Mean_Valence': 1.4473684210526316, 'SD_Familiarity': 2.3273733406281565, 'Length': 13, 'Frequency': 0.08, 'PATH_spanish': u'../stimuli_figure/Machine gun_es.jpeg', 'blank_dur': 0.5122422676320696, 'English': u'Machine gun', 'log_frequency': -2.525728644308256, 'PATH_english': u'../stimuli_figure/Machine gun_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 2.067839493456156, 'SD_Valence': 0.8913205635931025, 'Mean_Concreteness': 6.84}, {'Category': u'object', 'Mean_Familiarity': 4.88, 'SD_Concreteness': 2.165272684236664, 'Word': u'Sacapuntas', 'picked': True, 'Mean_Arousal': 3.684210526315789, 'Mean_Valence': 4.7105263157894735, 'SD_Familiarity': 3.073000705065545, 'Length': 10, 'Frequency': 0.18, 'PATH_spanish': u'../stimuli_figure/Sharpener_es.jpeg', 'blank_dur': 0.5486317707485023, 'English': u'Sharpener', 'log_frequency': -1.7147984280919266, 'PATH_english': u'../stimuli_figure/Sharpener_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 1.861491165675036, 'SD_Valence': 1.2060185722392749, 'Mean_Concreteness': 7.416666666666668}, {'Category': u'object', 'Mean_Familiarity': 4.64, 'SD_Concreteness': 2.1969676071045443, 'Word': u'Flecha', 'picked': True, 'Mean_Arousal': 5.5, 'Mean_Valence': 3.763157894736842, 'SD_Familiarity': 2.51462389500564, 'Length': 6, 'Frequency': 4.46, 'PATH_spanish': u'../stimuli_figure/Arrow_es.jpeg', 'blank_dur': 0.4196775318598312, 'English': u'Arrow', 'log_frequency': 1.4951487660319729, 'PATH_english': u'../stimuli_figure/Arrow_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 2.1529363983023595, 'SD_Valence': 1.9233165404935268, 'Mean_Concreteness': 6.08}, {'Category': u'animal', 'Mean_Familiarity': 3.6, 'SD_Concreteness': 2.1268129521265693, 'Word': u'Lince', 'picked': True, 'Mean_Arousal': 6.657894736842105, 'Mean_Valence': 6.894736842105262, 'SD_Familiarity': 2.179449471770337, 'Length': 5, 'Frequency': 1.25, 'PATH_spanish': u'../stimuli_figure/Lynx_es.jpeg', 'blank_dur': 0.380255398037512, 'English': u'Lynx', 'log_frequency': 0.22314355131420974, 'PATH_english': u'../stimuli_figure/Lynx_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 1.7285569014623643, 'SD_Valence': 1.3313166351136376, 'Mean_Concreteness': 6.76}, {'Category': u'object', 'Mean_Familiarity': 4.76, 'SD_Concreteness': 1.7559422921421233, 'Word': u'Pegamento', 'picked': True, 'Mean_Arousal': 3.657894736842105, 'Mean_Valence': 4.394736842105264, 'SD_Familiarity': 2.3323807579381195, 'Length': 9, 'Frequency': 1.61, 'PATH_spanish': u'../stimuli_figure/Glue_es.jpeg', 'blank_dur': 0.3683925557348123, 'English': u'Glue', 'log_frequency': 0.4762341789963717, 'PATH_english': u'../stimuli_figure/Glue_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 1.7441224199141598, 'SD_Valence': 1.4803117583297167, 'Mean_Concreteness': 7.4}, {'Category': u'animal', 'Mean_Familiarity': 4.0, 'SD_Concreteness': 2.051016008388688, 'Word': u'Ping\xfcino', 'picked': True, 'Mean_Arousal': 4.947368421052632, 'Mean_Valence': 7.0, 'SD_Familiarity': 2.6770630673681683, 'Length': 8, 'Frequency': 1.96, 'PATH_spanish': u'../stimuli_figure/Penguin_es.jpeg', 'blank_dur': 0.6507459540827403, 'English': u'Penguin', 'log_frequency': 0.6729444732424258, 'PATH_english': u'../stimuli_figure/Penguin_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 2.2773546581452395, 'SD_Valence': 1.506741607001768, 'Mean_Concreteness': 7.04}, {'Category': u'object', 'Mean_Familiarity': 4.84, 'SD_Concreteness': 2.1617893822787955, 'Word': u'Alfombra', 'picked': True, 'Mean_Arousal': 2.9210526315789487, 'Mean_Valence': 5.026315789473684, 'SD_Familiarity': 1.9723082923316024, 'Length': 8, 'Frequency': 16.07, 'PATH_spanish': u'../stimuli_figure/Carpet_es.jpeg', 'blank_dur': 0.6600748839378505, 'English': u'Carpet', 'log_frequency': 2.776954179749421, 'PATH_english': u'../stimuli_figure/Carpet_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 1.8215167268911472, 'SD_Valence': 1.1965455256191009, 'Mean_Concreteness': 7.44}, {'Category': u'animal', 'Mean_Familiarity': 3.76, 'SD_Concreteness': 1.8484227510682358, 'Word': u'Tigre', 'picked': True, 'Mean_Arousal': 7.236842105263157, 'Mean_Valence': 5.973684210526316, 'SD_Familiarity': 2.50466231922256, 'Length': 5, 'Frequency': 4.29, 'PATH_spanish': u'../stimuli_figure/Tiger_es.jpeg', 'blank_dur': 0.45006338368343535, 'English': u'Tiger', 'log_frequency': 1.4562867329399256, 'PATH_english': u'../stimuli_figure/Tiger_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 1.837068912864095, 'SD_Valence': 2.019992535512876, 'Mean_Concreteness': 7.6}, {'Category': u'object', 'Mean_Familiarity': 3.2, 'SD_Concreteness': 2.0066555924389893, 'Word': u'Lancha', 'picked': True, 'Mean_Arousal': 5.894736842105262, 'Mean_Valence': 6.157894736842105, 'SD_Familiarity': 1.914854215512676, 'Length': 6, 'Frequency': 1.96, 'PATH_spanish': u'../stimuli_figure/Boat_es.jpeg', 'blank_dur': 0.6586195565604661, 'English': u'Boat', 'log_frequency': 0.6729444732424258, 'PATH_english': u'../stimuli_figure/Boat_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 1.914235062583013, 'SD_Valence': 1.6028069261998623, 'Mean_Concreteness': 7.12}, {'Category': u'animal', 'Mean_Familiarity': 4.52, 'SD_Concreteness': 1.4525839046333966, 'Word': u'Cocodrilo', 'picked': True, 'Mean_Arousal': 6.605263157894738, 'Mean_Valence': 4.631578947368421, 'SD_Familiarity': 2.5839246635044657, 'Length': 9, 'Frequency': 3.21, 'PATH_spanish': u'../stimuli_figure/Crocodile_es.jpeg', 'blank_dur': 0.39543505727485534, 'English': u'Crocodile', 'log_frequency': 1.1662709371419244, 'PATH_english': u'../stimuli_figure/Crocodile_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 1.823858008997508, 'SD_Valence': 1.93713430908564, 'Mean_Concreteness': 7.88}, {'Category': u'animal', 'Mean_Familiarity': 4.36, 'SD_Concreteness': 1.5524174696260014, 'Word': u'Gaviota', 'picked': True, 'Mean_Arousal': 5.026315789473684, 'Mean_Valence': 5.0, 'SD_Familiarity': 2.325224003546038, 'Length': 7, 'Frequency': 2.5, 'PATH_spanish': u'../stimuli_figure/Seagull_es.jpeg', 'blank_dur': 0.6341510136298575, 'English': u'Seagull', 'log_frequency': 0.9162907318741552, 'PATH_english': u'../stimuli_figure/Seagull_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 1.9240559932469117, 'SD_Valence': 1.9864405216230223, 'Mean_Concreteness': 7.92}, {'Category': u'animal', 'Mean_Familiarity': 4.4, 'SD_Concreteness': 1.5307950004273383, 'Word': u'Abejorro', 'picked': True, 'Mean_Arousal': 7.078947368421053, 'Mean_Valence': 2.131578947368421, 'SD_Familiarity': 2.4152294576982403, 'Length': 8, 'Frequency': 0.18, 'PATH_spanish': u'../stimuli_figure/Bumblebee_es.jpeg', 'blank_dur': 0.6854457461551342, 'English': u'Bumblebee', 'log_frequency': -1.7147984280919266, 'PATH_english': u'../stimuli_figure/Bumblebee_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 1.5833863633154823, 'SD_Valence': 1.3187023234692454, 'Mean_Concreteness': 7.52}, {'Category': u'animal', 'Mean_Familiarity': 4.72, 'SD_Concreteness': 1.468559384794046, 'Word': u'Oso', 'picked': True, 'Mean_Arousal': 5.2368421052631575, 'Mean_Valence': 5.605263157894738, 'SD_Familiarity': 2.685144316419509, 'Length': 3, 'Frequency': 11.43, 'PATH_spanish': u'../stimuli_figure/Bear_es.jpeg', 'blank_dur': 0.3557170325195985, 'English': u'Bear', 'log_frequency': 2.4362414778067194, 'PATH_english': u'../stimuli_figure/Bear_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 2.07213443326696, 'SD_Valence': 1.7939760112321024, 'Mean_Concreteness': 7.64}, {'Category': u'animal', 'Mean_Familiarity': 3.32, 'SD_Concreteness': 1.943364779619789, 'Word': u'Asno', 'picked': True, 'Mean_Arousal': 4.526315789473684, 'Mean_Valence': 5.315789473684211, 'SD_Familiarity': 2.3043437243605824, 'Length': 4, 'Frequency': 3.93, 'PATH_spanish': u'../stimuli_figure/Donkey_es.jpeg', 'blank_dur': 0.37769405276055856, 'English': u'Donkey', 'log_frequency': 1.3686394258811698, 'PATH_english': u'../stimuli_figure/Donkey_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 1.5894388284780532, 'SD_Valence': 1.6942711604969272, 'Mean_Concreteness': 6.88}, {'Category': u'object', 'Mean_Familiarity': 3.56, 'SD_Concreteness': 2.565800719723442, 'Word': u'Jeringa', 'picked': True, 'Mean_Arousal': 6.947368421052633, 'Mean_Valence': 2.0, 'SD_Familiarity': 2.3108440016582685, 'Length': 7, 'Frequency': 1.07, 'PATH_spanish': u'../stimuli_figure/Syringe_es.jpeg', 'blank_dur': 0.655751668155003, 'English': u'Syringe', 'log_frequency': 0.06765864847381486, 'PATH_english': u'../stimuli_figure/Syringe_en.jpeg', 'category': u'Nonliving_Things', 'SD_Arousal': 1.6594914300903707, 'SD_Valence': 1.2080808993852437, 'Mean_Concreteness': 6.4}, {'Category': u'animal', 'Mean_Familiarity': 4.24, 'SD_Concreteness': 2.6223399220289245, 'Word': u'Almeja', 'picked': True, 'Mean_Arousal': 3.4210526315789487, 'Mean_Valence': 4.921052631578949, 'SD_Familiarity': 2.3853720883753127, 'Length': 6, 'Frequency': 0.54, 'PATH_spanish': u'../stimuli_figure/Clam_es.jpeg', 'blank_dur': 0.4188469988800126, 'English': u'Clam', 'log_frequency': -0.6161861394238171, 'PATH_english': u'../stimuli_figure/Clam_en.jpeg', 'category': u'Living_Things', 'SD_Arousal': 1.7496189383941527, 'SD_Valence': 1.6986732334124204, 'Mean_Concreteness': 6.72}]" valType="str"/>
+>>>>>>> 5fe83eaa2f078f018ecde81bc7fd2529be564dee
       <Param name="Selected rows" updates="None" val="" valType="str"/>
     </LoopInitiator>
     <Routine name="fixation"/>
